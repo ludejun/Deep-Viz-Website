@@ -472,7 +472,7 @@ export default class ScatterCurveMap extends React.Component {
     if (this.props.mapConfig && this.props.mapConfig.map && this.props.mapConfig.map.type === 'world') {
       this.currentSource = this.sourceTomer;
       this.ratio = this.maxScreenDis / this.maxGeoDis;
-      const WorldMapJson = require('../../assets/map/WorldMap.json');
+      const WorldMapJson = require('../assets/map/WorldMap.json');
       WorldMapJson.features.forEach((it) => {
         if (it.geometry.type === 'Polygon') {
           const points = [];
@@ -514,7 +514,7 @@ export default class ScatterCurveMap extends React.Component {
     // 渲染中国省份
     if (this.props.mapConfig && this.props.mapConfig.map && this.props.mapConfig.map.type === 'province') {
       if (this.props.mapConfig.map.name) {
-        const province = require(`../../assets/map/${this.props.mapConfig.map.name}.json`);
+        const province = require(`../assets/map/${this.props.mapConfig.map.name}.json`);
         province.features.forEach((it) => {
           if (it.geometry.type === 'Polygon') {
             const points = [];

@@ -48,7 +48,7 @@ export { default as ImagePercent } from './Pictogram/ImagePercent';
 export { default as RainbowRain } from './Canvas/RainbowRain';
 export { default as Gauge } from './Canvas/Gauge';
 export { default as GaugePan } from './Canvas/GaugePan';
-export { default as ScatterCurveMap } from './Canvas/ScatterCurveMap/ScatterCurveMap';
+export { default as ScatterCurveMap } from './Canvas/ScatterCurveMap';
 export { default as CircleAnimate } from './Canvas/CircleAnimate';
 export { default as PillarList } from './Canvas/PillarList';
 export { default as ScratchOff } from './Canvas/ScratchOff';
