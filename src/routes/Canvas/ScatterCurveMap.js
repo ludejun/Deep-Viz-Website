@@ -46,14 +46,14 @@ export default class ScatterCurve extends Basic {
     }];
     const mapSource = [{
       parameter: 'type',
-      description: '必需，定义地图类型为世界地图还是中国地图',
+      description: '必需，定义地图类型为世界地图（world）、省份地图(province)、区县地图(district)',
       type: 'String',
       defaultValue: '',
     }, {
       parameter: 'name',
-      description: '非必需，定义当地图为中国地图时，要展示的区域',
+      description: '非必需，定义当地图为省份或区县地图时，要展示的区域，省份请输入省份拼音，区县请输入汉字',
       type: 'String',
-      defaultValue: '中国',
+      defaultValue: '',
     }, {
       parameter: 'mapBackgroundColor',
       description: '非必需，地图背景颜色',
@@ -107,7 +107,7 @@ export default class ScatterCurve extends Basic {
           </div>
           <hr />
           <p className="sample-title">
-            自定义刻度范围，自定义刻度单位
+            世界范围内的地图绘制，迁徙图为线性迁徙
             <Icon
               type="arrows-alt"
               title="Show me the code"
@@ -173,7 +173,7 @@ ReactDOM.render(
           </div>
           <hr />
           <p className="sample-title">
-            自定义刻度范围，自定义刻度单位
+          世界范围内的地图绘制，迁徙图为圆球迁徙
             <Icon
               type="arrows-alt"
               title="Show me the code"
@@ -218,18 +218,18 @@ ReactDOM.render(
             <ScatterCurveMap
               mapConfig={{
                 map: {
-                  type: 'district',
-                  name: '徐汇区',
+                  type: 'province',
+                  name: 'guangdong',
                   mapBackgroundColor: null,
                   areaBackgroundColor: null,
                   areaLineColor: null },
-                fromPoint: [116.400244, 39.918698],
+                fromPoint: [113.323296, 23.117758],
                 toPoints: [
-                  [99.371246, 37.56617],
-                  [88.480047, 31.354546],
-                  [100.990209, 29.698186],
-                  [116.002403, 29.311931],
-                  [128.07103, 44.572632],
+                  [113.415283, 22.499449],
+                  [113.608455, 24.820991],
+                  [116.63481, 23.656958],
+                  [110.425722, 21.39238],
+                  [113.295701, 25.198217],
                 ],
                 travelDirection: 'from-to',
                 travelType: '',
@@ -238,7 +238,67 @@ ReactDOM.render(
           </div>
           <hr />
           <p className="sample-title">
-            自定义刻度范围，自定义刻度单位
+            省份的地图绘制（图例为广东省）
+            <Icon
+              type="arrows-alt"
+              title="Show me the code"
+              onClick={this.onCodeToggleClick}
+            />
+          </p>
+          <div className="code-container">
+            <Highlight className="JavaScript">
+              <div style={{ whiteSpace: 'pre' }}>
+                {`import { Gauge } from 'deep-viz';
+
+ReactDOM.render(
+  <ScatterCurveMap
+  mapConfig={{
+    map: {
+      type: 'province',
+      name: 'guangdong',
+      mapBackgroundColor: null,
+      areaBackgroundColor: null,
+      areaLineColor: null },
+    fromPoint: [113.323296, 23.117758],
+    toPoints: [
+        [113.415283, 22.499449],
+        [113.608455, 24.820991],
+        [116.63481, 23.656958],
+        [110.425722, 21.39238],
+        [113.295701, 25.198217],
+    ],
+    travelDirection: 'from-to',
+    travelType: '',
+  }}
+/>
+, mountNode);`}
+              </div>
+            </Highlight>
+          </div>
+        </Card>
+        <Card>
+          <div style={{ height: 500, marginBottom: 20 }}>
+            <ScatterCurveMap
+              mapConfig={{
+                map: {
+                  type: 'district',
+                  name: '徐汇区',
+                  mapBackgroundColor: null,
+                  areaBackgroundColor: 'darkblue',
+                  areaLineColor: null },
+                fromPoint: [121.439372, 31.2056777],
+                toPoints: [
+                  [121.422124, 31.141905],
+                  [121.445696, 31.13696],
+                ],
+                travelDirection: 'from-to',
+                travelType: '',
+              }}
+            />
+          </div>
+          <hr />
+          <p className="sample-title">
+            区县的地图（图例为徐汇区）
             <Icon
               type="arrows-alt"
               title="Show me the code"
@@ -253,8 +313,8 @@ ReactDOM.render(
               <ScatterCurveMap
               mapConfig={{
                 map: {
-                  type: 'china',
-                  name: '中国',
+                  type: 'district',
+                  name: '徐汇区',
                   mapBackgroundColor: null,
                   areaBackgroundColor: null,
                   areaLineColor: null },
@@ -275,48 +335,6 @@ ReactDOM.render(
             </Highlight>
           </div>
         </Card>
-        <div style={{ height: 500, marginBottom: 20 }}>
-          <ScatterCurveMap
-            mapConfig={{
-              map: {
-                type: 'province',
-                name: 'guangdong',
-                mapBackgroundColor: null,
-                areaBackgroundColor: null,
-                areaLineColor: null },
-              fromPoint: [113.323296, 23.117758],
-              toPoints: [
-                  [113.415283, 22.499449],
-                  [113.608455, 24.820991],
-                  [116.63481, 23.656958],
-                  [110.425722, 21.39238],
-                  [113.295701, 25.198217],
-              ],
-              travelDirection: 'from-to',
-              travelType: '',
-            }}
-          />
-        </div>
-        <hr />
-        <p className="sample-title">
-            自定义刻度范围，自定义刻度单位
-            <Icon
-              type="arrows-alt"
-              title="Show me the code"
-              onClick={this.onCodeToggleClick}
-            />
-        </p>
-        <div className="code-container">
-          <Highlight className="JavaScript">
-            <div style={{ whiteSpace: 'pre' }}>
-              {`import { Gauge } from 'deep-viz';
-
-ReactDOM.render(
-  <GaugePan number={this.state.number} startNumber={6} numberInterval={20} unit={'km/h'} />
-, mountNode);`}
-            </div>
-          </Highlight>
-        </div>
         <p className="container-title">API</p>
         {this._renderAPI(tableConfig)}
       </div>
