@@ -162,9 +162,9 @@ export default class ScatterCurveMap extends React.Component {
             this.radius * 16 / 3 + this.context.lineWidth * 2);
       this.context.drawImage(
             this.offCanvas,
-            this.mapType !== 'province' ? this.x - 8 / 3 * this.radius - this.context.lineWidth :
+            (this.mapType !== 'province' && this.mapType !== 'district') ? this.x - 8 / 3 * this.radius - this.context.lineWidth :
             this.x - 8 / 3 * this.radius - this.context.lineWidth + this.offCanvas.width / 2 + 0.5,
-            this.mapType !== 'province' ? this.y - 8 / 3 * this.radius - this.context.lineWidth :
+            (this.mapType !== 'province' && this.mapType !== 'district') ? this.y - 8 / 3 * this.radius - this.context.lineWidth :
             this.y - 8 / 3 * this.radius - this.context.lineWidth + this.offCanvas.height / 2 + 0.5,
             this.radius * 16 / 3 + this.context.lineWidth * 2,
             this.radius * 16 / 3 + this.context.lineWidth * 2,
@@ -293,7 +293,7 @@ export default class ScatterCurveMap extends React.Component {
         this.context.save();
         this.fourthcircle.createCenterCircleClipPath();
         this.context.clip();
-        this.mapType !== 'province' ? this.context.drawImage(this.offCanvas, 0, 0) :
+        (this.mapType !== 'province' && this.mapType !== 'district') ? this.context.drawImage(this.offCanvas, 0, 0) :
         this.context.drawImage(this.offCanvas, -this.offCanvas.width / 2,
           -this.offCanvas.height / 2);
         this.context.restore();
@@ -309,7 +309,7 @@ export default class ScatterCurveMap extends React.Component {
         this.context.save();
         this.thirdcircle.createCenterCircleClipPath();
         this.context.clip();
-        this.mapType !== 'province' ? this.context.drawImage(this.offCanvas, 0, 0) :
+        (this.mapType !== 'province' && this.mapType !== 'district') ? this.context.drawImage(this.offCanvas, 0, 0) :
         this.context.drawImage(this.offCanvas, -this.offCanvas.width / 2,
           -this.offCanvas.height / 2);
         this.context.restore();
@@ -325,7 +325,7 @@ export default class ScatterCurveMap extends React.Component {
         this.context.save();
         this.secondcircle.createCenterCircleClipPath();
         this.context.clip();
-        this.mapType !== 'province' ? this.context.drawImage(this.offCanvas, 0, 0) :
+        (this.mapType !== 'province' && this.mapType !== 'district') ? this.context.drawImage(this.offCanvas, 0, 0) :
         this.context.drawImage(this.offCanvas, -this.offCanvas.width / 2,
           -this.offCanvas.height / 2);
         this.context.restore();
@@ -340,7 +340,7 @@ export default class ScatterCurveMap extends React.Component {
       this.context.save();
       this.circle.createCenterCircleClipPath();
       this.context.clip();
-      this.mapType !== 'province' ? this.context.drawImage(this.offCanvas, 0, 0) :
+      (this.mapType !== 'province' && this.mapType !== 'district') ? this.context.drawImage(this.offCanvas, 0, 0) :
       this.context.drawImage(this.offCanvas, -this.offCanvas.width / 2,
         -this.offCanvas.height / 2);
       this.context.restore();
@@ -577,7 +577,7 @@ export default class ScatterCurveMap extends React.Component {
         // this.context.restore();
       }
     }
-    if (this.props.mapConfig && this.props.mapConfig.map && this.props.mapConfig.map.type === 'china') {
+    if (this.props.mapConfig && this.props.mapConfig.map && this.props.mapConfig.map.type === 'district') {
       window.mapLoad = this.mapLoad.bind(this);
       if (typeof BMap === 'undefined') {
         this.loadScript();
@@ -588,7 +588,7 @@ export default class ScatterCurveMap extends React.Component {
   }
   mapLoad = () => {
     const bdary = new BMap.Boundary(); // eslint-disable-line
-    bdary.get(this.props.mapConfig.map.name || '中国', (rs) => {
+    bdary.get(this.props.mapConfig.map.name || '徐汇区', (rs) => {
       let pointsArray = [];
       rs.boundaries.length > 0 && (pointsArray = rs.boundaries[0].split(';'));
       const points = pointsArray.map((it) => {
@@ -612,11 +612,18 @@ export default class ScatterCurveMap extends React.Component {
       this.maxScreenDis = Math.min(this.canvas.width, this.canvas.height);
       this.minLng = this.chinaPoints[0][0];
       this.maxLat = this.chinaPoints[0][1];
+      this.maxLng = this.chinaPoints[0][0];
+      this.minLat = this.chinaPoints[0][1];
       this.chinaPoints.forEach((it) => {
         this.minLng = Math.min(this.minLng, it[0]);
         this.maxLat = Math.max(this.maxLat, it[1]);
+        this.maxLng = Math.max(this.maxLng, it[0]);
+        this.minLat = Math.min(this.maxLat, it[1]);
       });
-      this.currentSource = [this.minLng, this.maxLat];
+      this.centerPoint = [(this.minLng + this.maxLng) / 2, (this.maxLat + this.minLat) / 2];
+      this.currentSource = this.centerPoint;
+      this.ratio = 1.3 * Math.min(this.canvas.width, this.canvas.height) /
+      this.distancePoint([this.minLng, this.maxLat], [this.maxLng, this.minLat]);
       this.chinaPoints.forEach((it) => {
         this.maxLength = Math.max(this.maxLength,
           this.distancePoint([this.minLng, this.maxLat], it));
@@ -624,13 +631,13 @@ export default class ScatterCurveMap extends React.Component {
       this.ratio = this.maxScreenDis / this.maxLength;
       const screenPoints = [];
       this.chinaPoints.forEach((it) => {
-        const y = Math.abs(it[1] - this.maxLat) * this.ratio;
-        const x = (it[0] - this.minLng) * this.ratio;
+        const y = -(it[1] - this.centerPoint[1]) * this.ratio;
+        const x = (it[0] - this.centerPoint[0]) * this.ratio;
         screenPoints.push([x, y]);
       });
       this.context.fillStyle = this.props.mapConfig.map.mapBackgroundColor || '#020B22';
       this.context.fillRect(0, 0, this.canvas.width, this.canvas.height);
-      this.context.translate(0.5, 0.5);
+      this.context.translate(this.canvas.width / 2 + 0.5, this.canvas.height / 2 + 0.5);
       this.context.beginPath();
       screenPoints.forEach((it, index) => {
         index === 0 ? this.context.moveTo(it[0], it[1]) : this.context.lineTo(it[0], it[1]);
