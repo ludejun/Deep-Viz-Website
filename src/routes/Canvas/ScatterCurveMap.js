@@ -76,8 +76,8 @@ export default class ScatterCurve extends Basic {
     ];
     return (
       <div>
-        <p className="container-header">各地区迁徙图</p>
-        <p>该组件可以根据传入的刻度范围、单位、当前刻度值来实现仪表盘的指示作用</p>
+        <p className="container-header">ScatterCurveMap 多样迁徙地图</p>
+        <p>可模拟显示世界、中国、各级别行政区的迁徙地图</p>
         <p className="container-title">代码示例</p>
         <p>点Title右侧箭头查看代码</p>
         <Card>
