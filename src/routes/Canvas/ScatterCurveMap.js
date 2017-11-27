@@ -8,6 +8,10 @@ export default class ScatterCurve extends Basic {
   constructor(props) {
     super(props);
     this.state = { number: 45 };
+    const script = document.createElement('script');
+    script.src =
+      'http://api.map.baidu.com/api?v=2.0&ak=C4f54f1b740bc62107184968edbb64fb&callback=mapLoad';
+    document.body.appendChild(script);
   }
 
   componentDidMount() {
@@ -72,8 +76,8 @@ export default class ScatterCurve extends Basic {
     ];
     return (
       <div>
-        <p className="container-header">ScatterCurveMap 多样迁徙地图</p>
-        <p>可模拟显示世界、中国、各级别行政区的迁徙地图</p>
+        <p className="container-header">各地区迁徙图</p>
+        <p>该组件可以根据传入的刻度范围、单位、当前刻度值来实现仪表盘的指示作用</p>
         <p className="container-title">代码示例</p>
         <p>点Title右侧箭头查看代码</p>
         <Card>
@@ -272,48 +276,48 @@ ReactDOM.render(
             </Highlight>
           </div>
         </Card>
-        {/* <div style={{ height: 500, marginBottom: 20 }}>
-            <ScatterCurveMap
-              mapConfig={{
-                map: {
-                  type: 'china',
-                  name: '四川',
-                  mapBackgroundColor: null,
-                  areaBackgroundColor: null,
-                  areaLineColor: null },
-                fromPoint: [104.117749, 30.482139],
-                toPoints: [
-                  [100.033549, 29.826607],
-                  [101.063798, 29.698186],
-                  [102.020457, 28.2747],
-                  [104.669668, 29.311931],
-                  [106.28863, 32.484348],
-                ],
-                travelDirection: 'from-to',
-                travelType: '',
-              }}
-            />
-          </div>
-          <hr />
-          <p className="sample-title">
+        <div style={{ height: 500, marginBottom: 20 }}>
+          <ScatterCurveMap
+            mapConfig={{
+              map: {
+                type: 'province',
+                name: 'guangdong',
+                mapBackgroundColor: null,
+                areaBackgroundColor: null,
+                areaLineColor: null },
+              fromPoint: [113.323296, 23.117758],
+              toPoints: [
+                  [113.415283, 22.499449],
+                  [113.608455, 24.820991],
+                  [116.63481, 23.656958],
+                  [110.425722, 21.39238],
+                  [113.295701, 25.198217],
+              ],
+              travelDirection: 'from-to',
+              travelType: '',
+            }}
+          />
+        </div>
+        <hr />
+        <p className="sample-title">
             自定义刻度范围，自定义刻度单位
             <Icon
               type="arrows-alt"
               title="Show me the code"
               onClick={this.onCodeToggleClick}
             />
-          </p>
-          <div className="code-container">
-            <Highlight className="JavaScript">
-              <div style={{ whiteSpace: 'pre' }}>
-                {`import { Gauge } from 'deep-viz';
+        </p>
+        <div className="code-container">
+          <Highlight className="JavaScript">
+            <div style={{ whiteSpace: 'pre' }}>
+              {`import { Gauge } from 'deep-viz';
 
 ReactDOM.render(
   <GaugePan number={this.state.number} startNumber={6} numberInterval={20} unit={'km/h'} />
 , mountNode);`}
-              </div>
-            </Highlight>
-          </div> */}
+            </div>
+          </Highlight>
+        </div>
         <p className="container-title">API</p>
         {this._renderAPI(tableConfig)}
       </div>
