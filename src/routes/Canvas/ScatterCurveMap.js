@@ -284,7 +284,7 @@ ReactDOM.render(
                   type: 'district',
                   name: '徐汇区',
                   mapBackgroundColor: null,
-                  areaBackgroundColor: 'darkblue',
+                  areaBackgroundColor: 'lightblue',
                   areaLineColor: null },
                 fromPoint: [121.439372, 31.2056777],
                 toPoints: [
