@@ -1,0 +1,62 @@
+.logo {
+  width: 556px;
+  height: 100px;
+  position: absolute;
+  top: ~'calc(50% - 50px)';
+  left: ~'calc(50% - 278px)';
+}
+.logo-anime {
+  animation: logoAnime 10s linear;
+}
+@keyframes logoAnime {
+  0% {
+    stroke-dasharray: 0 200%;
+  }
+  100% {
+    stroke-dasharray: 200%;
+  }
+}
+@keyframes circleAnime {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.home-page {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: block;
+  perspective: 1000px;
+  overflow: hidden;
+  .circle-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 500px;
+    height: 500px;
+    .circle-anime {
+      animation: circleAnime 100s linear infinite;
+      width: 100%;
+      height: 100%;
+    }
+    .circle {
+      width: 50px;
+      height: 1px;
+      background-color: #999;
+      display: inline-block;
+      margin: 10px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+    }
+  }
+}
