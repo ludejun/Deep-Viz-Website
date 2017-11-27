@@ -153,7 +153,6 @@ ReactDOM.render(
               mapConfig={{
                 map: {
                   type: 'world',
-                  name: '江苏',
                   mapBackgroundColor: null,
                   areaBackgroundColor: null,
                   areaLineColor: null },
@@ -219,8 +218,8 @@ ReactDOM.render(
             <ScatterCurveMap
               mapConfig={{
                 map: {
-                  type: 'china',
-                  name: '中国',
+                  type: 'district',
+                  name: '徐汇区',
                   mapBackgroundColor: null,
                   areaBackgroundColor: null,
                   areaLineColor: null },

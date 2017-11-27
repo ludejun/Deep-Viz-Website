@@ -577,7 +577,7 @@ export default class ScatterCurveMap extends React.Component {
         // this.context.restore();
       }
     }
-    if (this.props.mapConfig && this.props.mapConfig.map && this.props.mapConfig.map.type === 'china') {
+    if (this.props.mapConfig && this.props.mapConfig.map && this.props.mapConfig.map.type === 'district') {
       window.mapLoad = this.mapLoad.bind(this);
       if (typeof BMap === 'undefined') {
         this.loadScript();
@@ -588,7 +588,7 @@ export default class ScatterCurveMap extends React.Component {
   }
   mapLoad = () => {
     const bdary = new BMap.Boundary(); // eslint-disable-line
-    bdary.get(this.props.mapConfig.map.name || '中国', (rs) => {
+    bdary.get(this.props.mapConfig.map.name || '徐汇区', (rs) => {
       let pointsArray = [];
       rs.boundaries.length > 0 && (pointsArray = rs.boundaries[0].split(';'));
       const points = pointsArray.map((it) => {
@@ -612,9 +612,13 @@ export default class ScatterCurveMap extends React.Component {
       this.maxScreenDis = Math.min(this.canvas.width, this.canvas.height);
       this.minLng = this.chinaPoints[0][0];
       this.maxLat = this.chinaPoints[0][1];
+      this.maxLng = this.chinaPoints[0][0];
+      this.minLat = this.chinaPoints[0][1];
       this.chinaPoints.forEach((it) => {
         this.minLng = Math.min(this.minLng, it[0]);
         this.maxLat = Math.max(this.maxLat, it[1]);
+        this.maxLng = Math.max(this.maxLng, it[0]);
+        this.minLat = Math.min(this.maxLat, it[1]);
       });
       this.currentSource = [this.minLng, this.maxLat];
       this.chinaPoints.forEach((it) => {
