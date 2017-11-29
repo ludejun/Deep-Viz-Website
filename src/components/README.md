@@ -7,9 +7,9 @@
 
 2.支持环境
 
-3.版本
+3.组件范围
 
-4.组件范围
+4.安装使用
 
 5.如何贡献
 
@@ -18,7 +18,7 @@
 7.展现网络技术栈介绍
 ~~~
 
-## 特性
+### 特性
 
 - 提供丰富数据可视化组件，基础图表、电子地图、3D制图等，能满足绝大部分可视化需求
 
@@ -34,20 +34,16 @@
 
 - 支持npm + webpack安装使用
 
-## 支持环境
+### 支持环境
 
 - 现代浏览器和 IE9 及以上
 
 
 - 大部分组件在支持Canvas的浏览器上即可使用
 
-## 版本
+### 组件范围
 
-- 稳定版：
-
-## 组件范围
-
-- Basic/Echarts 基础图表组件（包含...）
+- Basic/Echarts 基础图表组件
 
 
 - Map 地图组件
@@ -64,11 +60,21 @@
 
 - WebGL/3D 组件
 
+  参考示例网站：
+
+### 安装使用
+
+推荐使用npm安装使用
+
+```shell
+npm install deep-viz --save
+```
+
 ### 如何贡献
 
 第一版开发人员主要基于万达大数据前端开发小组，感谢他们卓有成效的付出。
 
-如您希望参与贡献，欢迎 [Pull Request](https://github.com/pulls)，或给我们 [报告 Bug](https://github.com/issues)。
+如您希望参与贡献，欢迎 [Pull Request](https://github.com/ludejun/Deep-Viz/pulls)，或给我们 [报告 Bug](https://github.com/ludejun/Deep-Viz/issues)。
 
 ### 感谢
 
@@ -84,8 +90,8 @@
 
 ### 展示网站技术栈介绍
 
-本展示网站技术栈主要为 React + dva + Ant-Design，对此中使用的开源产品一并表示深深的感谢，希望本组件库能像这些产品一样大大提高前端开发效率。
+展示网站技术栈主要为 React + dva + Ant-Design，对此中使用的开源产品一并表示深深的感谢，希望本组件库能像这些产品一样大大提高前端开发效率。
 
 [dva](https://github.com/dvajs/dva)是一个基于 react 和 redux、sagas、roadhog 的轻量应用框架，概念来自 elm， 支持 side effects、热替换、动态加载、react-native、SSR 等，已在生产环境广泛应用。
 
-[Ant-Design](https://github.com/ant-design/ant-design)是蚂蚁金服出品的一套丰富 React UI 组件库，适合开发和服务于企业级后台产品
+[Ant-Design](https://github.com/ant-design/ant-design)是蚂蚁金服出品的一套丰富 React UI 组件库，适合开发和服务于企业级后台产品。
