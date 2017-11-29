@@ -55,10 +55,10 @@ export default class AMapDistrictClusterShow extends Basic {
       type: 'Object',
       defaultValue: 'null',
     }, {
-        parameter: 'renderOptions',
-        description: '非必需，map的相关样式，详见下面table',
-        type: 'Object',
-        defaultValue: 'null',
+      parameter: 'renderOptions',
+      description: '非必需，map的相关样式，详见下面table',
+      type: 'Object',
+      defaultValue: 'null',
     }, {
       parameter: 'point',
       description: '必需，定义地图组件的数据源（地区的经纬度例如["121.8,32.5","231.1,562.6"]）',
