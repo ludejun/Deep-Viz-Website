@@ -68,7 +68,7 @@ class AMapDistrictCluster extends React.Component {
   initPage(DistrictCluster, $, utils) {
     const map = this.amap;
     const that = this;
-    const renderOptions = this.props.renderOptions;
+    const { renderOptions } = this.props;
     function MyRender(ctx, polygons, styleOptions, feature, dataItems) {
       MyRender.__super__.constructor.call(this, ctx, polygons, styleOptions, feature, dataItems);
     }
