@@ -5,6 +5,7 @@
 
 # production
 /dist
+/src/components/lib
 
 # misc
 .DS_Store
