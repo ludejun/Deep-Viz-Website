@@ -4,7 +4,6 @@
 /node_modules
 
 # production
-/dist
 /src/components/lib/
 src/components/lib/
 
