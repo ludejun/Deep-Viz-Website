@@ -13,36 +13,40 @@ class AMapDistrictCluster extends React.Component {
     } else {
       this.mapRender();
     }
-    const script2 = document.createElement('script');
-    script2.async = true;
-    script2.type = 'text/javascript';
-    script2.src = 'http://webapi.amap.com/ui/1.0/main.js?v=1.0.11';
-    document.head.appendChild(script2);
-    script2.onload = () => {
-      // 加载相关组件
-      window.AMapUI.load(['ui/geo/DistrictCluster', 'lib/$', 'lib/utils'], (DistrictCluster, $, utils) => {
-        window.DistrictCluster = DistrictCluster;
-        // 启动页面
-        if (this.props.labelConfig) {
-          this.initPage(DistrictCluster, $, utils);
-        } else if (!this.props.labelConfig) {
-          this.initPage1(DistrictCluster, $, utils);
-        }
-      });
-    };
+    // if (!window.AMapUI) {
+      const script2 = document.createElement('script');
+      script2.async = true;
+      script2.type = 'text/javascript';
+      script2.src = 'http://webapi.amap.com/ui/1.0/main.js?v=1.0.11';
+      document.head.appendChild(script2);
+      script2.onload = () => {
+        // 加载相关组件
+        AMapUI.load(['ui/geo/DistrictCluster', 'lib/$', 'lib/utils'], (DistrictCluster, $, utils) => {
+          window.DistrictCluster = DistrictCluster;
+          // 启动页面
+          if (this.props.labelConfig) {
+            this.initPage(DistrictCluster, $, utils);
+          } else if (!this.props.labelConfig) {
+            this.initPage1(DistrictCluster, $, utils);
+          }
+        });
+      };
+    // }
   }
 
   mapRender() {
     this.amap = new window.AMap.Map('ampClusterContainer', {
-      zoom: 4,
-      center: [139.1, 234.5],
+      zoom: 1,
+      center:[116.39,39.9],
     });
-    this.amap.addControl(new window.AMap.ToolBar());
+    // this.amap.addControl(new window.AMap.ToolBar());
   }
 
   initPage1(DistrictCluster, $) {
     const distCluster = new DistrictCluster({
+      zIndex: 0,
       map: this.amap,
+      autoSetFitView: false,
       getPosition(item) {
         if (!item) {
           return null;
@@ -122,8 +126,9 @@ class AMapDistrictCluster extends React.Component {
     });
 
     const distCluster = new DistrictCluster({
-      zIndex: 200,
+      zIndex: 10,
       map: this.amap,
+      autoSetFitView: false,
       getPosition(item) {
         if (!item) {
           return null;
@@ -136,16 +141,16 @@ class AMapDistrictCluster extends React.Component {
       renderOptions: {
         getClusterMarker: null,
         featureClickToShowSub: true,
-        // featureStyle: {
-        //   fillStyle: 'black',
-        //   lineWidth: 5,
-        //   strokeStyle:'red',
-        //   hoverOptions: {
-        //     fillStyle:'pink',
-        //     lineWidth: 1,
-        //     strokeStyle:'red',
-        //   },
-        // },
+        featureStyle: {
+          fillStyle: '#9cd49b',
+          lineWidth: that.props.renderOptions ? that.props.renderOptions.lineWidth : 1,
+          strokeStyle: that.props.renderOptions ? that.props.renderOptions.strokeStyle : '#1f77b4',
+          hoverOptions: {
+            fillStyle: that.props.renderOptions ? that.props.renderOptions.hoverColor : '#b0ddaf',
+            lineWidth: that.props.renderOptions ? that.props.renderOptions.hoverLineWidth : 1,
+            strokeStyle: that.props.renderOptions ? that.props.renderOptions.hoverStrokeStyle : '#1f77b4',
+          },
+        },
       },
     });
     window.distCluster = distCluster;

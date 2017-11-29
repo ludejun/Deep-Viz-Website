@@ -55,6 +55,11 @@ export default class AMapDistrictClusterShow extends Basic {
       type: 'Object',
       defaultValue: 'null',
     }, {
+        parameter: 'renderOptions',
+        description: '非必需，map的相关样式，详见下面table',
+        type: 'Object',
+        defaultValue: 'null',
+    }, {
       parameter: 'point',
       description: '必需，定义地图组件的数据源（地区的经纬度例如["121.8,32.5","231.1,562.6"]）',
       type: 'Array',
@@ -80,9 +85,42 @@ export default class AMapDistrictClusterShow extends Basic {
         defaultValue: '#fff',
       },
     ];
+    const renderConfig = [
+      {
+        parameter: 'lineWidth',
+        description: '非必需，定义map的边线宽',
+        type: 'Number',
+        defaultValue: '1',
+      },
+      {
+        parameter: 'strokeStyle',
+        description: '非必需，定义map边线的颜色',
+        type: 'String',
+        defaultValue: '#1f77b4',
+      },
+      {
+        parameter: 'hoverColor',
+        description: '非必需，定义map的hover时填充颜色',
+        type: 'String',
+        defaultValue: '#b0ddaf',
+      },
+      {
+        parameter: 'hoverStrokeStyle',
+        description: '非必需，定义map的hover时的边线的颜色',
+        type: 'String',
+        defaultValue: '#1f77b4',
+      },
+      {
+        parameter: 'hoverLineColor',
+        description: '非必需，定义map的hover时的边线宽',
+        type: 'Number',
+        defaultValue: '1',
+      },
+    ];
     const tableConfig = [
       { title: 'AMapDistrictCluster', subtitle: '', dataSource: Source },
       { title: 'labelConfig', subtitle: '', dataSource: labelConfig },
+      { title: 'renderOptions', subtitle: '', dataSource: renderConfig },
     ];
     return (
       <div>

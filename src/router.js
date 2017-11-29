@@ -86,8 +86,8 @@ export default ({ history }) => {
                 title="BaiduMapCrossCurve 百度地图迁徙流向图"
                 component={routes.BaiduMapCrossCurve}
               />
-              <Route path="AMapCluster" title="AMapCluster 高德地图点聚合" component={routes.AMapCluster} />
               <Route path="aMapIndoor" title="AMapIndoor 高德地图室内图" component={routes.AMapIndoor} />
+              <Route path="AMapCluster" title="AMapCluster 高德地图点聚合" component={routes.AMapCluster} />
               <Route path="aMapDistrictCluster" title="AMapDistrictCluster 高德地图行政聚合图" component={routes.AMapDistrictCluster} />
             </Route>
             <Route path="pictogram" title="Pictogram 象形图组件">
