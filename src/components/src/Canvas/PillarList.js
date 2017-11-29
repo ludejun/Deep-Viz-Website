@@ -69,7 +69,7 @@ export default class PillarList extends Component {
     const addLabel = (x, y, wx, wy, h, i, val) => {
       const fontBSize = Math.floor(wx * 0.5);
       const fontSSize = Math.floor(wx * 0.38);
-      const percent = `${val.percent * 100}%`;
+      const percent = `${(val.percent * 100).toFixed(2)}%`;
       const offset = val.name.length / 2 * fontSSize;
 
       let point1X = x - wx;
