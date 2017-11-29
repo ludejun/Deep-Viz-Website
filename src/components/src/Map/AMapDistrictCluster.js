@@ -39,7 +39,7 @@ class AMapDistrictCluster extends React.Component {
       zoom: 1,
       center:[116.39,39.9],
     });
-    // this.amap.addControl(new window.AMap.ToolBar());
+    this.amap.addControl(new window.AMap.ToolBar());
   }
 
   initPage1(DistrictCluster, $) {
@@ -68,6 +68,7 @@ class AMapDistrictCluster extends React.Component {
   initPage(DistrictCluster, $, utils) {
     const map = this.amap;
     const that = this;
+    const renderOptions = this.props.renderOptions;
     function MyRender(ctx, polygons, styleOptions, feature, dataItems) {
       MyRender.__super__.constructor.call(this, ctx, polygons, styleOptions, feature, dataItems);
     }
@@ -143,12 +144,12 @@ class AMapDistrictCluster extends React.Component {
         featureClickToShowSub: true,
         featureStyle: {
           fillStyle: '#9cd49b',
-          lineWidth: that.props.renderOptions ? that.props.renderOptions.lineWidth : 1,
-          strokeStyle: that.props.renderOptions ? that.props.renderOptions.strokeStyle : '#1f77b4',
+          lineWidth: renderOptions ? renderOptions.lineWidth : 1,
+          strokeStyle: renderOptions ? renderOptions.strokeStyle : '#1f77b4',
           hoverOptions: {
-            fillStyle: that.props.renderOptions ? that.props.renderOptions.hoverColor : '#b0ddaf',
-            lineWidth: that.props.renderOptions ? that.props.renderOptions.hoverLineWidth : 1,
-            strokeStyle: that.props.renderOptions ? that.props.renderOptions.hoverStrokeStyle : '#1f77b4',
+            fillStyle: renderOptions ? renderOptions.hoverColor : '#b0ddaf',
+            lineWidth: renderOptions ? renderOptions.hoverLineWidth : 1,
+            strokeStyle: renderOptions ? renderOptions.hoverStrokeStyle : '#1f77b4',
           },
         },
       },
