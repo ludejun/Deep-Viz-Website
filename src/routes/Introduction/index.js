@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'dva/router';
 import { Collapse } from 'antd';
 import IntroductionDemo from './IntroductionDemo';
 import './introduction.less';
@@ -33,7 +32,7 @@ export default function () {
   return (
     <div className="main-introduction">
       <h1>Deep-Viz of React</h1>
-      <p>主要专注于数据可视化，提供统一、简洁、漂亮、多样并糅合数据可视化经验、商业数据展示惯例的React组件库。</p>
+      <p>主要专注于数据可视化，提供统一、简洁、漂亮、多样图表并糅合数据可视化经验、商业数据展示惯例的React组件库。</p>
       <Collapse bordered={false}>
         <Panel
           header={
@@ -84,7 +83,7 @@ export default function () {
       <div id="components">
         <h3>组件范围</h3>
         <ul className="list-container">
-          <li>Basic/Echarts 基础图表组件（包含...）</li>
+          <li>Basic/Echarts 基础图表组件</li>
           <li>Map 地图组件</li>
           <li>Pictogram 象形图组件</li>
           <li>SVG 组件</li>
@@ -101,14 +100,18 @@ export default function () {
             <li key={i}>
               <div
                 className="imgContainer"
-                style={{ backgroundImage: `url(${v.imgSrc || 'img/advtor.jpg'})` }}
+                style={{
+                  backgroundImage: `url(${
+                  (window.location.host.indexOf('github.io') > -1 ? `dist/${v.imgSrc}` : v.imgSrc) || 'img/advtor.jpg'})`,
+                }}
               />
               {v.name}
             </li>
           ))}
         </ul>
         <p>
-          如您希望参与贡献，欢迎 <Link to="">Pull Request</Link>，或给我们 <Link to="">报告 Bug</Link>。
+          如您希望参与贡献，欢迎 <a href="https://github.com/ludejun/Deep-Viz/pulls">Pull Request</a>，
+          或给我们 <a href="https://github.com/ludejun/Deep-Viz/issues">报告 Bug</a>。
         </p>
       </div>
 

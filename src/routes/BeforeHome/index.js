@@ -1,7 +1,8 @@
 import React from 'react';
-import ScrollAnim, { Link as AnimeLink, Element, OverPack } from 'rc-scroll-anim';
-import QueueAnim from 'rc-queue-anim';
-import TweenOne from 'rc-tween-one';
+// import ScrollAnim, { Link as AnimeLink, Element, OverPack } from 'rc-scroll-anim';
+import { Element } from 'rc-scroll-anim';
+// import QueueAnim from 'rc-queue-anim';
+// import TweenOne from 'rc-tween-one';
 import './beforeHome.less';
 
 // ScrollAnim.scrollScreen.init();
