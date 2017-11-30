@@ -81,7 +81,17 @@ export default class PillarList extends Component {
       let labelX = x - 3 * wx - offset;
       let labelXTitleY = y - h * 0.8 - wx * 0.5 - fontBSize * 1.8;
       let labelXSubTitleY = y - h * 0.8 - wx * 0.5 - fontSSize;
-      if (i % 2 !== 0) {
+      if (i === 3) {
+        point1X = x + wy;
+        point1Y = y - wy - h * 0.5;
+        point2X = x + 2 * wy;
+        point2Y = y - wy - h * 0.5;
+        point3X = x + 3 * wy;
+        point3Y = y - wy - h * 0.3;
+        labelX = x + 4 * wy - offset;
+        labelXTitleY = y - wy - h * 0.4 + fontBSize * 1.8;
+        labelXSubTitleY = y - wy - h * 0.4 + fontSSize;
+      } else if (i % 2 !== 0) {
         // right
         point1X = x + wy;
         point1Y = y - wy - h * 0.5;

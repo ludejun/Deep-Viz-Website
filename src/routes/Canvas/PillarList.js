@@ -34,10 +34,10 @@ export default class BallMoveShow extends Basic {
     const tableConfig = [{ title: 'PillarList', subtitle: '', dataSource: chartSource }];
     const chartData = [
       { percent: _.random(0.1, 0.2), name: '普通消费' },
-      { percent: _.random(0.2, 0.6), name: '中端消费' },
-      { percent: _.random(0.7, 1), name: '高级消费' },
-      { percent: _.random(0.2, 0.8), name: '中级消费' },
-      { percent: _.random(0.3, 0.9), name: '初级消费' },
+      { percent: _.random(0.5, 0.6), name: '中端消费' },
+      { percent: _.random(0.8, 1), name: '高级消费' },
+      { percent: _.random(0.2, 0.4), name: '中级消费' },
+      { percent: _.random(0.7, 0.9), name: '初级消费' },
     ];
     return (
       <div>
