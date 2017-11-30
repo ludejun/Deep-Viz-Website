@@ -1,38 +1,104 @@
-body {
-  // background: red;
-  .nav {
-    position: fixed;
-    top: 40%;
-    right: 30px;
-    z-index: 100;
-    .nav-list {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      border: 1px solid #9b9b9b;
-      margin-bottom: 23px;
-      cursor: pointer;
-    }
-    .active {
-      background-color: #0bbfff;
-    }
-  }
+.before-home {
+  height: 100%;
+
   .carousel-page {
-    height: 100vh !important;
+    //height: 100vh !important;
+    height: 700px;
     text-align: center;
     position: relative;
     overflow: hidden;
   }
+
   .carousel-page-0 {
-    background: red;
+    position: relative;
+    color: #fff;
+    min-height: 700px;
+    background: url('../../assets/header-1.jpg');
+    background-size: cover;
+
+    .page-0-content {
+      margin-top: 300px;
+      .logo-container {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        font-size: 70px;
+        font-weight: bold;
+      }
+      .logo1 {
+        width: 300px !important;
+      }
+    }
+    .page-0-foot {
+      margin-top: 245px;
+      .line {
+        border-bottom: 1px solid #fff;
+        margin-top: 10px;
+      }
+      .company {
+        text-align: justify;
+        width: 100%;
+        span {
+          display: inline-block;
+        }
+      }
+    }
   }
   .carousel-page-1 {
-    background: blue;
+    background: url('../../assets/header-2.jpg');
+    background-size: cover;
+    .computer {
+      height: 330px;
+    }
+    .desc {
+      margin-right: 100px;
+    }
+    .desc-0 {
+      font-size: 30px;
+      text-align: right;
+    }
+    .desc-1 {
+      font-size: 18px;
+      font-weight: bold;
+      text-align: right;
+      margin-bottom: 20px;
+    }
+    .desc-2 {
+      font-size: 12px;
+      text-align: right;
+      .para::after {
+        content: '';
+        display: inline-block;
+        margin-left: 5px;
+        margin-top: 10px;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #666;
+      }
+    }
   }
   .carousel-page-2 {
-    background: pink;
-  }
-  .carousel-page-3 {
-    background: purple;
+    background: url('../../assets/header-3.jpg');
+    background-size: cover;
+    .content {
+      color: #fff;
+      margin-top: 150px;
+      text-align: center;
+      .title {
+        font-size: 36px;
+      }
+      .sub-title {
+        font-size: 18px;
+      }
+      .img-wrap {
+        margin-top: 50px;
+      }
+      .pic {
+        width: 100%;
+        // width: 200px;
+      }
+    }
   }
 }

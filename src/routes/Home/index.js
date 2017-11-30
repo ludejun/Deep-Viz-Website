@@ -54,7 +54,7 @@ export default class Home extends Component {
             {this.renderCircle(480, CIRCLE_NUM_OUT)}
           </div>
         </div>
-        <Link to="main/introduction">
+        <Link to="front-page">
           <Logo className="logo" />
         </Link>
       </div>
