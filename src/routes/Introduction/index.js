@@ -32,7 +32,7 @@ export default function () {
   return (
     <div className="main-introduction">
       <h1>Deep-Viz of React</h1>
-      <p>主要专注于数据可视化，提供统一、简洁、漂亮、多样并糅合数据可视化经验、商业数据展示惯例的React组件库。</p>
+      <p>主要专注于数据可视化，提供统一、简洁、漂亮、多样图表并糅合数据可视化经验、商业数据展示惯例的React组件库。</p>
       <Collapse bordered={false}>
         <Panel
           header={
