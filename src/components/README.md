@@ -15,7 +15,7 @@
 
 6.感谢
 
-7.展现网络技术栈介绍
+7.展示网站技术栈介绍
 ~~~
 
 ### 特性
@@ -60,7 +60,7 @@
 
 - WebGL/3D 组件
 
-  参考示例网站：
+  参考示例网站：[https://ludejun.github.io/Deep-Viz-Website/](https://ludejun.github.io/Deep-Viz-Website/)
 
 ### 安装使用
 
@@ -70,9 +70,22 @@
 npm install deep-viz --save
 ```
 
+👇为一个简单LineChart例子，详情可见[https://ludejun.github.io/Deep-Viz-Website/#/main/components/basic/line-chart](https://ludejun.github.io/Deep-Viz-Website/#/main/components/basic/line-chart)
+
+```javascript
+import { LineChart } from 'deep-viz';
+
+ReactDOM.render(
+  <LineChart config={{
+    x: { data: lineData.date },
+    y: [{data: [lineData.y1, lineData.y2], legend: ['legend1', 'legend2'], name: 'yAxisName/unit'}],
+  }}/>
+, mountNode);
+```
+
 ### 如何贡献
 
-第一版开发人员主要基于万达大数据前端开发小组，感谢他们卓有成效的付出。
+第一版开发人员主要基于万达大数据前端开发和设计小组，感谢他们卓有成效的付出。在3D及2D组件方面还有不少提升空间，也希望得到大家的帮助。
 
 如您希望参与贡献，欢迎 [Pull Request](https://github.com/ludejun/Deep-Viz/pulls)，或给我们 [报告 Bug](https://github.com/ludejun/Deep-Viz/issues)。
 

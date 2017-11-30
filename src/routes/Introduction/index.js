@@ -76,7 +76,7 @@ export default function () {
       <div id="version">
         <h3>版本</h3>
         <ul className="list-container">
-          <li>稳定版：</li>
+          <li>稳定版：V1.0.0</li>
         </ul>
       </div>
 
@@ -94,7 +94,7 @@ export default function () {
 
       <div id="contribution">
         <h3>如何贡献</h3>
-        <p>第一版开发人员主要基于万达大数据前端开发和设计小组，感谢他们卓有成效的付出。</p>
+        <p>第一版开发人员主要基于万达大数据前端开发和设计小组，感谢他们卓有成效的付出。在3D及2D组件方面还有不少提升空间，也希望得到大家的帮助。</p>
         <ul className="developer">
           {developers.map((v, i) => (
             <li key={i}>
