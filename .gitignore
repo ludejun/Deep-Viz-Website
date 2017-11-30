@@ -4,8 +4,7 @@
 /node_modules
 
 # production
-/src/components/lib/
-src/components/lib/
+src/components/lib
 
 # misc
 .DS_Store
@@ -14,4 +13,8 @@ npm-debug.log*
 /src/.editorconfig
 *.zip
 
-yarn.lock
+*yarn.lock
+*package-lock.json
+
+
+*.gitignore
