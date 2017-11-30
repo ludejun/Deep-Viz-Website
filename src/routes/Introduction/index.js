@@ -100,7 +100,10 @@ export default function () {
             <li key={i}>
               <div
                 className="imgContainer"
-                style={{ backgroundImage: `url(${v.imgSrc || 'img/advtor.jpg'})` }}
+                style={{
+                  backgroundImage: `url(${
+                  (window.location.host.indexOf('github.io') > -1 ? `dist/${v.imgSrc}` : v.imgSrc) || 'img/advtor.jpg'})`,
+                }}
               />
               {v.name}
             </li>
