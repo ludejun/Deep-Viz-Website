@@ -114,10 +114,10 @@ export default class Home extends Basic {
                 <TweenOne animation={{ ...oneAnim, delay: 100 }} key="3s">
                   <p className="sub-title">不断完善的组件库更好的助力前端开发</p>
                 </TweenOne>
-                <Row className="img-wrap" gutter={6} key="3p">
+                <Row className="img-wrap" key="3p">
                   <QueueAnim leaveReverse key="3d">
                     {Array.from(new Array(6)).map((item, i) => (
-                      <Col span={4} key={`3d-${i}`}>
+                      <Col md={4} xs={8} key={`3d-${i}`}>
                         <div className="pic-container">
                           <img alt={i} className="pic" src={require(`../../assets/${i + 1}.png`)} />
                           <p key={i} className="pic-title">
