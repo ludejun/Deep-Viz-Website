@@ -77,10 +77,13 @@ npm install deep-viz --save
 ```javascript
 import { LineChart } from 'deep-viz';
 
-ReactDOM.render(
-<LineChart config={{
+const config = {
   x: { data: lineData.date },
-  y: [{data: [lineData.y1, lineData.y2], legend: ['legend1', 'legend2'], name: 'yAxisName/unit'}]}}/>
+  y: [{data: [lineData.y1, lineData.y2], legend: ['legend1', 'legend2'], name: 'yAxisName/unit'}]
+}
+
+ReactDOM.render(
+<LineChart config={ config }/>
 , mountNode);
 ```
 
