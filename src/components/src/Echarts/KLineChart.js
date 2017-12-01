@@ -179,7 +179,7 @@ export default class KLineChart extends Basic {
     });
 
 
-    option.series[config.bar ? 1 : 0].itemStyle = {
+    option.series[config.bar === undefined ? 0 : 1].itemStyle = {
       normal: {
         color: '#00da3c',
         color0: '#ec0000',
