@@ -4,9 +4,10 @@ import QueueAnim from 'rc-queue-anim';
 import TweenOne from 'rc-tween-one';
 import { Row, Col } from 'antd';
 import Header from '../Layout/Header';
+import Footer from '../Layout/Footer';
 import Logo from './Logo';
-import './home.less';
 import NetLine from './NetLine';
+import './home.less';
 
 const titleAnim = { y: '+=50', opacity: 0, type: 'from' };
 const oneAnim = { y: '+=50', opacity: 0, type: 'from', ease: 'easeOutQuad' };
@@ -79,7 +80,7 @@ export default class Home extends React.Component {
                       key="2s"
                       className="desc-1"
                     >
-                      功能强大，简洁易用。Canvas、SVG、E-Map、WebGL、DOM，你想要的它都有。
+                      功能强大，简洁易用。Canvas、SVG、E-Map、WebGL、DOM，你想要的它都有
                     </TweenOne>
                     <QueueAnim key="2d" delay={250} leaveReverse className="desc-2">
                       <p key="2d-0" className="para">
@@ -110,7 +111,7 @@ export default class Home extends React.Component {
                   <p className="title">可靠且丰富的组件库</p>
                 </TweenOne>
                 <TweenOne animation={{ ...oneAnim, delay: 100 }} key="3s">
-                  <p className="sub-title">不断完善的组件库更好的助力资源开发</p>
+                  <p className="sub-title">不断完善的组件库更好的助力前端开发</p>
                 </TweenOne>
                 <Row className="img-wrap" gutter={6} key="3p">
                   <QueueAnim leaveReverse key="3d">
@@ -130,6 +131,7 @@ export default class Home extends React.Component {
             </div>
           </Element>
         </div>
+        <Footer />
       </div>
     );
   }
