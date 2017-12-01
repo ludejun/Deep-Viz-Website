@@ -10,7 +10,7 @@ export default class ScatterCurve extends Basic {
     this.state = { number: 45 };
     const script = document.createElement('script');
     script.src =
-      'http://api.map.baidu.com/api?v=2.0&ak=C4f54f1b740bc62107184968edbb64fb&callback=mapLoad';
+      'https://api.map.baidu.com/api?v=2.0&ak=C4f54f1b740bc62107184968edbb64fb&callback=mapLoad';
     document.body.appendChild(script);
   }
 

@@ -119,7 +119,7 @@ export default class Home extends Basic {
                     {Array.from(new Array(6)).map((item, i) => (
                       <Col md={4} xs={8} key={`3d-${i}`}>
                         <div className="pic-container">
-                          <img alt={i} className="pic" src={require(`../../assets/${i + 1}.png`)} />
+                          <img alt={i} className="pic" src={require(`../../assets/${i + 1}.jpg`)} />
                           <p key={i} className="pic-title">
                             {picTitle[i]}
                           </p>
