@@ -1,6 +1,5 @@
 import React from 'react';
 import { Menu, Icon } from 'antd';
-import { Link } from 'react-router';
 import WDBasic from './WDBasic';
 import './header.less';
 
@@ -14,21 +13,24 @@ export default class Header extends WDBasic {
     const menu = document.getElementById('navigator');
     menu.style.display = window.getComputedStyle(menu).display === 'none' ? 'block' : 'none';
   };
+  // getHash = () => {
+  //   const router = window.location.href;
+  //   return router.substring(1, router.indexOf('?')) || '/';
+  //   console.log('qwe ', router.substring(1, router.indexOf('?')) || '/');
+  // };
 
   render() {
     return (
       <div className="header-container">
         <div className={`header ${this.type}`}>
-          <div className="header-logo">
-            <Link to="/">
-              <img alt="icon" src={require('../../assets/icon.png')} className="header-icon" />
-              <span className="header-title">Deep-Viz</span>
-            </Link>
+          <div className="header-logo" onClick={() => this._forward('/')}>
+            <img alt="icon" src={require('../../assets/icon.png')} className="header-icon" />
+            <span className="header-title">Deep-Viz</span>
           </div>
           <Icon type="bars" className="header-bars" onClick={this.showBars} />
           <Menu
             className={this.type}
-            selectedKeys={['/']}
+            selectedKeys={[window.location.hash.substring(1, window.location.hash.indexOf('?'))]}
             mode="horizontal"
             id="navigator"
             onClick={(e) => {
@@ -38,7 +40,7 @@ export default class Header extends WDBasic {
             }}
           >
             <Menu.Item key="/">首页</Menu.Item>
-            <Menu.Item key="main/introduction">组件</Menu.Item>
+            <Menu.Item key="/main/introduction">组件</Menu.Item>
             <Menu.Item key="github">
               <a
                 target="_blank"

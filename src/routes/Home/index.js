@@ -8,6 +8,7 @@ import Footer from '../Layout/Footer';
 import Logo from './Logo';
 import NetLine from './NetLine';
 import './home.less';
+import Basic from '../Layout/WDBasic';
 
 const titleAnim = { y: '+=50', opacity: 0, type: 'from' };
 const oneAnim = { y: '+=50', opacity: 0, type: 'from', ease: 'easeOutQuad' };
@@ -15,24 +16,24 @@ const twoAnim = { x: '+=100', opacity: 0, type: 'from' };
 const threeAnim = { x: '-=150', opacity: 0, type: 'from' };
 const picTitle = ['基础图表组件', 'Map地图组件', '象形图组件', 'SVG组件', 'Canvas组件', 'WebGL/3D组件'];
 // ScrollAnim.scrollScreen.init();
-export default class Home extends React.Component {
+export default class Home extends Basic {
   render() {
     return (
       <div className="home">
         <div className="content-wrapper">
           <Element className="carousel-page carousel-page-0" id="welcome0">
             <div className="svg-container">
-              <NetLine />
+              <NetLine className="net-line" />
             </div>
             <div className="page-0-content">
               <Header type="light" />
               <div className="title">
-                <div className="logo-container">
-                  <Logo className="logo logo1" />
+                <div className="logo-container" onClick={() => this._forward('main/introduction')}>
+                  <Logo className="logo" />
                 </div>
                 <OverPack replay key="0o">
                   <TweenOne animation={titleAnim} reverseDelay={100} key="3z">
-                    <p style={{ fontSize: 18, color: 'rgba(255,255,255,0.8)' }}>
+                    <p className="sub-title">
                       主要专注于数据可视化，提供统一、简洁、漂亮、多样图表并糅合数据可视化经验、商业数据展示惯例的React组件库。
                     </p>
                   </TweenOne>

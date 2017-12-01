@@ -4,8 +4,8 @@ export default class NetLine extends Component {
   render() {
     return (
       <svg
-        width="1500px"
-        height="470px"
+        // width="1500px"
+        // height="470px"
         viewBox="0 0 1500 470"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
