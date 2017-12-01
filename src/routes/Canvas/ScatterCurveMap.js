@@ -117,7 +117,7 @@ export default class ScatterCurve extends Basic {
           <div className="code-container">
             <Highlight className="JavaScript">
               <div style={{ whiteSpace: 'pre' }}>
-                {`import { Gauge } from 'deep-viz';
+                {`import { ScatterCurveMap  } from 'deep-viz';
 
 ReactDOM.render(
   <ScatterCurveMap
@@ -183,7 +183,7 @@ ReactDOM.render(
           <div className="code-container">
             <Highlight className="JavaScript">
               <div style={{ whiteSpace: 'pre' }}>
-                {`import { Gauge } from 'deep-viz';
+                {`import { ScatterCurveMap  } from 'deep-viz';
 
 ReactDOM.render(
   <ScatterCurveMap
@@ -248,7 +248,7 @@ ReactDOM.render(
           <div className="code-container">
             <Highlight className="JavaScript">
               <div style={{ whiteSpace: 'pre' }}>
-                {`import { Gauge } from 'deep-viz';
+                {`import { ScatterCurveMap  } from 'deep-viz';
 
 ReactDOM.render(
   <ScatterCurveMap
@@ -308,7 +308,7 @@ ReactDOM.render(
           <div className="code-container">
             <Highlight className="JavaScript">
               <div style={{ whiteSpace: 'pre' }}>
-                {` import { Gauge } from 'deep-viz';
+                {` import { ScatterCurveMap  } from 'deep-viz';
             ReactDOM.render(
               <ScatterCurveMap
               mapConfig={{

@@ -95,7 +95,7 @@ export default class GaugePan extends Basic {
           <div className="code-container">
             <Highlight className="JavaScript">
               <div style={{ whiteSpace: 'pre' }}>
-                {`import { Gauge } from 'deep-viz';
+                {`import { ScratchOff } from 'deep-viz';
 
 ReactDOM.render(
     <ScratchOff

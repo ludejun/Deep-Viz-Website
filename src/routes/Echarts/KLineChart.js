@@ -253,7 +253,7 @@ export default class KLineChartShow extends Basic {
         <p>k线图，可以同步展示日K线、MA5、MA10、MA20等，并支持x轴缩放</p>
         <p className="container-title">代码示例</p>
         <p>点Title右侧箭头查看代码</p>
-        <Card noHovering>
+        <Card>
           <KLineChart
             config={{
               x: { data: kData.xdata },
@@ -364,8 +364,8 @@ ReactDOM.render(
       x: { data: kData.xdata },
       y: [
         { data: [kData.ydata, this.calculateMA(5,kData.ydata), this.calculateMA(10,kData.ydata), this.calculateMA(20,kData.ydata)],
-          legend: ['日K', 'MA5', 'MA2'],
-          type: ['candlestick', 'line', 'line'],
+          legend: ['日K', 'MA5', 'MA10', 'MA20'],
+          type: ['candlestick', 'line', 'line', 'line'],
         }
       ],
       dataZoom: { start: 10, end: 50 },
@@ -373,14 +373,14 @@ ReactDOM.render(
     style={{ height: 450, width: '100%' }}
     onEvents={{ click: this.onChartClick }}
     onTooltipFormat={this.onTooltipFormat}
-  // />
+  />
 , mountNode);
             `}
             </Highlight>
           </div>
         </Card>
-this.calculateMA(10,kData.ydata)
-        <Card noHovering>
+
+        <Card>
           <KLineChart
             config={{
               x: { data: kData.xdata },
@@ -536,8 +536,8 @@ ReactDOM.render(
       x: { data: kData.xdata },
       y: [
         { data: [kData.ydata, this.calculateMA(5,kData.ydata), this.calculateMA(10,kData.ydata), this.calculateMA(20,kData.ydata)],
-          legend: ['日K', 'MA5', 'MA2'],
-          type: ['candlestick', 'line', 'line'],
+          legend: ['日K', 'MA5', 'MA10', 'MA20'],
+          type: ['candlestick', 'line', 'line', 'line'],
         }
       ],
       bar:{ data: kData.barData },
