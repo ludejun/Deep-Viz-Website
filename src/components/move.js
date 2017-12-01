@@ -8,8 +8,8 @@ fs.readdir(filePath, (err, files) => {
     return;
   }
   files.forEach((filename) => {
-    fs.stat(path.join(filePath, filename), (err, stats) => {
-      if (err) throw err;
+    fs.stat(path.join(filePath, filename), (er, stats) => {
+      if (er) throw er;
       if (stats.isDirectory() && filename === 'src') {
         const name = filename;
         readFile(path.join(filePath, filename), name);
@@ -23,15 +23,14 @@ function getdir(url) {
   return arr[len - 1];
 }
 function readFile(readurl, name) {
-  var name = name;
   fs.readdir(readurl, (err, files) => {
     if (err) {
       console.log(err);
       return;
     }
     files.forEach((filename) => {
-      fs.stat(path.join(readurl, filename), (err, stats) => {
-        if (err) throw err;
+      fs.stat(path.join(readurl, filename), (er, stats) => {
+        if (er) throw er;
         if (stats.isFile() && getdir(filename) !== 'js' && getdir(filename) !== 'DS_Store' && getdir(filename) !== 'md') {
           const newUrl = `${filePath}/${name}/${filename}`;
           const desUrl = newUrl.replace('src', 'lib');
@@ -61,9 +60,9 @@ function readFile(readurl, name) {
     });
   });
 }
-function fsExistsSync(path) {
+function fsExistsSync(paths) {
   try {
-    fs.accessSync(path, fs.F_OK);
+    fs.accessSync(paths, fs.F_OK);
   } catch (e) {
     return false;
   }
