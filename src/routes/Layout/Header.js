@@ -1,5 +1,6 @@
 import React from 'react';
 import { Menu, Icon } from 'antd';
+import { Link } from 'react-router';
 import WDBasic from './WDBasic';
 import './header.less';
 
@@ -19,13 +20,15 @@ export default class Header extends WDBasic {
       <div className="header-container">
         <div className={`header ${this.type}`}>
           <div className="header-logo">
-            <img alt="icon" src={require('../../assets/icon.png')} className="header-icon" />
-            <span className="header-title">Deep-Viz</span>
+            <Link to="/">
+              <img alt="icon" src={require('../../assets/icon.png')} className="header-icon" />
+              <span className="header-title">Deep-Viz</span>
+            </Link>
           </div>
           <Icon type="bars" className="header-bars" onClick={this.showBars} />
           <Menu
             className={this.type}
-            selectedKeys={['main/introduction']}
+            selectedKeys={['/']}
             mode="horizontal"
             id="navigator"
             onClick={(e) => {
