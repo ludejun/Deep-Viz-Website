@@ -1,6 +1,7 @@
 {
   "entry": "src/index.js",
   "disableCSSModules":true,
+  "publicPath": "/Deep-Viz-Website/dist/",
   "env": {
     "development": {
       "extraBabelPlugins": [
