@@ -23,3 +23,4 @@ npm start
 npm run build
 ```
 
+After build, you can open the "index.html" not the "dist/index.html".
