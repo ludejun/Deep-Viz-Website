@@ -6,7 +6,7 @@ import { Row, Col } from 'antd';
 import Header from '../Layout/Header';
 import Logo from './Logo';
 import './home.less';
-import NetLineSvg from './NetLine';
+import NetLine from './NetLine';
 
 const oneAnim = { y: '+=50', opacity: 0, type: 'from', ease: 'easeOutQuad' };
 const twoAnim = { x: '+=100', opacity: 0, type: 'from' };
@@ -19,14 +19,16 @@ export default class Home extends React.Component {
       <div className="home">
         <div className="content-wrapper">
           <Element className="carousel-page carousel-page-0" id="welcome0">
-            <div className="svg-container">{NetLineSvg}</div>
+            <div className="svg-container">
+              <NetLine />
+            </div>
             <div className="page-0-content">
               <Header type="light" />
               <div className="title">
                 <div className="logo-container">
                   <Logo className="logo logo1" />
                 </div>
-                <p style={{ fontSize: 18 }}>
+                <p style={{ fontSize: 18, color: 'rgba(255,255,255,0.8)' }}>
                   主要专注于数据可视化，提供统一、简洁、漂亮、多样图表并糅合数据可视化经验、商业数据展示惯例的React组件库。
                 </p>
               </div>
