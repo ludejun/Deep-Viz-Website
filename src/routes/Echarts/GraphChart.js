@@ -206,7 +206,7 @@ export default class GraphChartShow extends Basic {
           </p>
           <div className="code-container">
             <Highlight className="JavaScript">{
-              `import { ShadeMap } from 'deep-viz';
+              `import { GraphChart } from 'deep-viz';
 
 // 创建虚假数据
 const graphData = {
