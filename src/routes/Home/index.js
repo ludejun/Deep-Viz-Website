@@ -10,7 +10,7 @@ import NetLine from './NetLine';
 import './home.less';
 import Basic from '../Layout/WDBasic';
 
-const titleAnim = { y: '+=50', opacity: 0, type: 'to' };
+const titleAnim = { y: '+=60', opacity: 0, type: 'from' };
 const oneAnim = { y: '+=50', opacity: 0, type: 'from', ease: 'easeOutQuad' };
 const twoAnim = { x: '+=100', opacity: 0, type: 'from' };
 const threeAnim = { x: '-=150', opacity: 0, type: 'from' };
