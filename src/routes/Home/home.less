@@ -1,62 +1,153 @@
-.logo {
-  width: 556px;
-  height: 100px;
-  position: absolute;
-  top: ~'calc(50% - 50px)';
-  left: ~'calc(50% - 278px)';
-}
-.logo-anime {
-  animation: logoAnime 10s linear;
-}
-@keyframes logoAnime {
-  0% {
-    stroke-dasharray: 0 200%;
-  }
-  100% {
-    stroke-dasharray: 200%;
-  }
-}
-@keyframes circleAnime {
-  0% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-.home-page {
-  position: relative;
-  width: 100%;
+.home {
   height: 100%;
-  display: block;
-  perspective: 1000px;
-  overflow: hidden;
-  .circle-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    width: 500px;
-    height: 500px;
-    .circle-anime {
-      animation: circleAnime 100s linear infinite;
-      width: 100%;
-      height: 100%;
+
+  .carousel-page {
+    //height: 100vh !important;
+    height: 700px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .carousel-page-0 {
+    position: relative;
+    color: #fff;
+    min-height: 700px;
+    background: url('../../assets/header-1.jpg');
+    background-size: cover;
+
+    .ant-menu-horizontal.light > .ant-menu-item-selected,
+    .ant-menu-horizontal.light > .ant-menu-item:hover {
+      border-bottom: 2px solid transparent !important;
     }
-    .circle {
-      width: 50px;
-      height: 1px;
-      background-color: #999;
-      display: inline-block;
-      margin: 10px;
+
+    .page-0-content {
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      margin: auto;
+      z-index: 1;
+      width: 100%;
+    }
+    .svg-container {
+      position: absolute;
+      z-index: 0;
+      top: 100px;
+    }
+    .title {
+      margin-top: 180px;
+      .logo-container {
+        position: relative;
+        height: 100px;
+      }
+      .logo {
+        width: 300px;
+        height: 100px;
+        position: absolute;
+        top: ~'calc(50% - 50px)';
+        left: ~'calc(50% - 150px)';
+      }
+      .logo-anime {
+        animation: logoAnime 10s linear;
+      }
+      @keyframes logoAnime {
+        0% {
+          stroke-dasharray: 0 200%;
+        }
+        100% {
+          stroke-dasharray: 200%;
+        }
+      }
+      @keyframes circleAnime {
+        0% {
+          transform: rotate(0);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    }
+    .page-0-foot {
+      margin-top: 245px;
+      .line {
+        border-bottom: 1px solid #fff;
+        margin-top: 10px;
+      }
+      .company {
+        text-align: justify;
+        width: 100%;
+        span {
+          display: inline-block;
+        }
+      }
+    }
+  }
+  .carousel-page-1 {
+    background: url('../../assets/header-2.jpg');
+    background-size: cover;
+    .computer {
+      width: 80%;
+      margin-left: 10%;
+    }
+    .desc {
+      margin-right: 100px;
+    }
+    .desc-0 {
+      font-size: 30px;
+      text-align: right;
+    }
+    .desc-1 {
+      font-size: 18px;
+      font-weight: bold;
+      text-align: right;
+      margin-bottom: 20px;
+    }
+    .desc-2 {
+      font-size: 12px;
+      text-align: right;
+      .para::after {
+        content: '';
+        display: inline-block;
+        margin-left: 5px;
+        margin-top: 10px;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #666;
+      }
+    }
+  }
+  .carousel-page-2 {
+    background: url('../../assets/header-3.jpg');
+    background-size: cover;
+    .content {
+      color: #fff;
+      margin-top: 150px;
+      text-align: center;
+      .title {
+        font-size: 36px;
+      }
+      .sub-title {
+        font-size: 18px;
+      }
+      .img-wrap {
+        width: 96%;
+        margin: 50px 2% 0 2% !important;
+      }
+      .pic-container {
+        background: rgba(255, 255, 255, 0.2);
+        padding: 15px 1.2% 0 1.2%;
+        height: 240px;
+        margin-left: 5%;
+        text-align: center;
+        max-width: 200px;
+        border-radius: 1%;
+        .pic {
+          width: 95%;
+          height: 150px;
+        }
+        .pic-title {
+          margin-top: 15px;
+          color: rgba(255, 255, 255, 0.9);
+        }
+      }
     }
   }
 }

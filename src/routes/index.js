@@ -4,7 +4,6 @@ export { default as Main } from './Layout/Main';
 export { default as Home } from './Home';
 export { default as Introduction } from './Introduction';
 export { default as QuickStart } from './Introduction/QuickStart';
-export { default as BeforeHome } from './BeforeHome';
 
 // Echarts
 export { default as ChartSample } from './Echarts/ChartSample';
