@@ -8,7 +8,6 @@ export default ({ history }) => {
     <Router history={history}>
       <Route path="/" component={routes.App}>
         <IndexRoute component={routes.Home} />
-        <Route path="front-page" components={routes.BeforeHome} />
         <Route path="main" components={routes.Main}>
           <IndexRoute component={routes.Introduction} />
           <Route path="introduction" title="关于Deep-Viz" component={routes.Introduction} />

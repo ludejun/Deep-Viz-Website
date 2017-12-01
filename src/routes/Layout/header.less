@@ -1,39 +1,41 @@
-.light {
-  color: #fff !important;
-  background: transparent !important;
-}
-.header {
-  background: #fff;
-  height: 80px;
-  padding: 0 48px;
-  width: 100%;
-  transition: opacity 0.5s;
-  line-height: 80px;
-  // color: #fff;
-  .ant-menu {
+.header-container {
+  .header {
+    background: #fff;
+    height: 80px;
+    padding: 0 48px;
+    width: 100%;
+    transition: opacity 0.5s;
+    line-height: 80px;
+    // color: #fff;
+
+    &-logo {
+      float: left;
+      width: 200px;
+      height: 100%;
+    }
+    &-icon {
+      display: inline-block;
+      vertical-align: middle;
+      width: 35px;
+      margin-right: 10px;
+    }
+    &-title {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .github {
+      height: 20px;
+      border-radius: 50%;
+      background: #111;
+      display: inline-block;
+      vertical-align: middle;
+    }
   }
-  &-logo {
-    float: left;
-    width: 200px;
-    height: 100%;
-  }
-  &-icon {
-    display: inline-block;
-    vertical-align: middle;
-    width: 35px;
-    margin-right: 10px;
-  }
-  &-title {
-    display: inline-block;
-    vertical-align: middle;
-    font-size: 20px;
-    font-weight: bold;
-  }
-  .github {
-    height: 20px;
-    background: #111;
-    display: inline-block;
-    vertical-align: middle;
+  .light {
+    color: #fff !important;
+    background: transparent !important;
   }
   @media only screen and (max-width: 992px) and (min-width: 0) {
     #navigator {
@@ -50,7 +52,7 @@
     }
     &:after {
       clear: both;
-      content: '.';
+      content: '';
       display: block;
       height: 0;
     }
@@ -75,7 +77,7 @@
     }
     &:after {
       clear: both;
-      content: '.';
+      content: '';
       display: block;
       height: 0;
     }
