@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, Icon } from 'antd';
 import Highlight from 'react-highlight';
+import _ from 'lodash';
 import { PillarList } from '../../components/src';
 import Basic from '../Layout/WDBasic';
 
@@ -31,6 +32,13 @@ export default class BallMoveShow extends Basic {
       },
     ];
     const tableConfig = [{ title: 'PillarList', subtitle: '', dataSource: chartSource }];
+    const chartData = [
+      { percent: _.random(0.2, 0.4), name: '普通消费' },
+      { percent: _.random(0.5, 0.6), name: '中端消费' },
+      { percent: _.random(0.9, 1), name: '高级消费' },
+      { percent: _.random(0.1, 0.2), name: '中级消费' },
+      { percent: _.random(0.7, 0.8), name: '初级消费' },
+    ];
     return (
       <div>
         <p className="container-header">PillarList 立体簇状柱形图</p>
@@ -38,11 +46,7 @@ export default class BallMoveShow extends Basic {
         <p className="container-title">代码示例</p>
         <Card noHovering>
           <PillarList
-            data={[
-              { percent: 0.6, name: '高端消费' },
-              { percent: 0.855, name: '普通消费' },
-              { percent: 0.3, name: '低端消费' },
-            ]}
+            data={chartData.slice(0, 3)}
             style={{ width: 400, height: 300 }}
             colors={['#c23631', '#91c7ae', '#d48266']}
           />
@@ -55,12 +59,15 @@ export default class BallMoveShow extends Basic {
           <div className="code-container">
             <Highlight className="JavaScript">
               {`import {PillarList} from 'deep-viz';
+const chartData = [
+  { percent: parseFloat(_.random(0.1, 0.2).toFixed(4)), name: '普通消费' },
+  { percent: parseFloat(_.random(0.2, 0.6).toFixed(4)), name: '中端消费' },
+  { percent: parseFloat(_.random(0.7, 1)).toFixed(4), name: '高级消费' },
+  { percent: parseFloat(_.random(0.2, 0.8).toFixed(4)), name: '中级消费' },
+  { percent: parseFloat(_.random(0.3, 0.9).toFixed(4)), name: '初级消费' },
+];
 ReactDOM.render(
-  <PillarList data={[
-    { percent: 0.6, name: '高端消费' },
-    { percent: 0.855, name: '普通消费' },
-    { percent: 0.3, name: '低端消费' },
-  ]}
+  <PillarList data={chartData.slice(0,3)}
   style={{ width: 400, height: 300 }}
   colors={['#c23631', '#91c7ae', '#d48266']} />
 , mountNode);`}
@@ -68,15 +75,7 @@ ReactDOM.render(
           </div>
         </Card>
         <Card noHovering>
-          <PillarList
-            data={[
-              { percent: 0.6, name: '高端消费' },
-              { percent: 0.958, name: '普通消费' },
-              { percent: 0.4, name: '低端消费' },
-              { percent: 0.2, name: '中端消费' },
-            ]}
-            style={{ width: 400, height: 300 }}
-          />
+          <PillarList data={chartData.slice(0, 4)} style={{ width: 400, height: 300 }} />
           <hr />
           <p className="sample-title">
             四列柱状排列图
@@ -86,29 +85,22 @@ ReactDOM.render(
           <div className="code-container">
             <Highlight className="JavaScript">
               {`import {PillarList} from 'deep-viz';
+const chartData = [
+  { percent: parseFloat(_.random(0.1, 0.2).toFixed(4)), name: '普通消费' },
+  { percent: parseFloat(_.random(0.2, 0.6).toFixed(4)), name: '中端消费' },
+  { percent: parseFloat(_.random(0.7, 1)).toFixed(4), name: '高级消费' },
+  { percent: parseFloat(_.random(0.2, 0.8).toFixed(4)), name: '中级消费' },
+  { percent: parseFloat(_.random(0.3, 0.9).toFixed(4)), name: '初级消费' },
+];
 ReactDOM.render(
-  <PillarList data={[
-    { percent: 0.6,name:'高端消费' },
-    { percent: 0.958, name: '普通消费' },
-    { percent: 0.4,name:'低端消费' },
-    { percent: 0.2,name:'中端消费' },
-  ]}
+  <PillarList data={chartData.slice(0,4)}
   style={{ width: 400, height: 300 }} />
   , mountNode);`}
             </Highlight>
           </div>
         </Card>
         <Card noHovering>
-          <PillarList
-            data={[
-              { percent: 0.6, name: '普通消费' },
-              { percent: 0.943, name: '中端消费' },
-              { percent: 0.8, name: '高级消费' },
-              { percent: 0.2, name: '中级消费' },
-              { percent: 0.4, name: '初级消费' },
-            ]}
-            style={{ width: 400, height: 300 }}
-          />
+          <PillarList data={chartData} style={{ width: 400, height: 300 }} />
           <hr />
           <p className="sample-title">
             五列柱状排列图
@@ -118,14 +110,15 @@ ReactDOM.render(
           <div className="code-container">
             <Highlight className="JavaScript">
               {`import {PillarList} from 'deep-viz';
+const chartData = [
+  { percent: parseFloat(_.random(0.1, 0.2).toFixed(4)), name: '普通消费' },
+  { percent: parseFloat(_.random(0.2, 0.6).toFixed(4)), name: '中端消费' },
+  { percent: parseFloat(_.random(0.7, 1)).toFixed(4), name: '高级消费' },
+  { percent: parseFloat(_.random(0.2, 0.8).toFixed(4)), name: '中级消费' },
+  { percent: parseFloat(_.random(0.3, 0.9).toFixed(4)), name: '初级消费' },
+];
 ReactDOM.render(
-  <PillarList data={[
-    { percent: 0.6,name:'普通消费' },
-    { percent: 0.943,name:'中端消费' },
-    { percent: 0.8,name:'高级消费' },
-    { percent: 0.2,name:'中级消费' },
-    { percent: 0.4,name:'初级消费' },
-  ]}
+  <PillarList data={chartData}
   style={{ width: 400, height: 300 }}
   , mountNode);`}
             </Highlight>
