@@ -364,8 +364,8 @@ ReactDOM.render(
       x: { data: kData.xdata },
       y: [
         { data: [kData.ydata, this.calculateMA(5,kData.ydata), this.calculateMA(10,kData.ydata), this.calculateMA(20,kData.ydata)],
-          legend: ['日K', 'MA5', 'MA2'],
-          type: ['candlestick', 'line', 'line'],
+          legend: ['日K', 'MA5', 'MA10', 'MA20'],
+          type: ['candlestick', 'line', 'line', 'line'],
         }
       ],
       dataZoom: { start: 10, end: 50 },
@@ -373,13 +373,13 @@ ReactDOM.render(
     style={{ height: 450, width: '100%' }}
     onEvents={{ click: this.onChartClick }}
     onTooltipFormat={this.onTooltipFormat}
-  // />
+  />
 , mountNode);
             `}
             </Highlight>
           </div>
         </Card>
-this.calculateMA(10,kData.ydata)
+
         <Card noHovering>
           <KLineChart
             config={{
@@ -536,8 +536,8 @@ ReactDOM.render(
       x: { data: kData.xdata },
       y: [
         { data: [kData.ydata, this.calculateMA(5,kData.ydata), this.calculateMA(10,kData.ydata), this.calculateMA(20,kData.ydata)],
-          legend: ['日K', 'MA5', 'MA2'],
-          type: ['candlestick', 'line', 'line'],
+          legend: ['日K', 'MA5', 'MA10', 'MA20'],
+          type: ['candlestick', 'line', 'line', 'line'],
         }
       ],
       bar:{ data: kData.barData },

@@ -206,7 +206,7 @@ export default class LineBarChartShow extends Basic {
           <p className="sample-desc">默认颜色，两个Y轴上各有一组数据，Y轴有名称及单位</p>
           <div className="code-container">
             <Highlight className="JavaScript">{
-              `import { LineChart } from 'deep-viz';
+              `import { LineBarChart } from 'deep-viz';
 import _ from 'lodash';
 import moment from 'moment';
 
@@ -278,7 +278,7 @@ ReactDOM.render(
           </p>
           <div className="code-container">
             <Highlight className="JavaScript">{
-              `import { LineChart } from 'deep-viz';
+              `import { LineBarChart } from 'deep-viz';
 import _ from 'lodash';
 import moment from 'moment';
 
@@ -354,7 +354,7 @@ ReactDOM.render(
             onTooltipFormat函数的参数params包含当前点的所有数据，可以console看看；右上角有默认工具箱，具有区域缩放、查看原始数据、保存图片功能</p>
           <div className="code-container">
             <Highlight className="JavaScript">{
-              `import { LineChart } from 'deep-viz';
+              `import { LineBarChart } from 'deep-viz';
 import _ from 'lodash';
 import moment from 'moment';
 

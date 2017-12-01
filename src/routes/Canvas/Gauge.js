@@ -94,7 +94,7 @@ export default class GaugePans extends Basic {
           <div className="code-container">
             <Highlight className="JavaScript">
               <div style={{ whiteSpace: 'pre' }}>
-                {`import { Gauge } from 'deep-viz';
+                {`import { GaugePan } from 'deep-viz';
 
 ReactDOM.render(
   <GaugePan number={this.state.number} startNumber={6} numberInterval={20} unit={'km/h'} />
