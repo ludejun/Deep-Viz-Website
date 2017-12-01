@@ -22,5 +22,3 @@ npm start
 # build for production with minification
 npm run build
 ```
-
-After build, you can open the "index.html" not the "dist/index.html".
