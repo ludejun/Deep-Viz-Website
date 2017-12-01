@@ -10,7 +10,7 @@ import NetLine from './NetLine';
 import './home.less';
 import Basic from '../Layout/WDBasic';
 
-const titleAnim = { y: '+=50', opacity: 0, type: 'from' };
+const titleAnim = { y: '+=50', opacity: 0, type: 'to' };
 const oneAnim = { y: '+=50', opacity: 0, type: 'from', ease: 'easeOutQuad' };
 const twoAnim = { x: '+=100', opacity: 0, type: 'from' };
 const threeAnim = { x: '-=150', opacity: 0, type: 'from' };
@@ -108,7 +108,7 @@ export default class Home extends Basic {
           <Element className="carousel-page carousel-page-2" id="welcome2">
             <div className="content">
               <OverPack replay key="3o">
-                <TweenOne animation={oneAnim} reverseDelay={100} key="3t">
+                <TweenOne animation={oneAnim} reverseDelay={120} key="3t">
                   <p className="title">可靠且丰富的组件库</p>
                 </TweenOne>
                 <TweenOne animation={{ ...oneAnim, delay: 100 }} key="3s">
