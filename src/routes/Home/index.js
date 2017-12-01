@@ -59,7 +59,7 @@ export default class Home extends Basic {
           <Element className="carousel-page carousel-page-1" id="welcome1">
             <div style={{ marginTop: 200 }}>
               <Row>
-                <Col span={12}>
+                <Col md={12} sm={24}>
                   <OverPack replay playScale={0.2} key="2oi">
                     <TweenOne
                       animation={{ ...threeAnim, x: '-=100' }}
@@ -70,7 +70,7 @@ export default class Home extends Basic {
                     />
                   </OverPack>
                 </Col>
-                <Col span={12}>
+                <Col md={12} sm={24}>
                   <OverPack replay playScale={0.2} key="2o" className="desc">
                     <TweenOne animation={twoAnim} key="2t" component="p" className="desc-0">
                       Deep-Viz的特性
