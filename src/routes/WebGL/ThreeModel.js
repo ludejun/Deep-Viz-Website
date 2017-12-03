@@ -133,7 +133,7 @@ ReactDOM.render(
 
         <Card noHovering>
           <ThreeModel
-            modelPath={'/model/standard-male-figure.obj'}
+            modelPath={`${window.location.href.indexOf('github.io') > -1 ? '/deepviz' : ''}/model/standard-male-figure.obj`}
             cameraZ={30}
             cameraY={-10}
           />
