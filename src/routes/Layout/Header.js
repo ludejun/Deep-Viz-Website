@@ -9,6 +9,7 @@ export default class Header extends WDBasic {
     // this.onMenuClick = this.onMenuClick.bind(this);
     this.type = props.type || '';
   }
+
   showBars = () => {
     const menu = document.getElementById('navigator');
     menu.style.display = window.getComputedStyle(menu).display === 'none' ? 'block' : 'none';
@@ -30,7 +31,7 @@ export default class Header extends WDBasic {
           <Icon type="bars" className="header-bars" onClick={this.showBars} />
           <Menu
             className={this.type}
-            selectedKeys={[window.location.hash.substring(1, window.location.hash.indexOf('?'))]}
+            selectedKeys={[window.location.hash.indexOf('/main') === 1 ? '/main' : null]}
             mode="horizontal"
             id="navigator"
             onClick={(e) => {
@@ -40,7 +41,7 @@ export default class Header extends WDBasic {
             }}
           >
             <Menu.Item key="/">首页</Menu.Item>
-            <Menu.Item key="/main/introduction">组件</Menu.Item>
+            <Menu.Item key="/main">组件</Menu.Item>
             <Menu.Item key="github">
               <a
                 target="_blank"

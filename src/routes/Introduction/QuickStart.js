@@ -18,7 +18,7 @@ $ npm start`}
         {'$ npm install deep-viz --save'}
       </Highlight>
       <p>安装完后，直接装载数据使用即可。👇为一个简单LineChart例子，
-        <a href="https://ludejun.github.io/Deep-Viz-Website/#/main/components/basic/line-chart">详情点此</a></p>
+        <a href="https://ludejun.github.io/deepviz/#/main/components/basic/line-chart">详情点此</a></p>
       <Highlight className="Javascript">
         {`import { LineChart } from 'deep-viz';
 

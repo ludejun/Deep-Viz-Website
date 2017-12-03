@@ -101,8 +101,7 @@ export default function () {
               <div
                 className="imgContainer"
                 style={{
-                  backgroundImage: `url(${
-                  (window.location.host.indexOf('github.io') > -1 ? `dist/${v.imgSrc}` : v.imgSrc) || 'img/advtor.jpg'})`,
+                  backgroundImage: `url(${v.imgSrc || 'img/advtor.jpg'})`,
                 }}
               />
               {v.name}

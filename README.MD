@@ -1,6 +1,8 @@
+![logo](logo.png)
+
 # Deep-Viz Website
 
-
+A React component library, provide concise and beautiful diversity charts with Canvas, SVG, E-map, WebGL, Dom, based on data visualization experience and commercial data display practice. [https://ludejun.github.io/deepviz/](https://ludejun.github.io/deepviz/)
 
 React组件库Deep-Viz的展示网站代码。Deep-Viz的开发主要在此项目。
 
