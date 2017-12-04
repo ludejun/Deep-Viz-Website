@@ -31,7 +31,7 @@ export default class Header extends WDBasic {
           <Icon type="bars" className="header-bars" onClick={this.showBars} />
           <Menu
             className={this.type}
-            selectedKeys={[window.location.hash.indexOf('/main') === 1 ? '/main' : null]}
+            selectedKeys={[window.location.hash.indexOf('/main') === 1 ? '/main' : '/']}
             mode="horizontal"
             id="navigator"
             onClick={(e) => {
