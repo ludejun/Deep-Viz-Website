@@ -37,7 +37,7 @@ class AMapDistrictCluster extends React.Component {
   mapRender() {
     this.amap = new window.AMap.Map('ampClusterContainer', {
       zoom: 1,
-      center: [116.39, 39.9],
+      // center: [116.39, 39.9],
     });
     this.amap.addControl(new window.AMap.ToolBar());
   }
@@ -121,7 +121,7 @@ class AMapDistrictCluster extends React.Component {
     });
 
     const distCluster = new DistrictCluster({
-      zIndex: 10,
+      zIndex: 200,
       map: this.amap,
       autoSetFitView: false,
       getPosition(item) {
