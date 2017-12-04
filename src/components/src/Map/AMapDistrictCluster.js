@@ -17,7 +17,7 @@ class AMapDistrictCluster extends React.Component {
     const script2 = document.createElement('script');
     script2.async = false;
     script2.type = 'text/javascript';
-    script2.src = 'http://webapi.amap.com/ui/1.0/main.js';
+    script2.src = 'http://webapi.amap.com/ui/1.0/main.js?v=1.0.11';
     document.head.appendChild(script2);
     script2.onload = () => {
       // 加载相关组件
