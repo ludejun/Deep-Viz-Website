@@ -157,23 +157,16 @@ export default class ScatterCurveMap extends React.Component {
     };
     this.CirclePoint.prototype.drawAnimate = function () {
       this.context.beginPath();
-      this.context.clearRect(
-        this.x - 8 / 3 * this.radius - this.context.lineWidth,
-        this.y - 8 / 3 * this.radius - this.context.lineWidth,
-        this.radius * 16 / 3 + this.context.lineWidth * 2,
-        this.radius * 16 / 3 + this.context.lineWidth * 2);
-      this.context.drawImage(
-        this.offCanvas,
-        (this.mapType !== 'province' && this.mapType !== 'district') ? this.x - 8 / 3 * this.radius - this.context.lineWidth :
-          this.x - 8 / 3 * this.radius - this.context.lineWidth + this.offCanvas.width / 2 + 0.5,
-        (this.mapType !== 'province' && this.mapType !== 'district') ? this.y - 8 / 3 * this.radius - this.context.lineWidth :
-          this.y - 8 / 3 * this.radius - this.context.lineWidth + this.offCanvas.height / 2 + 0.5,
-        this.radius * 16 / 3 + this.context.lineWidth * 2,
-        this.radius * 16 / 3 + this.context.lineWidth * 2,
-        this.x - 8 / 3 * this.radius - this.context.lineWidth,
-        this.y - 8 / 3 * this.radius - this.context.lineWidth,
-        this.radius * 16 / 3 + this.context.lineWidth * 2,
-        this.radius * 16 / 3 + this.context.lineWidth * 2);
+      this.context.save();
+      this.context.arc(this.x, this.y, this.radius * 2.6, 0, Math.PI * 2);
+      this.context.clip();
+      this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
+      this.context.restore();
+      this.context.save();
+      this.context.arc(this.x, this.y, this.radius * 2.6 + 2, 0, Math.PI * 2);
+      this.context.clip();
+      this.context.drawImage(this.offCanvas, 0, 0);
+      this.context.restore();
       this.createCenterCirclePath();
       this.fillPath();
       this.createFlashCirclePath(this.tempRadius + this.radius / 3);
