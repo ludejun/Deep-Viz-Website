@@ -165,7 +165,13 @@ export default class ScatterCurveMap extends React.Component {
       this.context.save();
       this.context.arc(this.x, this.y, this.radius * 2.6 + 2, 0, Math.PI * 2);
       this.context.clip();
-      this.context.drawImage(this.offCanvas, 0, 0);
+      if (this.mapType === 'world') {
+        this.context.drawImage(this.offCanvas, 0, 0);
+      } else {
+        this.context.drawImage(this.offCanvas, -this.offCanvas.width / 2,
+           -this.offCanvas.height / 2);
+      }
+
       this.context.restore();
       this.createCenterCirclePath();
       this.fillPath();
