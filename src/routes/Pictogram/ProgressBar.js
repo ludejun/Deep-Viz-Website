@@ -45,7 +45,7 @@ export default class ProgressBarShow extends Basic {
       },
       {
         parameter: 'value',
-        description: '非必需，组件的数据的value',
+        description: '必需，组件的数据的value',
         type: 'Number',
         defaultValue: 'null',
       },
