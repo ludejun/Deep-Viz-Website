@@ -1,0 +1,44 @@
+.progress-wrap {
+  width: 100%;
+  display: flex;
+  font-size: 14px;
+  color: #333333;
+  position: relative;
+  margin: 25px auto;
+}
+.bar-name {
+  //position: absolute;
+  //left: 0;
+  //top: -25px;
+}
+.outer-bar {
+  flex: 1;
+  background-color: #d9d9d9;
+  border-radius: 15px;
+}
+.inner-bar {
+  width: 50%;
+  height: 25px;
+}
+.child-item {
+  background-color: #78A960;
+  border-radius: 30px;
+  height: 100%;
+  animation: transitionwidth 1s ease-out;
+}
+.bar-value {
+  margin-left: 10px;
+  margin-right: 5px;
+  width: 10%;
+}
+@keyframes transitionwidth {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 50%;
+  }
+  100% {
+    width: 100%;
+  }
+}

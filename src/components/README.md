@@ -49,7 +49,7 @@
 - Map 地图组件
 
 
-- Pictogram 象形图组件
+- Pictogram/Dom 象形图组件
 
 
 - SVG 组件

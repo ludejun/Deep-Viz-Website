@@ -85,7 +85,7 @@ export default function () {
         <ul className="list-container">
           <li>Basic/Echarts 基础图表组件</li>
           <li>Map 地图组件</li>
-          <li>Pictogram 象形图组件</li>
+          <li>Pictogram/Dom 象形图组件</li>
           <li>SVG 组件</li>
           <li>Canvas 组件</li>
           <li>WebGL/3D 组件</li>
