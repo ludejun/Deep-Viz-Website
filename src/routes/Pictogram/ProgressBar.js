@@ -57,7 +57,7 @@ export default class ProgressBarShow extends Basic {
       },
     ];
     const tableConfig = [
-      { title: 'RainbowRain', subtitle: '', dataSource: ProgressSource },
+      { title: 'ProgressBar', subtitle: '', dataSource: ProgressSource },
       { title: 'data', subtitle: '', dataSource: dataArrSource },
     ];
     return (
