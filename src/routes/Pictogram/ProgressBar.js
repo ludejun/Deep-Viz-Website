@@ -59,7 +59,7 @@ export default class ProgressBarShow extends Basic {
       },
       {
         parameter: 'namePosition',
-        description: '非必需，设置数据的name属性的位置，可选"center"，"bottom"',
+        description: '非必需，设置数据的name属性的位置，可选"top"，"center"，"bottom"',
         type: 'String',
         defaultValue: 'top',
       },
