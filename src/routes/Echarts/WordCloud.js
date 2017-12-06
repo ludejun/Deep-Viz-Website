@@ -106,10 +106,10 @@ export default class WordCloudShow extends Basic {
         defaultValue: 'null',
       },
       {
-        parameter: 'center',
+        parameter: 'top',
         description: '非必需，用来控制词云的位置',
         type: 'String',
-        defaultValue: '{ left: 10, right: 0, top: 30, bottom: 10 }',
+        defaultValue: 'center',
       },
       {
         parameter: 'bottom',
