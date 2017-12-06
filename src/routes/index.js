@@ -22,6 +22,7 @@ export { default as ShadeMapScatter } from './Echarts/ShadeMapScatter';
 export { default as ScatterNet } from './Echarts/ScatterNet';
 export { default as KLineChart } from './Echarts/KLineChart';
 export { default as ScatterCartesian } from './Echarts/ScatterCartesian';
+export { default as WordCloud } from './Echarts/WordCloud';
 
 // Map
 export { default as BaiduMapPoint } from './Map/BaiduMapPoint';

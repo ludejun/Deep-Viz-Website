@@ -53,6 +53,7 @@ export default ({ history }) => {
               <Route path="graph-chart" title="GraphChart 关系图" component={routes.GraphChart} />
               <Route path="scatter-net" title="ScatterNet 网格散点图" component={routes.ScatterNet} />
               <Route path="K-Line-chart" title="KLineChart K线图" component={routes.KLineChart} />
+              <Route path="word-cloudt" title="WordCloud 词云" component={routes.WordCloud} />
               {/* <Route path="map-basic" title="MapBasic 地图基础组件" component={routes.MapBasic} />*/}
             </Route>
             <Route path="map" title="Map 地图组件">

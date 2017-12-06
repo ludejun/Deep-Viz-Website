@@ -22,6 +22,9 @@ import GraphChart from './Echarts/GraphChart';
 import KLineChart from './Echarts/KLineChart';
 
 import ScatterNet from './Echarts/ScatterNet';
+// WordCloud
+import WordCloud from './Echarts/WordCloud';
+
 // map
 // import MapBasic from './Echarts/MapBasic';
 import BaiduMapPoint from './Map/BaiduMapPoint';
@@ -92,6 +95,7 @@ module.exports = {
   MapScatter,
   ShadeMapScatter,
   ScatterCartesian,
+  WordCloud,
   ImageBar,
   ImagePercent,
   ProgressBar,
