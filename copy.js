@@ -73,7 +73,7 @@ try {
   process.exit(0);
 }
 try {
-  execSync('git merge upstream/dev', { cwd });
+  execSync('git merge upstream/master', { cwd });
 } catch (e) {
   console.log('Deep-Viz没有mergec成功');
   process.exit(0);
