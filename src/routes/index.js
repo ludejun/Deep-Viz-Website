@@ -22,6 +22,7 @@ export { default as ShadeMapScatter } from './Echarts/ShadeMapScatter';
 export { default as ScatterNet } from './Echarts/ScatterNet';
 export { default as KLineChart } from './Echarts/KLineChart';
 export { default as ScatterCartesian } from './Echarts/ScatterCartesian';
+export { default as WordCloud } from './Echarts/WordCloud';
 
 // Map
 export { default as BaiduMapPoint } from './Map/BaiduMapPoint';
@@ -50,6 +51,7 @@ export { default as RadarSpan } from './Canvas/RadarSpan';
 // Pictogram
 export { default as ImageBar } from './Pictogram/ImageBar';
 export { default as ImagePercent } from './Pictogram/ImagePercent';
+export { default as ProgressBar } from './Pictogram/ProgressBar';
 
 // SVG
 export { default as BallMove } from './SVG/BallMove';
