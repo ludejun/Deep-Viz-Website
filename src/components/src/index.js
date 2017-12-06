@@ -45,6 +45,7 @@ import ScatterCartesian from './Echarts/ScatterCartesian';
 // Pictogram start
 import ImageBar from './Pictogram/ImageBar';
 import ImagePercent from './Pictogram/ImagePercent';
+import ProgressBar from './Pictogram/ProgressBar';
 
 // canvas
 
@@ -97,6 +98,7 @@ module.exports = {
   WordCloud,
   ImageBar,
   ImagePercent,
+  ProgressBar,
   RainbowRain,
   Gauge,
   GaugePan,

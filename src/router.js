@@ -87,7 +87,6 @@ export default ({ history }) => {
                 title="BaiduMapCrossCurve 百度地图迁徙流向图"
                 component={routes.BaiduMapCrossCurve}
               />
-              <Route path="aMapIndoor" title="AMapIndoor 高德地图室内图" component={routes.AMapIndoor} />
               <Route
                 path="AMapCluster"
                 title="AMapCluster 高德地图点聚合"
@@ -98,14 +97,16 @@ export default ({ history }) => {
                 title="AMapDistrictCluster 高德地图行政聚合图"
                 component={routes.AMapDistrictCluster}
               />
+              <Route path="aMapIndoor" title="AMapIndoor 高德地图室内图" component={routes.AMapIndoor} />
             </Route>
-            <Route path="pictogram" title="Pictogram 象形图组件">
+            <Route path="pictogram" title="Pictogram/Dom 象形图组件">
               <Route path="image-bar" title="ImageBar 柱状象形图" component={routes.ImageBar} />
               <Route
                 path="image-percent"
                 title="ImagePercent 百分比象形图"
                 component={routes.ImagePercent}
               />
+              <Route path="progress-bar" title="ProgressBar 进度条" component={routes.ProgressBar} />
             </Route>
             <Route path="svg" title="SVG 组件">
               <Route path="pie-chart" title="PieChartSvg SVG饼图" component={routes.PieChartSvg} />

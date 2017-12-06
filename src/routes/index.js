@@ -50,6 +50,7 @@ export { default as ScratchOff } from './Canvas/ScratchOff';
 // Pictogram
 export { default as ImageBar } from './Pictogram/ImageBar';
 export { default as ImagePercent } from './Pictogram/ImagePercent';
+export { default as ProgressBar } from './Pictogram/ProgressBar';
 
 // SVG
 export { default as BallMove } from './SVG/BallMove';
