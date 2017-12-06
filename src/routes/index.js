@@ -41,6 +41,7 @@ export { default as ScatterCurve } from './Canvas/ScatterCurveMap';
 export { default as Gauge } from './Canvas/Gauge';
 export { default as CircleAnimate } from './Canvas/CircleAnimate';
 export { default as ScratchOff } from './Canvas/ScratchOff';
+export { default as RadarSpan } from './Canvas/RadarSpan';
 
 // export { default as Clock } from './Canvas/Clock';
 // export { default as AbstractCanvasVisualization } from './Canvas/AbstractCanvasVisualization';

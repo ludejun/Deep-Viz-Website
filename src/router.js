@@ -120,6 +120,11 @@ export default ({ history }) => {
                 component={routes.ScatterCurve}
               />
               <Route
+                path="radar-span"
+                title="RadarSpan 雷达扫描"
+                component={routes.RadarSpan}
+              />
+              <Route
                 path="CircleAnimate"
                 title="CircleAnimate 气泡Canvas"
                 component={routes.CircleAnimate}
