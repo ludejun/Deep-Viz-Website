@@ -29,7 +29,7 @@ export default class ProgressBar extends React.Component {
     }
   }
   render() {
-    const { data } = this.props;
+    const { data, config } = this.props;
     let allV = 0;
     data.forEach((item) => {
       allV += item.value;
@@ -37,23 +37,55 @@ export default class ProgressBar extends React.Component {
     const defaultPosition = {
       position: 'absolute',
       left: 0,
-      top: '-25px',
+      top: config && config.height ? `-${config.height}` : '-25px',
+      height: config && config.height ? config.height : '25px',
+      lineHeight: config && config.height ? config.height : '25px',
+      fontSize: config.fontSize || '14px',
+      color: config.color || '#333',
     };
-    const lettPosition = {
-      marginRight: '10px',
+    // const left = {
+    //   height: config && config.height ? config.height : '25px',
+    //   lineHeight: config && config.height ? config.height : '25px',
+    // };
+    const center = {
+      position: 'absolute',
+      left: 0,
+      height: config && config.height ? config.height : '25px',
+      lineHeight: config && config.height ? config.height : '25px',
+      fontSize: config.fontSize || '14px',
+      color: config.color || '#333',
     };
-    const { namePosition } = this.props;
+    const bottom = {
+      position: 'absolute',
+      left: 0,
+      top: config && config.height ? config.height : '25px',
+      height: config && config.height ? config.height : '25px',
+      lineHeight: config && config.height ? config.height : '25px',
+      fontSize: config.fontSize || '14px',
+      color: config.color || '#333',
+    };
+    const barValue = {
+      fontSize: config.fontSize || '14px',
+      color: config.color || '#333',
+      height: config && config.height ? config.height : '25px',
+      lineHeight: config && config.height ? config.height : '25px',
+    };
+    const marginStyle = {
+      marginTop: config && config.margin ? config.margin : '25px',
+      marginBottom: config && config.margin ? config.margin : '25px',
+    };
+    const { namePosition } = this.props.config;
     return (
       <div>
-        {this.state.dataList.map((item, i) =>
-          <div key={i} className="progress-wrap">
-            <div className="bar-name" style={namePosition === 'left' ? lettPosition : defaultPosition}>{item.name}</div>
+        {data.map((item, i) =>
+          <div key={i} style={marginStyle} className="progress-wrap">
             <div className="outer-bar">
-              <div className="inner-bar" style={{ width: `${item.value / allV * 100}%` }}>
+              <div className="bar-name" style={namePosition && namePosition === 'center' ? center : namePosition === 'bottom' ? bottom : defaultPosition}>{item.name}</div>
+              <div className="inner-bar" style={{ height: config && config.height ? config.height : '25px', width: `${item.value / allV * 100}%` }}>
                 <div className="child-item" style={{ background: item.backgroundColor ? item.backgroundColor : '#2CA51A' }} />
               </div>
             </div>
-            <div className="bar-value">{this.transformValue(item.value.toString())}{this.props.unit}</div>
+            <div className="bar-value" style={barValue}>{this.transformValue(item.value.toString())}{this.props.config.unit}</div>
           </div>,
         )}
       </div>

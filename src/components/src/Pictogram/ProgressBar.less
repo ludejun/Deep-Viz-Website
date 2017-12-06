@@ -1,24 +1,23 @@
 .progress-wrap {
   width: 100%;
-  display: flex;
-  font-size: 14px;
   color: #333333;
-  position: relative;
-  margin: 25px auto;
+  font-size: 0;
 }
 .bar-name {
-  //position: absolute;
-  //left: 0;
-  //top: -25px;
+  font-size: 14px;
+  //padding-right: 10px;
+  //display: inline-block;
+  //vertical-align: text-bottom;
+  //width: 8%;
 }
 .outer-bar {
-  flex: 1;
+  display: inline-block;
+  width: 88%;
   background-color: #d9d9d9;
   border-radius: 15px;
+  position: relative;
 }
 .inner-bar {
-  width: 50%;
-  height: 25px;
 }
 .child-item {
   background-color: #78A960;
@@ -27,9 +26,13 @@
   animation: transitionwidth 1s linear;
 }
 .bar-value {
-  margin-left: 10px;
-  margin-right: 5px;
-  width: 10%;
+  display: inline-block;
+  vertical-align: bottom;
+  padding: 0 10px;
+  width: 9%;
+  font-size: 14px;
+  height: 25px;
+  line-height: 25px;
 }
 @keyframes transitionwidth {
   0% {

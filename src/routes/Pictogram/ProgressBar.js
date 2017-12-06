@@ -24,16 +24,10 @@ export default class ProgressBarShow extends Basic {
         defaultValue: 'null',
       },
       {
-        parameter: 'unit',
-        description: '非必需，展示数据value的单位',
-        type: 'String',
+        parameter: 'config',
+        description: '必需，组件相关配置项，详见下面table',
+        type: 'Object',
         defaultValue: 'null',
-      },
-      {
-        parameter: 'namePosition',
-        description: '非必需，设置数据的name属性的位置，可选"left"',
-        type: 'String',
-        defaultValue: 'top',
       },
     ];
     const dataArrSource = [
@@ -56,9 +50,48 @@ export default class ProgressBarShow extends Basic {
         defaultValue: '#2CA51A',
       },
     ];
+    const optionsSource = [
+      {
+        parameter: 'unit',
+        description: '非必需，展示数据value的单位',
+        type: 'String',
+        defaultValue: 'null',
+      },
+      {
+        parameter: 'namePosition',
+        description: '非必需，设置数据的name属性的位置，可选"center"，"bottom"',
+        type: 'String',
+        defaultValue: 'top',
+      },
+      {
+        parameter: 'color',
+        description: '非必需，设置文字的字体颜色',
+        type: 'String',
+        defaultValue: '#333',
+      },
+      {
+        parameter: 'fontSize',
+        description: '非必需，设置文字的字体大小',
+        type: 'String',
+        defaultValue: '14px',
+      },
+      {
+        parameter: 'height',
+        description: '非必需，设置ProgressBar的高度',
+        type: 'String',
+        defaultValue: '25px',
+      },
+      {
+        parameter: 'margin',
+        description: '非必需，设置上下相邻ProgressBar的margin',
+        type: 'String',
+        defaultValue: '25px',
+      },
+    ];
     const tableConfig = [
       { title: 'ProgressBar', subtitle: '', dataSource: ProgressSource },
       { title: 'data', subtitle: '', dataSource: dataArrSource },
+      { title: 'config', subtitle: '', dataSource: optionsSource },
     ];
     return (
       <div>
@@ -69,7 +102,14 @@ export default class ProgressBarShow extends Basic {
         <Card noHovering>
           <ProgressBar
             data={data}
-            unit="$"
+            config={{
+              height: '20px',
+              margin: '20px',
+              unit: '$',
+              namePosition: 'center',
+              color: '#333',
+              fontSize: '14px',
+            }}
           />
           <hr />
           <p className="sample-title">
@@ -93,7 +133,14 @@ const data = [
 ReactDOM.render(
   <ProgressBar
     data={data}
-    unit="$"
+    config={{
+      height: '20px',
+      margin: '20px',
+      unit: '$',
+      namePosition: 'center',
+      color: '#333',
+      fontSize: '14px',
+    }}
   />
 , mountNode);
             `}
