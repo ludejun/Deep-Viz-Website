@@ -11,3 +11,6 @@ npm-debug.log*
 .idea
 /src/.editorconfig
 *.zip
+
+yarn.lock
+package-lock.json

@@ -3,6 +3,7 @@
   min-height: 100vh;
   padding-bottom: 10px;
 }
+
 @media only screen and (max-width: 992px) and (min-width: 0) {
   .main-content {
     margin: 24px 0;
@@ -70,7 +71,17 @@
       }
     }
   }
-
+  .header-container {
+    .header {
+      padding: 0 6px;
+      &-logo {
+        width: auto;
+      }
+      &-icon {
+        margin-left: 12px;
+      }
+    }
+  }
 }
 @media only screen and (min-width: 992px){
   .main-content {

@@ -1,50 +1,76 @@
-.header {
-  background: #fff;
-  height: 80px;
-  padding: 0 48px;
-  width: 100%;
-  transition: opacity 0.5s;
-  line-height: 80px;
-  &-logo {
-    float: left;
-    width: 200px;
-    font-size: 32px;
-    font-weight: bold;
-    height: 100%;
+.header-container {
+  .header {
+    background: #fff;
+    height: 80px;
+    padding: 0 48px;
+    width: 100%;
+    transition: opacity 0.5s;
+    line-height: 80px;
+    // color: #fff;
+
+    &-logo {
+      float: left;
+      width: 200px;
+      height: 100%;
+      cursor: pointer;
+    }
+    &-icon {
+      display: inline-block;
+      vertical-align: middle;
+      width: 35px;
+      margin: 0 10px 0 24px;
+    }
+    &-title {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 26px;
+      font-weight: bold;
+    }
+    .github {
+      height: 20px;
+      border-radius: 50%;
+      background: #111;
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+  .light {
+    color: #fff !important;
+    background: transparent !important;
   }
   @media only screen and (max-width: 992px) and (min-width: 0) {
     #navigator {
       display: none;
       border: 0;
-      position:absolute;
-      top:56px;
-      right:30px;
-      width:69px;
+      position: absolute;
+      top: 56px;
+      right: 30px;
+      width: 69px;
       z-index: 999;
       font-size: 14px;
       line-height: 62px;
-      box-shadow: 0 1px 6px rgba(0,0,0,.2);
+      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
     }
     &:after {
       clear: both;
-      content: '.';
+      content: '';
       display: block;
       height: 0;
     }
-    .header-bars{
+    .header-bars {
       display: block;
       font-size: 22px;
-      position:absolute;
-      right:30px;
-      top:32px;
+      position: absolute;
+      right: 30px;
+      top: 32px;
     }
-    .show-menu{
+    .show-menu {
       display: block;
     }
   }
   @media only screen and (min-width: 992px) {
     #navigator {
-      display:block !important;
+      display: block !important;
       border: 0;
       float: right;
       font-size: 14px;
@@ -52,16 +78,16 @@
     }
     &:after {
       clear: both;
-      content: '.';
+      content: '';
       display: block;
       height: 0;
     }
-    .header-bars{
+    .header-bars {
       display: none;
       font-size: 22px;
-      position:absolute;
-      right:30px;
-      top:32px;
+      position: absolute;
+      right: 30px;
+      top: 32px;
     }
   }
 }

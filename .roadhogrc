@@ -1,6 +1,7 @@
 {
   "entry": "src/index.js",
   "disableCSSModules":true,
+  "publicPath": "/deepviz/", //build for github page need
   "env": {
     "development": {
       "extraBabelPlugins": [

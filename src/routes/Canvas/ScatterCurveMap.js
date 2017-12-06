@@ -10,7 +10,7 @@ export default class ScatterCurve extends Basic {
     this.state = { number: 45 };
     const script = document.createElement('script');
     script.src =
-      'http://api.map.baidu.com/api?v=2.0&ak=C4f54f1b740bc62107184968edbb64fb&callback=mapLoad';
+      'https://api.map.baidu.com/api?v=2.0&ak=C4f54f1b740bc62107184968edbb64fb&callback=mapLoad';
     document.body.appendChild(script);
   }
 
@@ -80,7 +80,7 @@ export default class ScatterCurve extends Basic {
         <p>可模拟显示世界、中国、各级别行政区的迁徙地图</p>
         <p className="container-title">代码示例</p>
         <p>点Title右侧箭头查看代码</p>
-        <Card>
+        <Card noHovering>
           <div style={{ height: 500, marginBottom: 20 }}>
             <ScatterCurveMap
               mapConfig={{
@@ -117,7 +117,7 @@ export default class ScatterCurve extends Basic {
           <div className="code-container">
             <Highlight className="JavaScript">
               <div style={{ whiteSpace: 'pre' }}>
-                {`import { Gauge } from 'deep-viz';
+                {`import { ScatterCurveMap  } from 'deep-viz';
 
 ReactDOM.render(
   <ScatterCurveMap
@@ -147,7 +147,7 @@ ReactDOM.render(
             </Highlight>
           </div>
         </Card>
-        <Card>
+        <Card noHovering>
           <div style={{ height: 500, marginBottom: 20 }}>
             <ScatterCurveMap
               mapConfig={{
@@ -183,7 +183,7 @@ ReactDOM.render(
           <div className="code-container">
             <Highlight className="JavaScript">
               <div style={{ whiteSpace: 'pre' }}>
-                {`import { Gauge } from 'deep-viz';
+                {`import { ScatterCurveMap  } from 'deep-viz';
 
 ReactDOM.render(
   <ScatterCurveMap
@@ -213,7 +213,7 @@ ReactDOM.render(
             </Highlight>
           </div>
         </Card>
-        <Card>
+        <Card noHovering>
           <div style={{ height: 500, marginBottom: 20 }}>
             <ScatterCurveMap
               mapConfig={{
@@ -248,7 +248,7 @@ ReactDOM.render(
           <div className="code-container">
             <Highlight className="JavaScript">
               <div style={{ whiteSpace: 'pre' }}>
-                {`import { Gauge } from 'deep-viz';
+                {`import { ScatterCurveMap  } from 'deep-viz';
 
 ReactDOM.render(
   <ScatterCurveMap
@@ -276,7 +276,7 @@ ReactDOM.render(
             </Highlight>
           </div>
         </Card>
-        <Card>
+        <Card noHovering>
           <div style={{ height: 500, marginBottom: 20 }}>
             <ScatterCurveMap
               mapConfig={{
@@ -308,7 +308,7 @@ ReactDOM.render(
           <div className="code-container">
             <Highlight className="JavaScript">
               <div style={{ whiteSpace: 'pre' }}>
-                {` import { Gauge } from 'deep-viz';
+                {` import { ScatterCurveMap  } from 'deep-viz';
             ReactDOM.render(
               <ScatterCurveMap
               mapConfig={{

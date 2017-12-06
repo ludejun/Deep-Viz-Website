@@ -14,7 +14,7 @@ export default class Logo extends Component {
         {...this.props}
       >
         <path
-          stroke="#4A4A4A"
+          stroke="#fff"
           strokeWidth="1"
           fill="none"
           fillRule="nonzero"
