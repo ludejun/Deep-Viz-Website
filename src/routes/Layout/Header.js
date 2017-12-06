@@ -35,7 +35,9 @@ export default class Header extends WDBasic {
             mode="horizontal"
             id="navigator"
             onClick={(e) => {
-              if (e.key !== 'github') {
+              if (e.key === '/main') {
+                this._forward('/main/introduction');
+              } else if (e.key !== 'github') {
                 this._forward(e.key);
               }
             }}
