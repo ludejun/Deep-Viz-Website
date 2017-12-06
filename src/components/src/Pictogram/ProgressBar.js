@@ -93,6 +93,7 @@ export default class ProgressBar extends React.Component {
   }
 }
 ProgressBar.propTypes = {
+
   data: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
@@ -100,6 +101,12 @@ ProgressBar.propTypes = {
       backgroundColor: PropTypes.string,
     }),
   ).isRequired,
-  unit: PropTypes.string,
-  namePosition: PropTypes.string,
+  config: PropTypes.shape({
+    unit: PropTypes.string,
+    namePosition: PropTypes.string,
+    height: PropTypes.string,
+    margin: PropTypes.string,
+    color: PropTypes.string,
+    fontSize: PropTypes.string,
+  }),
 };
