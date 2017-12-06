@@ -87,6 +87,12 @@ export default class ProgressBarShow extends Basic {
         type: 'String',
         defaultValue: '25px',
       },
+      {
+        parameter: 'backgroundColor',
+        description: '非必需，设置ProgressBar最外层的背景色',
+        type: 'String',
+        defaultValue: '#d9d9d9',
+      },
     ];
     const tableConfig = [
       { title: 'ProgressBar', subtitle: '', dataSource: ProgressSource },
@@ -109,6 +115,7 @@ export default class ProgressBarShow extends Basic {
               namePosition: 'center',
               color: '#333',
               fontSize: '14px',
+              backgroundColor: '#d9d9d9',
             }}
           />
           <hr />
@@ -140,6 +147,7 @@ ReactDOM.render(
       namePosition: 'center',
       color: '#333',
       fontSize: '14px',
+      backgroundColor: '#d9d9d9',
     }}
   />
 , mountNode);

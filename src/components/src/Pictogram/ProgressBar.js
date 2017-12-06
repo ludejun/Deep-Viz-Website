@@ -79,7 +79,7 @@ export default class ProgressBar extends React.Component {
       <div>
         {data.map((item, i) =>
           <div key={i} style={marginStyle} className="progress-wrap">
-            <div className="outer-bar">
+            <div className="outer-bar" style={{ backgroundColor: config && config.backgroundColor ? config.backgroundColor : '#d9d9d9' }}>
               <div className="bar-name" style={namePosition && namePosition === 'center' ? center : namePosition === 'bottom' ? bottom : defaultPosition}>{item.name}</div>
               <div className="inner-bar" style={{ height: config && config.height ? config.height : '25px', width: `${item.value / allV * 100}%` }}>
                 <div className="child-item" style={{ background: item.backgroundColor ? item.backgroundColor : '#2CA51A' }} />
