@@ -70,6 +70,30 @@ ReactDOM.render(
             </Highlight>
           </div>
         </Card>
+        <Card noHovering>
+          <div style={{ height: 500, width: 500 }}>
+            <RadarSpan theme={'green'} />
+          </div>
+          <hr />
+          <p className="sample-title">
+            <Icon
+              type="arrows-alt"
+              title="Show me the code"
+              onClick={this.onCodeToggleClick}
+            />
+          </p>
+          <div className="code-container">
+            <Highlight className="JavaScript">
+              <div style={{ whiteSpace: 'pre' }}>
+                {`import { RadarSpan } from 'deep-viz';
+
+ReactDOM.render(
+    <RadarSpan theme={'green'} />
+, mountNode);`}
+              </div>
+            </Highlight>
+          </div>
+        </Card>
         <p className="container-title">API</p>
         {this._renderAPI(tableConfig)}
       </div>
