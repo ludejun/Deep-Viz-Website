@@ -72,7 +72,7 @@ export default class GaugePan extends Basic {
         <p>该组件可以自定义刮奖背景、中奖内容、刮奖区域的位置</p>
         <p className="container-title">代码示例</p>
         <p>点Title右侧箭头查看代码</p>
-        <Card noHovering>
+        <Card>
           <div style={{ height: 350 }}>
             <ScratchOff
               width={500}

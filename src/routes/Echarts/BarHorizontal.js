@@ -192,7 +192,7 @@ export default class BarHorizontalShow extends Basic {
         <p>一般用于商业数据分析，从大到小排序；或者是每项名字过长横向显示的柱状图；和普通坐标系不同，此组件的x、y会颠倒；支持颜色渐变</p>
         <p className="container-title">代码示例</p>
         <p>点Title右侧箭头查看代码</p>
-        <Card noHovering>
+        <Card>
           <BarHorizontal
             config={{
               x: { data: [barData.y1.sort()] },
@@ -233,7 +233,7 @@ ReactDOM.render(
           </div>
         </Card>
 
-        <Card noHovering ref={() => 'barHorizontalSample'}>
+        <Card ref={() => 'barHorizontalSample'}>
           <BarHorizontal
             config={{
               x: {
@@ -294,7 +294,7 @@ ReactDOM.render(
           </div>
         </Card>
 
-        <Card noHovering>
+        <Card>
           <BarHorizontal
             color={['#2CA51A', '#0BBEFE']}
             config={{

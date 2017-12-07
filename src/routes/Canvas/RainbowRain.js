@@ -32,7 +32,7 @@ export default class Rainbow extends Basic {
         <p>彩虹雨背景动画</p>
         <p className="container-title">代码示例</p>
         <p>点Title右侧箭头查看代码</p>
-        <Card noHovering>
+        <Card>
           <RainbowRain width={780} height={200} />
           <hr />
           <p className="sample-title">

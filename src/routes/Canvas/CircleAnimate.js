@@ -38,7 +38,7 @@ export default class CircleAnimates extends Basic {
         <p>气泡背景动画</p>
         <p className="container-title">代码示例</p>
         <p>点Title右侧箭头查看代码</p>
-        <Card noHovering>
+        <Card>
           <CircleAnimate
             width={766} height={260} fillStyle="#fff"
           />

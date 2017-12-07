@@ -182,7 +182,7 @@ export default class GraphChartShow extends Basic {
         <p>节点关系图，支持部分节点的显示隐藏</p>
         <p className="container-title">代码示例</p>
         <p>点Title右侧箭头查看代码</p>
-        <Card noHovering>
+        <Card>
           <GraphChart
             config={{
               data: graphData.data,

@@ -38,7 +38,7 @@ export default class BallMoveShow extends Basic {
         <p className="container-header">BallMove 小球曲线运动</p>
         <p>svg实现的小球运动。</p>
         <p className="container-title">代码示例</p>
-        <Card noHovering>
+        <Card>
           <BallMove ballColor="orange" width="727px" dur="5s" />
           <hr />
           <p className="sample-title">

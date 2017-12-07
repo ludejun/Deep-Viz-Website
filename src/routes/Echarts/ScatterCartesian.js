@@ -147,7 +147,7 @@ export default class ScatterCartesianShow extends Basic {
         </p>
         <p className="container-title">代码示例</p>
         <p>点Title右侧箭头查看代码</p>
-        <Card noHovering>
+        <Card>
           <ScatterCartesian
             config={{
               options: [
@@ -209,7 +209,7 @@ ReactDOM.render(
             </Highlight>
           </div>
         </Card>
-        <Card noHovering>
+        <Card>
           <ScatterCartesian
             config={{
               options: [

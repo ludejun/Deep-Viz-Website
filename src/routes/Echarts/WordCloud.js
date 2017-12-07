@@ -180,7 +180,7 @@ export default class WordCloudShow extends Basic {
         <p>词云图，通过设置可以展现出关键词</p>
         <p className="container-title">代码示例</p>
         <p>点Title右侧箭头查看代码</p>
-        <Card noHovering>
+        <Card>
           <WordCloud
             config={{
               data: CloudData,

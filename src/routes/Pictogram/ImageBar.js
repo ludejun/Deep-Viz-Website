@@ -90,7 +90,7 @@ export default class ImageBarShow extends Basic {
         <p className="container-header">ImageBar 柱状象形图</p>
         <p>用象形图展示一组数据对比，多用于性别等。</p>
         <p className="container-title">代码示例</p>
-        <Card noHovering>
+        <Card>
           <ImageBar
             dataList={[
               {
@@ -133,7 +133,7 @@ export default class ImageBarShow extends Basic {
           </div>
         </Card>
 
-        <Card noHovering>
+        <Card>
           <ImageBar
             dataList={[
               {
@@ -178,7 +178,7 @@ export default class ImageBarShow extends Basic {
           </div>
         </Card>
 
-        <Card noHovering>
+        <Card>
           <ImageBar
             dataList={[
               {

@@ -80,7 +80,7 @@ export default class ScatterCurve extends Basic {
         <p>可模拟显示世界、中国、各级别行政区的迁徙地图</p>
         <p className="container-title">代码示例</p>
         <p>点Title右侧箭头查看代码</p>
-        <Card noHovering>
+        <Card>
           <div style={{ height: 500, marginBottom: 20 }}>
             <ScatterCurveMap
               mapConfig={{
@@ -147,7 +147,7 @@ ReactDOM.render(
             </Highlight>
           </div>
         </Card>
-        <Card noHovering>
+        <Card>
           <div style={{ height: 500, marginBottom: 20 }}>
             <ScatterCurveMap
               mapConfig={{
@@ -213,7 +213,7 @@ ReactDOM.render(
             </Highlight>
           </div>
         </Card>
-        <Card noHovering>
+        <Card>
           <div style={{ height: 500, marginBottom: 20 }}>
             <ScatterCurveMap
               mapConfig={{
@@ -276,7 +276,7 @@ ReactDOM.render(
             </Highlight>
           </div>
         </Card>
-        <Card noHovering>
+        <Card>
           <div style={{ height: 500, marginBottom: 20 }}>
             <ScatterCurveMap
               mapConfig={{

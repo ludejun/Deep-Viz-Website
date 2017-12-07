@@ -44,7 +44,7 @@ export default class BallMoveShow extends Basic {
         <p className="container-header">PillarList 立体簇状柱形图</p>
         <p>立体簇状柱形图，可根据数据量，做出3、4、5个柱子的立体柱形图</p>
         <p className="container-title">代码示例</p>
-        <Card noHovering>
+        <Card>
           <PillarList
             data={chartData.slice(0, 3)}
             style={{ width: 400, height: 300 }}
@@ -74,7 +74,7 @@ ReactDOM.render(
             </Highlight>
           </div>
         </Card>
-        <Card noHovering>
+        <Card>
           <PillarList data={chartData.slice(0, 4)} style={{ width: 400, height: 300 }} />
           <hr />
           <p className="sample-title">
@@ -99,7 +99,7 @@ ReactDOM.render(
             </Highlight>
           </div>
         </Card>
-        <Card noHovering>
+        <Card>
           <PillarList data={chartData} style={{ width: 400, height: 300 }} />
           <hr />
           <p className="sample-title">

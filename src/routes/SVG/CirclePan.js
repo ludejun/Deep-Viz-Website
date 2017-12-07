@@ -67,7 +67,7 @@ export default class CirclePanSvg extends Basic {
         <p className="container-header">CirclePan 环形图</p>
         <p>环形图主要用于表现不同类目的数据在总和中的占比。每个的弧度表示数据数量的比例。支持1-6个环。</p>
         <p className="container-title">代码示例</p>
-        <Card noHovering>
+        <Card>
           <div>
             <CirclePan
               data={

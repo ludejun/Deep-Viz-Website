@@ -248,7 +248,7 @@ export default class BarChartBasicShow extends Basic {
         <p>基础柱状图、极简柱状图、堆积柱状图等各种柱状图都可以使用本组件，支持x轴缩放</p>
         <p className="container-title">代码示例</p>
         <p>点Title右侧箭头查看代码</p>
-        <Card noHovering>
+        <Card>
           <BarChartBasic
             config={{
               x: { data: barData.date },
@@ -296,7 +296,7 @@ ReactDOM.render(
           </div>
         </Card>
 
-        <Card noHovering>
+        <Card>
           <BarChartBasic
             config={{
               x: { data: barData.date, rotate: -45, showAll: true },
@@ -350,7 +350,7 @@ ReactDOM.render(
           </div>
         </Card>
 
-        <Card noHovering>
+        <Card>
           <BarChartBasic
             color={['#2CA51A', '#0BBEFE']}
             config={{
@@ -406,7 +406,7 @@ ReactDOM.render(
           </div>
         </Card>
 
-        <Card noHovering>
+        <Card>
           <BarChartBasic
             color={['#EA6C6B', '#8AAAF6']}
             config={{
@@ -481,7 +481,7 @@ ReactDOM.render(
           </div>
         </Card>
 
-        <Card noHovering>
+        <Card>
           <BarChartBasic
             config={{
               x: { data: barData.date, rotate: -45, showAll: true },

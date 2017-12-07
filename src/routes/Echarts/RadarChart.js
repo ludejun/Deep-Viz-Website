@@ -127,7 +127,7 @@ export default class RadarChartShow extends Basic {
         <p>基础雷达图，实现简单的多数据雷达图方式呈现</p>
         <p className="container-title">代码示例</p>
         <p>点Title右侧箭头查看代码</p>
-        <Card noHovering>
+        <Card>
           <RadarChart
             config={{
               max: 100,

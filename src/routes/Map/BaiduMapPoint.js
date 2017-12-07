@@ -164,7 +164,7 @@ export default class BaiduMapPoints extends Basic {
         <p>该组件可以根据传入的坐标在百度地图上打上圆形或自定义图片的点，常用于在地图上打上大量的logo之类，并支持自定义的Tooltip</p>
         <p className="container-title">代码示例</p>
         <p>点Title右侧箭头查看代码</p>
-        <Card noHovering>
+        <Card>
           <BaiduMapPoint
             centerPoint={{ lng: 116.385243, lat: 39.913063 }}
             points={pointList}

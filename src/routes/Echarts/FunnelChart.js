@@ -127,7 +127,7 @@ export default class FunnelChartShow extends Basic {
         <p>基础漏斗图，实现简单的多数据项漏斗方式呈现</p>
         <p className="container-title">代码示例</p>
         <p>点Title右侧箭头查看代码</p>
-        <Card noHovering>
+        <Card>
           <FunnelChart
             color={['#fff']}
             config={{
