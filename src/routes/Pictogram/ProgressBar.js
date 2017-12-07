@@ -25,7 +25,7 @@ export default class ProgressBarShow extends Basic {
       },
       {
         parameter: 'config',
-        description: '必需，组件相关配置项，详见下面table',
+        description: '非必需，组件相关配置项，详见下面table',
         type: 'Object',
         defaultValue: 'null',
       },
@@ -127,7 +127,7 @@ export default class ProgressBarShow extends Basic {
               onClick={this.onCodeToggleClick}
             />
           </p>
-          <p className="sample-desc"></p>
+          <p className="sample-desc" />
           <div className="code-container">
             <Highlight className="JavaScript">{
               `import { ProgressBar } from 'deep-viz';

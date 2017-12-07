@@ -77,7 +77,7 @@ export default class ProgressBar extends React.Component {
     const { namePosition } = this.props.config;
     return (
       <div>
-        {data.map((item, i) =>
+        {data.map((item, i) => (
           <div key={i} style={marginStyle} className="progress-wrap">
             <div className="outer-bar" style={{ backgroundColor: config && config.backgroundColor ? config.backgroundColor : '#d9d9d9' }}>
               <div className="bar-name" style={namePosition && namePosition === 'center' ? center : namePosition === 'bottom' ? bottom : namePosition === 'top' ? defaultPosition : defaultPosition}>{item.name}</div>
@@ -87,6 +87,7 @@ export default class ProgressBar extends React.Component {
             </div>
             <div className="bar-value" style={barValue}>{this.transformValue(item.value.toString())}{this.props.config.unit}</div>
           </div>
+          ),
         )}
       </div>
     );
