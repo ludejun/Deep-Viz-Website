@@ -53,6 +53,7 @@ export default ({ history }) => {
               <Route path="graph-chart" title="GraphChart 关系图" component={routes.GraphChart} />
               <Route path="scatter-net" title="ScatterNet 网格散点图" component={routes.ScatterNet} />
               <Route path="K-Line-chart" title="KLineChart K线图" component={routes.KLineChart} />
+              <Route path="word-cloudt" title="WordCloud 词云" component={routes.WordCloud} />
               {/* <Route path="map-basic" title="MapBasic 地图基础组件" component={routes.MapBasic} />*/}
             </Route>
             <Route path="map" title="Map 地图组件">
@@ -86,7 +87,6 @@ export default ({ history }) => {
                 title="BaiduMapCrossCurve 百度地图迁徙流向图"
                 component={routes.BaiduMapCrossCurve}
               />
-              <Route path="aMapIndoor" title="AMapIndoor 高德地图室内图" component={routes.AMapIndoor} />
               <Route
                 path="AMapCluster"
                 title="AMapCluster 高德地图点聚合"
@@ -97,14 +97,16 @@ export default ({ history }) => {
                 title="AMapDistrictCluster 高德地图行政聚合图"
                 component={routes.AMapDistrictCluster}
               />
+              <Route path="aMapIndoor" title="AMapIndoor 高德地图室内图" component={routes.AMapIndoor} />
             </Route>
-            <Route path="pictogram" title="Pictogram 象形图组件">
+            <Route path="pictogram" title="Pictogram/Dom 象形图组件">
               <Route path="image-bar" title="ImageBar 柱状象形图" component={routes.ImageBar} />
               <Route
                 path="image-percent"
                 title="ImagePercent 百分比象形图"
                 component={routes.ImagePercent}
               />
+              <Route path="progress-bar" title="ProgressBar 进度条" component={routes.ProgressBar} />
             </Route>
             <Route path="svg" title="SVG 组件">
               <Route path="pie-chart" title="PieChartSvg SVG饼图" component={routes.PieChartSvg} />
@@ -118,6 +120,11 @@ export default ({ history }) => {
                 path="scatter-curve"
                 title="ScatterCurveMap 多样迁徙地图"
                 component={routes.ScatterCurve}
+              />
+              <Route
+                path="radar-span"
+                title="RadarSpan 雷达扫描"
+                component={routes.RadarSpan}
               />
               <Route
                 path="CircleAnimate"
