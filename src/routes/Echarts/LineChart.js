@@ -25,7 +25,11 @@ export default class LineChartShow extends Basic {
     for (let i = 0; i < 20; i++) {
       lineData.y1.push(_.random(50, 100));
       lineData.y2.push(_.random(50, 100));
-      lineData.date.push(moment().add(i, 'days').format('YYYY/MM/DD'));
+      lineData.date.push(
+        moment()
+          .add(i, 'days')
+          .format('YYYY/MM/DD'),
+      );
     }
     const chartSource = [
       {
@@ -182,6 +186,12 @@ export default class LineChartShow extends Basic {
         defaultValue: 'null',
       },
       {
+        parameter: 'showSymbol',
+        description: '非必需，是否显示标记的图形',
+        type: 'Boolean',
+        defaultValue: 'true',
+      },
+      {
         parameter: 'stack',
         description: '非必需，此y轴的数据是否累积显示（堆积图）；当两个坐标轴都需要分别堆积时，请使用不一样的String，否则数据都会堆到一块',
         type: 'Boolean/String',
@@ -237,6 +247,7 @@ export default class LineChartShow extends Basic {
                   data: [lineData.y1, lineData.y2],
                   legend: ['图例1', '图例2'],
                   name: '人数/个',
+                  showSymbol: false,
                 },
               ],
             }}
