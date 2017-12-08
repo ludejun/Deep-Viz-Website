@@ -10,8 +10,8 @@ import { ProgressBar } from '../../components/src';
 export default class ProgressBarShow extends Basic {
   render() {
     const data = [
-      { name: '吃', value: 1200, backgroundColor: '#2CA51A' },
-      { name: '喝', value: 800, backgroundColor: '#0BBEFE' },
+      { name: '吃', value: 1200.211, backgroundColor: '#2CA51A' },
+      { name: '喝', value: 800.5, backgroundColor: '#0BBEFE' },
       { name: '玩', value: 12000.12, backgroundColor: '#EA6C6B' },
       { name: '乐', value: 20000.12, backgroundColor: '#F8B853' },
     ];
