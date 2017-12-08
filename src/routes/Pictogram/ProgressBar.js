@@ -12,8 +12,8 @@ export default class ProgressBarShow extends Basic {
     const data = [
       { name: '吃', value: 1200, backgroundColor: '#2CA51A' },
       { name: '喝', value: 800, backgroundColor: '#0BBEFE' },
-      { name: '玩', value: 12000, backgroundColor: '#EA6C6B' },
-      { name: '乐', value: 20000, backgroundColor: '#F8B853' },
+      { name: '玩', value: 12000.12, backgroundColor: '#EA6C6B' },
+      { name: '乐', value: 20000.12, backgroundColor: '#F8B853' },
     ];
 
     const ProgressSource = [

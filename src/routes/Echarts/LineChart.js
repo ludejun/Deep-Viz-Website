@@ -25,7 +25,11 @@ export default class LineChartShow extends Basic {
     for (let i = 0; i < 20; i++) {
       lineData.y1.push(_.random(50, 100));
       lineData.y2.push(_.random(50, 100));
-      lineData.date.push(moment().add(i, 'days').format('YYYY/MM/DD'));
+      lineData.date.push(
+        moment()
+          .add(i, 'days')
+          .format('YYYY/MM/DD'),
+      );
     }
     const chartSource = [
       {
@@ -104,8 +108,14 @@ export default class LineChartShow extends Basic {
         defaultValue: 'false',
       },
       {
+        parameter: 'showTooltip',
+        description: '非必需，是否显示提示框组件',
+        type: 'Boolean',
+        defaultValue: 'true',
+      },
+      {
         parameter: 'isLegendShow',
-        description: '非必需，是否显示legned',
+        description: '非必需，是否显示legend',
         type: 'Boolean',
         defaultValue: 'true',
       },
@@ -180,6 +190,12 @@ export default class LineChartShow extends Basic {
           '非必需，自定义折线的样式（主要为color、width、type等），数组的每个元素为Object，可参考示例及Echarts.series.line.lineStyle',
         type: 'Array',
         defaultValue: 'null',
+      },
+      {
+        parameter: 'showSymbol',
+        description: '非必需，是否显示标记的图形',
+        type: 'Boolean',
+        defaultValue: 'true',
       },
       {
         parameter: 'stack',

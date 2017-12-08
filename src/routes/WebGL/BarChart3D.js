@@ -166,57 +166,21 @@ export default class BarChart3DShow extends Basic {
       { title: 'light', subtitle: '合理的光照设置能够让整个场景的明暗变得更丰富，更有层次。', dataSource: lightSource },
     ];
     const chartData = {
-      x: [
-        { value: '' },
-        { value: '户外' },
-        { value: '' },
-        { value: '电影' },
-        { value: '' },
-        { value: '停车' },
-        { value: '' },
-        { value: '日料' },
-        { value: '' },
-        { value: '旅游' },
-        { value: '' },
-        { value: '游戏' },
-        { value: '' },
-        { value: '休闲' },
-        { value: '' },
-        { value: '购物' },
-        { value: '' },
-      ],
+      x: ['户外', '电影', '停车', '日料', '旅游', '游戏', '休闲', '购物', '健身', '游戏'],
       x1: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
       y: [0],
       y1: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-      data: [
-        [
-          [1, 0, _.random(0, 20)],
-          [3, 0, _.random(0, 20)],
-          [5, 0, _.random(0, 20)],
-          [7, 0, _.random(0, 20)],
-          [9, 0, _.random(0, 20)],
-          [11, 0, _.random(0, 20)],
-          [13, 0, _.random(0, 20)],
-          [15, 0, _.random(0, 20)],
-        ],
-        // [
-        //   [2, 0, _.random(0, 20)],
-        //   [4, 0, _.random(0, 20)],
-        //   [6, 0, _.random(0, 20)],
-        //   [8, 0, _.random(0, 20)],
-        //   [10, 0, _.random(0, 20)],
-        //   [12, 0, _.random(0, 20)],
-        //   [14, 0, _.random(0, 20)],
-        //   [16, 0, _.random(0, 20)],
-        // ],
-      ],
+      data: [],
       data1: [],
     };
     const dataTmp = [];
+    const dataTmp1 = [];
     for (let i = 0; i < 10; i++) {
-      dataTmp.push([_.random(0, 9), _.random(0, 9), _.random(0, 20)]);
+      dataTmp.push(_.random(0, 20));
+      dataTmp1.push([_.random(0, 9), _.random(0, 9), _.random(0, 20)]);
     }
-    chartData.data1.push(dataTmp);
+    chartData.data.push(dataTmp);
+    chartData.data1.push(dataTmp1);
     return (
       <div>
         <p className="container-header">BarChart3D 3D柱状图</p>
@@ -251,49 +215,16 @@ export default class BarChart3DShow extends Basic {
             <Highlight className="JavaScript">
               {`import {BarChart3D} from 'deep-viz';
 const chartData = {
-  x: [
-    { value: '' },
-    { value: '户外' },
-    { value: '' },
-    { value: '电影' },
-    { value: '' },
-    { value: '停车' },
-    { value: '' },
-    { value: '日料' },
-    { value: '' },
-    { value: '旅游' },
-    { value: '' },
-    { value: '游戏' },
-    { value: '' },
-    { value: '休闲' },
-    { value: '' },
-    { value: '购物' },
-    { value: '' },
-  ],
+  x: ['户外', '电影', '停车', '日料', '旅游', '游戏', '休闲', '购物', '健身', '游戏'],
   y: [0],
-  data: [
-    [
-      [1, 0, _.random(0, 20)],
-      [3, 0, _.random(0, 20)],
-      [5, 0, _.random(0, 20)],
-      [7, 0, _.random(0, 20)],
-      [9, 0, _.random(0, 20)],
-      [11, 0, _.random(0, 20)],
-      [13, 0, _.random(0, 20)],
-      [15, 0, _.random(0, 20)],
-    ],
-    [
-      [2, 0, _.random(0, 20)],
-      [4, 0, _.random(0, 20)],
-      [6, 0, _.random(0, 20)],
-      [8, 0, _.random(0, 20)],
-      [10, 0, _.random(0, 20)],
-      [12, 0, _.random(0, 20)],
-      [14, 0, _.random(0, 20)],
-      [16, 0, _.random(0, 20)],
-    ],
-  ],
+  data: [],
 };
+const dataTmp = [];
+for (let i = 0; i < 10; i++) {
+  dataTmp.push(_.random(0, 20));
+
+}
+chartData.data.push(dataTmp);
 ReactDOM.render(
   <BarChart3D
     config={{
