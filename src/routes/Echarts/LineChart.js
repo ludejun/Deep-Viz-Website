@@ -108,6 +108,12 @@ export default class LineChartShow extends Basic {
         defaultValue: 'false',
       },
       {
+        parameter: 'showTooltip',
+        description: '非必需，是否显示提示框组件',
+        type: 'Boolean',
+        defaultValue: 'true',
+      },
+      {
         parameter: 'isLegendShow',
         description: '非必需，是否显示legned',
         type: 'Boolean',
@@ -247,7 +253,6 @@ export default class LineChartShow extends Basic {
                   data: [lineData.y1, lineData.y2],
                   legend: ['图例1', '图例2'],
                   name: '人数/个',
-                  showSymbol: false,
                 },
               ],
             }}
