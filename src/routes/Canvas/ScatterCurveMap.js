@@ -35,7 +35,7 @@ export default class ScatterCurve extends Basic {
       defaultValue: '',
     }, {
       parameter: 'travelDirection',
-      description: '非必需，定义迁徙方向;to-from为从目的地到始发地迁徙，fom-to为从事发地到目的地迁徙',
+      description: '非必需，定义迁徙方向;to-from为从目的地到始发地迁徙，fom-to为从事发地到目的地迁徙, none为不画迁徙线',
       type: 'String',
       defaultValue: 'from-to',
     }, {
