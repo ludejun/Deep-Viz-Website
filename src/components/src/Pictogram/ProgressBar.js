@@ -1,6 +1,4 @@
-/**
- * Created by Administrator on 2017/9/29.
- */
+/* eslint no-param-reassign: "off" */
 import React from 'react';
 import PropTypes from 'prop-types';
 import './ProgressBar.less';
@@ -13,6 +11,13 @@ export default class ProgressBar extends React.Component {
     };
   }
   transformValue(number) {
+    let restStr = '';
+    let dot = '';
+    if (number.includes('.')) {
+      dot = number.substring(number.indexOf('.'));
+      restStr = number.substring(0, number.indexOf('.'));
+    }
+    number = restStr === '' ? number : restStr;
     if (number.length <= 3) {
       return number === '' ? '0' : number;
     } else {
@@ -25,7 +30,7 @@ export default class ProgressBar extends React.Component {
           output += `,${number.substring(mod + 3 * i, mod + 3 * i + 3)}`;
         }
       }
-      return (output);
+      return `${output}${dot}`;
     }
   }
   render() {
@@ -77,7 +82,7 @@ export default class ProgressBar extends React.Component {
     const { namePosition } = this.props.config;
     return (
       <div>
-        {data.map((item, i) =>
+        {data.map((item, i) => (
           <div key={i} style={marginStyle} className="progress-wrap">
             <div className="outer-bar" style={{ backgroundColor: config && config.backgroundColor ? config.backgroundColor : '#d9d9d9' }}>
               <div className="bar-name" style={namePosition && namePosition === 'center' ? center : namePosition === 'bottom' ? bottom : namePosition === 'top' ? defaultPosition : defaultPosition}>{item.name}</div>
@@ -87,6 +92,7 @@ export default class ProgressBar extends React.Component {
             </div>
             <div className="bar-value" style={barValue}>{this.transformValue(item.value.toString())}{this.props.config.unit}</div>
           </div>
+          ),
         )}
       </div>
     );

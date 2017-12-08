@@ -10,10 +10,10 @@ import { ProgressBar } from '../../components/src';
 export default class ProgressBarShow extends Basic {
   render() {
     const data = [
-      { name: '吃', value: 1200, backgroundColor: '#2CA51A' },
-      { name: '喝', value: 800, backgroundColor: '#0BBEFE' },
-      { name: '玩', value: 12000, backgroundColor: '#EA6C6B' },
-      { name: '乐', value: 20000, backgroundColor: '#F8B853' },
+      { name: '吃', value: 1200.211, backgroundColor: '#2CA51A' },
+      { name: '喝', value: 800.5, backgroundColor: '#0BBEFE' },
+      { name: '玩', value: 12000.12, backgroundColor: '#EA6C6B' },
+      { name: '乐', value: 20000.12, backgroundColor: '#F8B853' },
     ];
 
     const ProgressSource = [
@@ -25,7 +25,7 @@ export default class ProgressBarShow extends Basic {
       },
       {
         parameter: 'config',
-        description: '必需，组件相关配置项，详见下面table',
+        description: '非必需，组件相关配置项，详见下面table',
         type: 'Object',
         defaultValue: 'null',
       },
@@ -127,7 +127,7 @@ export default class ProgressBarShow extends Basic {
               onClick={this.onCodeToggleClick}
             />
           </p>
-          <p className="sample-desc"></p>
+          <p className="sample-desc" />
           <div className="code-container">
             <Highlight className="JavaScript">{
               `import { ProgressBar } from 'deep-viz';
