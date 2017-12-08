@@ -105,14 +105,14 @@ export default class ProgressBarShow extends Basic {
         <p>ProgressBar 进度条，主要用来展示每项数据在所有数据的占比，直观明了。</p>
         <p className="container-title">代码示例</p>
         <p>点Title右侧箭头查看代码</p>
-        <Card noHovering>
+        <Card>
           <ProgressBar
             data={data}
             config={{
               height: '20px',
               margin: '20px',
               unit: '$',
-              namePosition: 'center',
+              namePosition: 'top',
               color: '#333',
               fontSize: '14px',
               backgroundColor: '#d9d9d9',
@@ -120,13 +120,14 @@ export default class ProgressBarShow extends Basic {
           />
           <hr />
           <p className="sample-title">
+            当月各项支出占比情况
             <Icon
               type="arrows-alt"
               title="Show me the code"
               onClick={this.onCodeToggleClick}
             />
           </p>
-          <p className="sample-desc">当月各项支出占比情况</p>
+          <p className="sample-desc"></p>
           <div className="code-container">
             <Highlight className="JavaScript">{
               `import { ProgressBar } from 'deep-viz';

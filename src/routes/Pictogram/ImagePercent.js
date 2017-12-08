@@ -50,7 +50,7 @@ export default class ImagePercentShow extends Basic {
         <p className="container-header">ImagePercent 柱状象形图</p>
         <p>用带百分比的图片展示一组数据对比。</p>
         <p className="container-title">代码示例</p>
-        <Card noHovering>
+        <Card>
           <ImagePercent
             dataList={[
               {
@@ -97,7 +97,7 @@ export default class ImagePercentShow extends Basic {
           </div>
         </Card>
 
-        <Card noHovering>
+        <Card>
           <ImagePercent
             dataList={[
               {
@@ -163,7 +163,7 @@ import { Icon } from 'antd';
           </div>
         </Card>
 
-        <Card noHovering>
+        <Card>
           <ImagePercent
             dataList={[
               {

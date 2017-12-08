@@ -383,7 +383,7 @@ export default class MapScatterShow extends Basic {
         </p>
         <p className="container-title">代码示例</p>
         <p>点Title右侧箭头查看代码</p>
-        <Card noHovering>
+        <Card>
           <MapScatter
             geoCoordMap={geoCoordMap}
             dataConfig={{
@@ -467,7 +467,7 @@ ReactDOM.render(
             </Highlight>
           </div>
         </Card>
-        <Card noHovering>
+        <Card>
           <MapScatter
             // title={}
             mapConfig={{

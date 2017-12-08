@@ -153,7 +153,7 @@ export default class IntroductionDemo extends Basic {
       <div>
         <ul className="demo-container">
           <li>
-            <Card noHovering>
+            <Card>
               <LineChart
                 config={{
                   x: { data: lineData.date },
@@ -181,7 +181,7 @@ ReactDOM.render(
             </Card>
           </li>
           <li>
-            <Card noHovering>
+            <Card>
               <div style={{ height: 300 }}>
                 <PieChartSvg data={list} color={['#0073CC', '#20CFAF']} unit="% " />
               </div>
@@ -197,7 +197,7 @@ ReactDOM.render(
             </Card>
           </li>
           <li>
-            <Card noHovering>
+            <Card>
               <BaiduMapHeatMap
                 datas={datas}
                 style={{ height: 300 }}
@@ -218,7 +218,7 @@ ReactDOM.render(
           </li>
 
           <li>
-            <Card noHovering>
+            <Card>
               <GlobePointLine
                 config={{
                   data: chartData.data,

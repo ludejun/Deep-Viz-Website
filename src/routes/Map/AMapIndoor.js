@@ -57,7 +57,7 @@ export default class AMapIndoors extends Basic {
         <p>根据实际建筑坐标展示建筑室内图。</p>
         <b><i>*&nbsp;如果同一个页面内需要引入多个地图组件，建议先引入地图js后再引入组件。否则多个地图组件同时初始化会同时加载多次地图js</i></b>
         <p className="container-title">代码示例</p>
-        <Card noHovering>
+        <Card>
           <AMapIndoor
             point={point}
             style={{ height: 500 }}

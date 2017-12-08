@@ -126,7 +126,7 @@ export default class PieChartShow extends Basic {
         <p>基础饼图、空心饼图、两种形式的南丁格尔饼图可以使用本组件；数据大小推荐从大到小顺序排列</p>
         <p className="container-title">代码示例</p>
         <p>点Title右侧箭头查看代码</p>
-        <Card noHovering>
+        <Card>
           <PieChart
             config={{ data: pieData }}
           />
@@ -160,7 +160,7 @@ ReactDOM.render(
           </div>
         </Card>
 
-        <Card noHovering>
+        <Card>
           <PieChart
             color={['#BF4544', '#E96A69', '#FCACAB']}
             config={{
@@ -195,7 +195,7 @@ ReactDOM.render(
           </div>
         </Card>
 
-        <Card noHovering>
+        <Card>
           选择roseType：
           <Radio.Group onChange={this.onRadioChange}>
             <Radio.Button value="radius">radius</Radio.Button>

@@ -76,7 +76,7 @@ export default class ThreeModelShow extends Basic {
         </p>
         <p className="container-title">代码示例</p>
         <p>点Title右侧箭头查看代码</p>
-        <Card noHovering>
+        <Card>
           <div style={{ overflow: 'hidden' }}>
             <div style={{ float: 'left' }}>
               <ThreeModel height="400" width="300" />
@@ -131,7 +131,7 @@ ReactDOM.render(
           </div>
         </Card>
 
-        <Card noHovering>
+        <Card>
           <ThreeModel
             modelPath={`${window.location.href.indexOf('github.io') > -1 ? '/deepviz' : ''}/model/standard-male-figure.obj`}
             cameraZ={30}

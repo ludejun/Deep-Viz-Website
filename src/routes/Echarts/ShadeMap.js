@@ -194,7 +194,7 @@ export default class ShadeMapShow extends Basic {
         <p>默认加载中国地图，根据不同区域（省份）的值，做出不同颜色的阴影地图。颜色可为渐变或每个区域固定色，省份的名称可以加上。Tooltip支持自定义显示。</p>
         <p className="container-title">代码示例</p>
         <p>点Title右侧箭头查看代码</p>
-        <Card noHovering>
+        <Card>
           <ShadeMap
             dataConfig={{
               visualMap: {},

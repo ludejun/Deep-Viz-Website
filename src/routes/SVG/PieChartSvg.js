@@ -82,7 +82,7 @@ export default class ChartSample extends Basic {
         <p className="container-header">PieChartSvg SVG饼图</p>
         <p>使用svg画出的piechart，包括进场动画</p>
         <p className="container-title">代码示例</p>
-        <Card noHovering>
+        <Card>
           <PieChartSvg data={[{ value: 20 }, { value: 10 }]} unit=" " />
           <hr />
           <p className="sample-title">
@@ -107,7 +107,7 @@ ReactDOM.render(
           </div>
         </Card>
 
-        <Card noHovering>
+        <Card>
           <PieChartSvg data={this.list} color={['#0073CC', '#20CFAF']} unit="% " />
           <hr />
           <p className="sample-title">

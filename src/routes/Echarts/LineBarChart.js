@@ -178,7 +178,7 @@ export default class LineBarChartShow extends Basic {
         <p>折线和柱状图的同时展示可以使用本组件，一般用于量及增长率的关系等商业图表</p>
         <p className="container-title">代码示例</p>
         <p>点Title右侧箭头查看代码</p>
-        <Card noHovering>
+        <Card>
           <LineBarChart
             config={{
               x: { data: lineBarData.date },
@@ -240,7 +240,7 @@ ReactDOM.render(
           </div>
         </Card>
 
-        <Card noHovering>
+        <Card>
           <LineBarChart
             color={['#2CA51A', '#0BBEFE']}
             config={{
@@ -318,7 +318,7 @@ ReactDOM.render(
             </Highlight>
           </div>
         </Card>
-        <Card noHovering>
+        <Card>
           <LineBarChart
             config={{
               x: { data: lineBarData.date },

@@ -174,7 +174,7 @@ export default class BaiduMapCrossCurves extends Basic {
         <p>根据迁徙数据在地图上展示迁徙流向和数据。线终点圆圈的大小会根据数值大小而变化。</p>
         <b><i>*&nbsp;如果同一个页面内需要引入多个地图组件或热力图组件，建议先引入地图js后再引入组件。否则多个地图组件同时初始化会同时加载多次地图js</i></b>
         <p className="container-title">代码示例</p>
-        <Card noHovering>
+        <Card>
           <BaiduMapCrossCurve
             datas={datas}
             point={point}

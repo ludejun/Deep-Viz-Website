@@ -277,7 +277,7 @@ export default class BaiduMapHeatMapWithPoints extends Basic {
         <p>根据热力数据在地图上展示热力图。同时支持在地图上额外展示自定的POI点</p>
         <b><i>*&nbsp;如果同一个页面内需要引入多个地图组件或热力图组件，建议先引入地图js和热力图js后再引入组件。否则多个地图组件同时初始化会同时加载多次地图js</i></b>
         <p className="container-title">代码示例</p>
-        <Card noHovering>
+        <Card>
           <BaiduMapHeatMapWithPoint
             datas={datas}
             points={pointList}

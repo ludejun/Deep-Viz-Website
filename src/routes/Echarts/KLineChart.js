@@ -253,7 +253,7 @@ export default class KLineChartShow extends Basic {
         <p>k线图，可以同步展示日K线、MA5、MA10、MA20等，并支持x轴缩放</p>
         <p className="container-title">代码示例</p>
         <p>点Title右侧箭头查看代码</p>
-        <Card noHovering>
+        <Card>
           <KLineChart
             config={{
               x: { data: kData.xdata },
@@ -380,7 +380,7 @@ ReactDOM.render(
           </div>
         </Card>
 
-        <Card noHovering>
+        <Card>
           <KLineChart
             config={{
               x: { data: kData.xdata },

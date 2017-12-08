@@ -49,7 +49,7 @@ export default class ProgressBar extends React.Component {
     // };
     const center = {
       position: 'absolute',
-      left: 0,
+      left: '5px',
       height: config && config.height ? config.height : '25px',
       lineHeight: config && config.height ? config.height : '25px',
       fontSize: config.fontSize || '14px',
@@ -86,7 +86,7 @@ export default class ProgressBar extends React.Component {
               </div>
             </div>
             <div className="bar-value" style={barValue}>{this.transformValue(item.value.toString())}{this.props.config.unit}</div>
-          </div>,
+          </div>
         )}
       </div>
     );

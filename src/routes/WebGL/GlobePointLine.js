@@ -168,7 +168,7 @@ export default class GlobeShow extends Basic {
         <p className="container-header">GlobePointLine 3D地球点线图</p>
         <p>可在立体的地球上，打出不同大小颜色的pointer，和不同起始点的飞行线。地球可以拖动调整不同视角，地图的图层纹理也可以调整。地球的亮暗根据实时显示。</p>
         <p className="container-title">代码示例</p>
-        <Card noHovering>
+        <Card>
           <GlobePointLine
             config={{
               data: chartData.data,

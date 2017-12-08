@@ -466,7 +466,7 @@ export default class ShadeMapScatterShow extends Basic {
           而且地图的区域（省份）颜色可通过value值大小而不同。每组数据可以拥有不同样式的scatter，每组数据可以通过legend点击显示或消失。</p>
         <p className="container-title">代码示例</p>
         <p>点Title右侧箭头查看代码</p>
-        <Card noHovering>
+        <Card>
           <ShadeMapScatter
             geoCoordMap={geoCoordMap}
             dataConfig={{

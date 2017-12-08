@@ -186,7 +186,7 @@ export default class BarChart3DShow extends Basic {
         <p className="container-header">BarChart3D 3D柱状图</p>
         <p>将两维或三维数据用3D柱状图展现出来，更为酷炫，有立体感。可改变阴影及柱子颜色，坐标轴方向等。</p>
         <p className="container-title">代码示例</p>
-        <Card noHovering>
+        <Card>
           <BarChart3D
             config={{
               box: { height: 100, width: 300, depth: 30 },
@@ -247,7 +247,7 @@ ReactDOM.render(
             </Highlight>
           </div>
         </Card>
-        <Card noHovering>
+        <Card>
           <Row>
             <Col span={12}>
               <BarChart3D
@@ -331,7 +331,7 @@ ReactDOM.render(
             </Col>
           </Row>
         </Card>
-        <Card noHovering>
+        <Card>
           <Row>
             <Col span={12}>
               <BarChart3D

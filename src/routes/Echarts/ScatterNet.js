@@ -456,7 +456,7 @@ export default class ScatterNetShow extends Basic {
         <p>每一个网格中的散点直径大小代表此坐标系上的value，高亮动画的散点代表每一列的最大值。</p>
         <p className="container-title">代码示例</p>
         <p>点Title右侧箭头查看代码</p>
-        <Card noHovering>
+        <Card>
           <ScatterNet
             config={{
               x: { data: data.x, position: 'top', axisLine: { show: false } },

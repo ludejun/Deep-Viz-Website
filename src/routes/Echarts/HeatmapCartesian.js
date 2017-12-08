@@ -82,7 +82,7 @@ export default class HeatmapCartesianShow extends Basic {
         <p className="container-header">HeatmapCartesian 笛卡尔坐标系热力图</p>
         <p>支持在笛卡尔坐标系（一般为直角坐标系）上根据区块显示热力值的可视化组件</p>
         <p className="container-title">代码示例</p>
-        <Card noHovering>
+        <Card>
           <HeatmapCartesian
             config={{
               x: { data: [0, 1, 2, 3, 4, 5, 6, 7, 8] },
