@@ -115,7 +115,7 @@ export default class LineChartShow extends Basic {
       },
       {
         parameter: 'isLegendShow',
-        description: '非必需，是否显示legned',
+        description: '非必需，是否显示legend',
         type: 'Boolean',
         defaultValue: 'true',
       },
