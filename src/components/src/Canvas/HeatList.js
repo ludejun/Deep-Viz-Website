@@ -66,6 +66,7 @@ class HotWords extends React.Component {
       this.textArray.push(text);
     });
     const animation = () => {
+      this.context = this.canvas.getContext('2d');
       this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
       for (let i = this.textArray.length - 1; i >= 0; i--) {
         const it = this.textArray[i];
