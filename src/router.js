@@ -127,6 +127,11 @@ export default ({ history }) => {
                 component={routes.RadarSpan}
               />
               <Route
+                path="hot-words"
+                title="HotWords 热词"
+                component={routes.HotWords}
+              />
+              <Route
                 path="CircleAnimate"
                 title="CircleAnimate 气泡Canvas"
                 component={routes.CircleAnimate}
