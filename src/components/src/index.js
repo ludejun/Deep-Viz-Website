@@ -57,6 +57,7 @@ import CircleAnimate from './Canvas/CircleAnimate';
 import PillarList from './Canvas/PillarList';
 import ScratchOff from './Canvas/ScratchOff';
 import RadarSpan from './Canvas/RadarSpan';
+import HotWords from './Canvas/HeatList';
 
 // import AbstractCanvasVisualization from './Canvas/AbstractCanvasVisualization';
 // import LineCircle from './Canvas/LineCircle';
@@ -114,4 +115,5 @@ module.exports = {
   ThreeModel,
   GlobePointLine,
   RadarSpan,
+  HotWords,
 };
