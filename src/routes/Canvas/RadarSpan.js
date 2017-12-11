@@ -4,7 +4,7 @@ import Highlight from 'react-highlight';
 import { RadarSpan, ScatterCurveMap } from '../../components/src';
 import Basic from '../Layout/WDBasic';
 
-export default class GaugePans extends Basic {
+export default class RadarSpanShow extends Basic {
 
   render() {
     const Source = [{

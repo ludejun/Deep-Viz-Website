@@ -69,7 +69,7 @@ export default class HotWordsC extends Basic {
           <div className="code-container">
             <Highlight className="JavaScript">
               <div style={{ whiteSpace: 'pre' }}>
-                {`import { RadarSpan } from 'deep-viz';
+                {`import { HotWords } from 'deep-viz';
 const words = [
   '10年谈心3268次',
   '遛螃哥',

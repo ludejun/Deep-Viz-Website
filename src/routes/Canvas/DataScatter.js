@@ -4,7 +4,7 @@ import Highlight from 'react-highlight';
 import { DataScatter } from '../../components/src';
 import Basic from '../Layout/WDBasic';
 
-export default class HotWordsC extends Basic {
+export default class DataScatterShow extends Basic {
 
   render() {
     const Source = [{
@@ -78,7 +78,7 @@ export default class HotWordsC extends Basic {
           <div className="code-container">
             <Highlight className="JavaScript">
               <div style={{ whiteSpace: 'pre' }}>
-                {`import { RadarSpan } from 'deep-viz';
+                {`import { DataScatter } from 'deep-viz';
 const sub = [
   {
     title: '50个百度用户',
@@ -119,7 +119,7 @@ ReactDOM.render(
           <div className="code-container">
             <Highlight className="JavaScript">
               <div style={{ whiteSpace: 'pre' }}>
-                {`import { RadarSpan } from 'deep-viz';
+                {`import { DataScatter } from 'deep-viz';
 const sub = [
   {
     title: '50个百度用户',
