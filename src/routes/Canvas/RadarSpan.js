@@ -18,7 +18,7 @@ export default class GaugePans extends Basic {
     ];
     return (
       <div>
-        <p className="container-header">雷达扫描</p>
+        <p className="container-header">RadarSpan 雷达扫描</p>
         <p>该组件可以根据传入的主题展现出扫描动画</p>
         <p className="container-title">代码示例</p>
         <p>点Title右侧箭头查看代码</p>
@@ -52,13 +52,13 @@ export default class GaugePans extends Basic {
           </div>
           <hr />
           <p className="sample-title">
+          定义蓝色主题扫描雷达
             <Icon
               type="arrows-alt"
               title="Show me the code"
               onClick={this.onCodeToggleClick}
             />
           </p>
-          <p className="sample-desc">定义蓝色主题扫描雷达</p>
           <div className="code-container">
             <Highlight className="JavaScript">
               <div style={{ whiteSpace: 'pre' }}>

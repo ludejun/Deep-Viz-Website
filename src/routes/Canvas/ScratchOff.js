@@ -68,7 +68,7 @@ export default class GaugePan extends Basic {
     ];
     return (
       <div>
-        <p className="container-header">刮奖卡</p>
+        <p className="container-header">ScratchOff刮奖卡</p>
         <p>该组件可以自定义刮奖背景、中奖内容、刮奖区域的位置</p>
         <p className="container-title">代码示例</p>
         <p>点Title右侧箭头查看代码</p>

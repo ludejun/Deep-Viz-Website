@@ -58,8 +58,8 @@ export default class HotWordsC extends Basic {
     ];
     return (
       <div>
-        <p className="container-header">数据散点动画格</p>
-        <p>该组件可以根据传入的数据数组进行散点动画展示</p>
+        <p className="container-header">DataScatter 数据散点动画格</p>
+        <p>该组件可以根据传入的数据数组进行散点动画展示，散点多少为数据大小，并可自定义行列数进行展示</p>
         <p className="container-title">代码示例</p>
         <p>点Title右侧箭头查看代码</p>
         <Card noHovering>
@@ -68,13 +68,13 @@ export default class HotWordsC extends Basic {
           </div>
           <hr />
           <p className="sample-title">
+            定义一行三列列数据散点动画图
             <Icon
               type="arrows-alt"
               title="Show me the code"
               onClick={this.onCodeToggleClick}
             />
           </p>
-          <p className="sample-desc">定义一行三列列数据散点动画图</p>
           <div className="code-container">
             <Highlight className="JavaScript">
               <div style={{ whiteSpace: 'pre' }}>
@@ -109,13 +109,13 @@ ReactDOM.render(
           </div>
           <hr />
           <p className="sample-title">
+            定义两行两列数据散点动画图
             <Icon
               type="arrows-alt"
               title="Show me the code"
               onClick={this.onCodeToggleClick}
             />
           </p>
-          <p className="sample-desc">定义两行两列数据散点动画图</p>
           <div className="code-container">
             <Highlight className="JavaScript">
               <div style={{ whiteSpace: 'pre' }}>

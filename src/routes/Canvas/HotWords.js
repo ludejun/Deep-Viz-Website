@@ -49,7 +49,7 @@ export default class HotWordsC extends Basic {
     ];
     return (
       <div>
-        <p className="container-header">热词</p>
+        <p className="container-header">HotWords 热词</p>
         <p>该组件可以根据传入的热词数组进行动画展示</p>
         <p className="container-title">代码示例</p>
         <p>点Title右侧箭头查看代码</p>
@@ -59,13 +59,13 @@ export default class HotWordsC extends Basic {
           </div>
           <hr />
           <p className="sample-title">
+          定义热词展示动画
             <Icon
               type="arrows-alt"
               title="Show me the code"
               onClick={this.onCodeToggleClick}
             />
           </p>
-          <p className="sample-desc">定义热词展示动画</p>
           <div className="code-container">
             <Highlight className="JavaScript">
               <div style={{ whiteSpace: 'pre' }}>
