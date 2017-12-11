@@ -71,7 +71,7 @@ export default class GaugePans extends Basic {
     ];
     return (
       <div>
-        <p className="container-header">仪表盘</p>
+        <p className="container-header">GaugePan 仪表盘</p>
         <p>该组件可以根据传入的刻度范围、单位、当前刻度值来实现仪表盘的指示作用</p>
         <p className="container-title">代码示例</p>
         <p>点Title右侧箭头查看代码</p>
@@ -97,7 +97,7 @@ export default class GaugePans extends Basic {
                 {`import { GaugePan } from 'deep-viz';
 
 ReactDOM.render(
-  <GaugePan number={this.state.number} startNumber={6} numberInterval={20} unit={'km/h'} />
+  <GaugePan number={56} startNumber={6} numberInterval={20} unit={'km/h'} />
 , mountNode);`}
               </div>
             </Highlight>

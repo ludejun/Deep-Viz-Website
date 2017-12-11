@@ -5,7 +5,18 @@ class HotWords extends React.Component {
     super();
     this.id = `${Math.random()}-canvas`;
     this.scaleRatio = 2;
-    this.colors = ['#FF1461', '#18FF92', '#5A87FF', '#FBF38C'];
+    this.colors = [
+      '#FDB933',
+      '#D64F44',
+      '#00A6AC',
+      '#1D953F',
+      '#E0861A',
+      '#45B97C',
+      '#F3715C',
+      '#F26522',
+      '#7FB80E',
+      '#63C5FA',
+    ];
     this.textArray = [];
     this.Text = function (text, x, y, vx, vy, color, font, context) {
       this.text = text;
@@ -37,9 +48,9 @@ class HotWords extends React.Component {
     this.props.circleOutline && (this.canvas.style.borderRadius = '50%');
     this.canvas.width = width * this.scaleRatio;
     this.canvas.height = height * this.scaleRatio;
-    this.context.shadowOffsetX = 10;
-    this.context.shadowOffsetY = 10;
-    this.context.shadowBlur = 10;
+    this.context.shadowOffsetX = 5;
+    this.context.shadowOffsetY = 5;
+    this.context.shadowBlur = 5;
     this.context.shadowColor = 'rgba(0, 0, 0, 0.5)';
     this.context.textAlign = 'center';
     this.context.textBaseline = 'middle';
@@ -59,7 +70,7 @@ class HotWords extends React.Component {
             y,
             vx,
             vy,
-            this.colors[Math.floor(Math.random() * 4)],
+            this.colors[Math.floor(Math.random() * 11)],
             `${Math.floor(Math.random() * 30 + 30)}px serial`,
             this.context,
         );

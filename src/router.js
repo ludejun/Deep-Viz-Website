@@ -132,6 +132,12 @@ export default ({ history }) => {
                 component={routes.HotWords}
               />
               <Route
+                path="data-scatter"
+                title="DataScatter 数据散点"
+                component={routes.DataScatter}
+              />
+              <Route path="scratch-off" title="ScrathcOff 刮奖卡" component={routes.ScratchOff} />
+              <Route
                 path="CircleAnimate"
                 title="CircleAnimate 气泡Canvas"
                 component={routes.CircleAnimate}
@@ -141,7 +147,6 @@ export default ({ history }) => {
                 title="RainbowRain 彩虹雨Canvas"
                 component={routes.RainbowRain}
               />
-              <Route path="scratch-off" title="ScrathcOff 刮奖卡" component={routes.ScratchOff} />
               {/* <Route path="LineCircle" title="LineCircle Canvas"
                      component={routes.LineCircle} />
               <Route path="Clock" title="Clock 时钟" component={routes.Clock} />
