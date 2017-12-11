@@ -58,6 +58,7 @@ import PillarList from './Canvas/PillarList';
 import ScratchOff from './Canvas/ScratchOff';
 import RadarSpan from './Canvas/RadarSpan';
 import HotWords from './Canvas/HeatList';
+import DataScatter from './Canvas/DataScatter';
 
 // import AbstractCanvasVisualization from './Canvas/AbstractCanvasVisualization';
 // import LineCircle from './Canvas/LineCircle';
@@ -116,4 +117,5 @@ module.exports = {
   GlobePointLine,
   RadarSpan,
   HotWords,
+  DataScatter,
 };

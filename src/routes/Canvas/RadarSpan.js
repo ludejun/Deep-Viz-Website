@@ -58,6 +58,7 @@ export default class GaugePans extends Basic {
               onClick={this.onCodeToggleClick}
             />
           </p>
+          <p className="sample-desc">定义蓝色主题扫描雷达</p>
           <div className="code-container">
             <Highlight className="JavaScript">
               <div style={{ whiteSpace: 'pre' }}>
@@ -82,6 +83,7 @@ ReactDOM.render(
               onClick={this.onCodeToggleClick}
             />
           </p>
+          <p className="sample-desc">定义绿色主题扫描雷达</p>
           <div className="code-container">
             <Highlight className="JavaScript">
               <div style={{ whiteSpace: 'pre' }}>

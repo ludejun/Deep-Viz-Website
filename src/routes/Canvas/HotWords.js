@@ -65,13 +65,34 @@ export default class HotWordsC extends Basic {
               onClick={this.onCodeToggleClick}
             />
           </p>
+          <p className="sample-desc">定义热词展示动画</p>
           <div className="code-container">
             <Highlight className="JavaScript">
               <div style={{ whiteSpace: 'pre' }}>
                 {`import { RadarSpan } from 'deep-viz';
-
+const words = [
+  '10年谈心3268次',
+  '遛螃哥',
+  '杜汶泽瘦身',
+  '安倍名字被写错',
+  '金色iPhone受欢迎',
+  '王菲离婚后全面复出',
+  '朱莉还有3年生命',
+  '五姐妹集体自杀',
+  '上海地铁进食罚',
+  '美女怒抽猥琐男',
+  '怒吼马英九',
+  '台风“天兔”',
+  '民政部回应以房养老',
+  '王菲李亚鹏过中秋',
+  '高档餐厅中秋宴遇冷',
+  '举报富人名人超生',
+  '连战赴湖北谒祖',
+  '无准生证看病被拒',
+  '最美抗癌女孩离世',
+];
 ReactDOM.render(
-    <RadarSpan theme={'blue'} />
+  <HotWords words={words} />
 , mountNode);`}
               </div>
             </Highlight>

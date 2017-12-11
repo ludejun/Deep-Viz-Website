@@ -44,6 +44,7 @@ export { default as CircleAnimate } from './Canvas/CircleAnimate';
 export { default as ScratchOff } from './Canvas/ScratchOff';
 export { default as RadarSpan } from './Canvas/RadarSpan';
 export { default as HotWords } from './Canvas/HotWords';
+export { default as DataScatter } from './Canvas/DataScatter';
 
 // export { default as Clock } from './Canvas/Clock';
 // export { default as AbstractCanvasVisualization } from './Canvas/AbstractCanvasVisualization';
