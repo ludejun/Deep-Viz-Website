@@ -68,7 +68,7 @@ export default class WordCloud extends Basic {
       <ReactEcharts
         option={this.getOption(this.props)}
         style={this.props.style || { height: 500, width: '100%' }}
-        notMerge
+        notMerge={false}
         lazyUpdate={false}
         onEvents={this.props.onEvents}
       />

@@ -19,7 +19,7 @@ export default class ProgressBar extends React.Component {
     }
     number = restStr === '' ? number : restStr;
     if (number.length <= 3) {
-      return number === '' ? '0' : number;
+      return number === '' ? '0' : `${number}${dot}`;
     } else {
       const mod = number.length % 3;
       let output = (mod === 0 ? '' : (number.substring(0, mod)));
