@@ -99,4 +99,5 @@ class HotWords extends React.Component {
     </div>);
   }
 }
+
 export default HotWords;

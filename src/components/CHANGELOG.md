@@ -1,5 +1,13 @@
 ##
 
+modify HeatList
+
+## 1.1.1
+
+fix HeatList conflict
+
+## 1.1.0
+
 add componnets HotWords, DataScatter in Canvas
 
 modify KLineChart, more official
