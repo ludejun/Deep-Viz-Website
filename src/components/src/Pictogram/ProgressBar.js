@@ -1,6 +1,7 @@
 /* eslint no-param-reassign: "off" */
 import React from 'react';
 import PropTypes from 'prop-types';
+import { comdify } from '../utils';
 import './ProgressBar.less';
 
 export default class ProgressBar extends React.Component {
@@ -10,29 +11,7 @@ export default class ProgressBar extends React.Component {
       dataList: this.props.data,
     };
   }
-  transformValue(number) {
-    let restStr = '';
-    let dot = '';
-    if (number.includes('.')) {
-      dot = number.substring(number.indexOf('.'));
-      restStr = number.substring(0, number.indexOf('.'));
-    }
-    number = restStr === '' ? number : restStr;
-    if (number.length <= 3) {
-      return number === '' ? '0' : `${number}${dot}`;
-    } else {
-      const mod = number.length % 3;
-      let output = (mod === 0 ? '' : (number.substring(0, mod)));
-      for (let i = 0; i < Math.floor(number.length / 3); i++) {
-        if (mod === 0 && i === 0) {
-          output += number.substring(mod + 3 * i, mod + 3 * i + 3);
-        } else {
-          output += `,${number.substring(mod + 3 * i, mod + 3 * i + 3)}`;
-        }
-      }
-      return `${output}${dot}`;
-    }
-  }
+
   render() {
     const { data, config } = this.props;
     let allV = 0;
@@ -90,7 +69,7 @@ export default class ProgressBar extends React.Component {
                 <div className="child-item" style={{ background: item.backgroundColor ? item.backgroundColor : '#2CA51A' }} />
               </div>
             </div>
-            <div className="bar-value" style={barValue}>{this.transformValue(item.value.toString())}{this.props.config.unit}</div>
+            <div className="bar-value" style={barValue}>{comdify(item.value)}{this.props.config.unit}</div>
           </div>
           ),
         )}
