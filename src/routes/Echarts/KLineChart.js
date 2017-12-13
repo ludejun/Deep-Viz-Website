@@ -5,7 +5,6 @@ import { KLineChart } from '../../components/src';
 import Basic from '../Layout/WDBasic';
 
 export default class KLineChartShow extends Basic {
-
   onTooltipFormat(params) {
     console.log(params);
   }
@@ -128,8 +127,7 @@ export default class KLineChartShow extends Basic {
       parameter: 'color',
       description: '非必需，自定义节点的颜色数组，按顺序取色',
       type: 'Array',
-      defaultValue:
-        "['#2CA51A', '#0BBEFE', '#F8B853', '#EA6C6B', '#8AAAF6', '#4F76D1', '#C1DFFF', '#F7F7F7']",
+      defaultValue: "['#2CA51A', '#0BBEFE', '#F8B853', '#EA6C6B', '#8AAAF6', '#4F76D1', '#C1DFFF', '#F7F7F7']",
     }, {
       parameter: 'config',
       description: '必需，配置关系图的数据源等，详见下面Table',
@@ -159,24 +157,14 @@ export default class KLineChartShow extends Basic {
       defaultValue: 'null',
     }, {
       parameter: 'y',
-      description: '必需，定义y轴数据源及配置，详见下面Table；此数组的长度=y轴数量',
-      type: 'Array',
-      defaultValue: 'null',
-    }, {
-      parameter: 'bar',
-      description: '非必需，定义柱状图的数据源及配置，详见下面Table',
+      description: '必需，定义y轴数据源及配置，详见下面Table；默认只有一个y轴',
       type: 'Object',
       defaultValue: 'null',
     }, {
-      parameter: 'title',
-      description: '非必需，设置Chart的标题，当有title时，legend会放在右边；推荐在组件外写title',
-      type: 'Array',
-      defaultValue: 'String',
-    }, {
-      parameter: 'subtitle',
-      description: '非必需，设置Chart的副标题，当有title时，legend会放在右边；推荐在组件外写subtitlee',
-      type: 'Array',
-      defaultValue: 'String',
+      parameter: 'volume',
+      description: '非必需，定义下方柱状图数据源及配置（一般用于表示volume），详见下面Table',
+      type: 'Object',
+      defaultValue: 'null',
     }, {
       parameter: 'dataZoom',
       description: '非必需，用于x轴区域缩放，并可以看到走势概览，默认显示后70%，在x轴数据量大时使用',
@@ -184,19 +172,14 @@ export default class KLineChartShow extends Basic {
       defaultValue: 'null | { start: 30, end: 100 }',
     }, {
       parameter: 'grid',
-      description: '非必须，用来控制图标的位置left，right，top，bottom控制上面折线图位置height控制高，barLeft，barRight，barTop，barBottom控制下面柱状图位置barHeight控制柱状图的高',
+      description: '非必须，用来控制图标的位置left，right，top，bottom控制上面K线的四周留白，height控制上图高度；barLeft，barRight，barTop，barBottom控制下面柱状图位置，barHeight控制柱状图的高',
       type: 'Array',
-      defaultValue: '[{left: 80, right: 0, top: 10, bottom: 10 },{left: 80, right: 0, top: 340, bottom: 10 }]',
-    }, {
-      parameter: 'toolbox',
-      description: ' 非必需，是否显示工具箱',
-      type: 'Boolean',
-      defaultValue: 'true',
+      defaultValue: '[{left: 80, right: 10, top: 30, bottom: 10, height: 230 },{left: 80, right: 0, top: 290, bottom: 10, barHeight: 80 }]',
     }];
 
     const xSource = [{
       parameter: 'data',
-      description: '必需，定义x轴数据源',
+      description: '必需，定义x轴数据源，一般为时间序列',
       type: 'Array',
       defaultValue: 'null',
     }, {
@@ -206,20 +189,25 @@ export default class KLineChartShow extends Basic {
       defaultValue: 'null',
     }];
     const ySource = [{
-      parameter: 'data',
-      description: '  必需，定义此y轴上的数据，data里面的每个元素都是一个数组，data.length=此y轴上折线数量，并与legend.length相同；数据中缺省值一般设为null',
+      parameter: 'kData',
+      description: '  必需，定义K线的数据，data里面的每个元素都是一个数组，每个元素至少包含4个数据[open, close, lowest, highest]（即：[开盘值, 收盘值, 最低值, 最高值]）；kData.length=x.data.length，数据中缺省值一般设为null',
+      type: 'Array',
+      defaultValue: 'null',
+    }, {
+      parameter: 'lineData',
+      description: '非必需，定义MA线的数据，里面的每个元素都是一个数组，表示一条MA的线数据，每个元素的长度=x.data.length；数据中缺省值一般设为null',
       type: 'Array',
       defaultValue: 'null',
     }, {
       parameter: 'legend',
-      description: '  必需，定义此y轴上折线的名称，并与data.length相同，每个元素都为String',
+      description: '非必需，定义此y轴上数据的名称，数组元素第一个为kData的name，后面几项依次为lineData的name，每个元素都为String',
       type: 'Array',
       defaultValue: 'null',
     }, {
-      parameter: 'type',
-      description: '必需, 定义此y轴上数据展现形式，并与data.length相同，每个元素都为String',
-      type: 'Array',
-      defaultValue: 'null',
+      parameter: 'position',
+      description: '必需, 定义y轴位置，可选left、right',
+      type: 'String',
+      defaultValue: 'left',
     }, {
       parameter: 'name',
       description: '非必需，此y轴的名称，可将单位也放于此，放于y轴上方',
@@ -227,16 +215,16 @@ export default class KLineChartShow extends Basic {
       defaultValue: 'null',
     }];
 
-    const barSource = [{
-      parameter: 'name',
-      description: '非必需，定义数据的名称',
+    const volumeSource = [{
+      parameter: 'show',
+      description: '非必需，是否显示',
+      type: 'Boolean',
+      defaultValue: 'false',
+    }, {
+      parameter: 'data',
+      description: '非必需，TODO',
       type: 'Array',
       defaultValue: 'null',
-    }, {
-      parameter: 'type',
-      description: '非必需，定义数据的展现形式',
-      type: 'String',
-      defaultValue: 'bar',
     }];
 
     const tableConfig = [
@@ -244,44 +232,42 @@ export default class KLineChartShow extends Basic {
       { title: 'config', subtitle: '', dataSource: configSource },
       { title: 'x', subtitle: '', dataSource: xSource },
       { title: 'y', subtitle: '', dataSource: ySource },
-      { title: 'bar', subtitle: '', dataSource: barSource },
+      { title: 'volume', subtitle: '', dataSource: volumeSource },
     ];
 
     return (
       <div>
         <p className="container-header">KLineChart K线图</p>
-        <p>k线图，可以同步展示日K线、MA5、MA10、MA20等，并支持x轴缩放</p>
+        <p>k线图，可以同步展示日K线、MA线图等，MA线自定义条数，并支持x轴缩放与鼠标手势缩放</p>
         <p className="container-title">代码示例</p>
         <p>点Title右侧箭头查看代码</p>
         <Card>
           <KLineChart
             config={{
               x: { data: kData.xdata },
-              y: [
-                { data: [
-                  kData.ydata,
+              y: {
+                kData: kData.ydata,
+                lineData: [
                   this.calculateMA(5, kData.ydata),
                   this.calculateMA(10, kData.ydata),
                   this.calculateMA(20, kData.ydata),
                 ],
-                  legend: ['日K', 'MA5', 'MA10', 'MA20'],
-                  type: ['candlestick', 'line', 'line', 'line'],
-                },
-              ],
-              dataZoom: { start: 10, end: 50 },
+                legend: ['日K', 'MA5', 'MA10', 'MA20'],
+              },
             }}
             style={{ height: 450, width: '100%' }}
             onEvents={{ click: this.onChartClick }}
           />
           <hr />
           <p className="sample-title">
-            基础K线图
+            静态基础K线图
             <Icon
               type="arrows-alt"
               title="Show me the code"
               onClick={this.onCodeToggleClick}
             />
           </p>
+          <p className="sample-desc">只装载数据，最简化K线图，添加事件交互</p>
           <div className="code-container">
             <Highlight className="JavaScript">{
               `import { KLineChart } from 'deep-viz';
@@ -362,17 +348,18 @@ ReactDOM.render(
   <KLineChart
     config={{
       x: { data: kData.xdata },
-      y: [
-        { data: [kData.ydata, this.calculateMA(5,kData.ydata), this.calculateMA(10,kData.ydata), this.calculateMA(20,kData.ydata)],
-          legend: ['日K', 'MA5', 'MA10', 'MA20'],
-          type: ['candlestick', 'line', 'line', 'line'],
-        }
-      ],
-      dataZoom: { start: 10, end: 50 },
+      y: {
+        kData: kData.ydata,
+        lineData: [
+          this.calculateMA(5, kData.ydata),
+          this.calculateMA(10, kData.ydata),
+          this.calculateMA(20, kData.ydata),
+        ],
+        legend: ['日K', 'MA5', 'MA10', 'MA20'],
+      },
     }}
     style={{ height: 450, width: '100%' }}
     onEvents={{ click: this.onChartClick }}
-    onTooltipFormat={this.onTooltipFormat}
   />
 , mountNode);
             `}
@@ -384,32 +371,33 @@ ReactDOM.render(
           <KLineChart
             config={{
               x: { data: kData.xdata },
-              y: [
-                { data: [
-                  kData.ydata,
+              y: {
+                kData: kData.ydata,
+                lineData: [
                   this.calculateMA(5, kData.ydata),
                   this.calculateMA(10, kData.ydata),
                   this.calculateMA(20, kData.ydata),
                 ],
-                  legend: ['日K', 'MA5', 'MA10', 'MA20'],
-                  type: ['candlestick', 'line', 'line', 'line'],
-                },
-              ],
-              bar: { data: kData.barData },
-              dataZoom: { start: 10, end: 50 },
+                legend: ['日K', 'MA5', 'MA10', 'MA20'],
+              },
+              volume: { show: true, data: kData.barData },
+              upColor: '#F04B5B',
+              downColor: '#2BBE65',
+              dataZoom: {},
             }}
-            style={{ height: 450, width: '100%' }}
+            style={{ height: 420, width: '100%' }}
             onEvents={{ click: this.onChartClick }}
           />
           <hr />
           <p className="sample-title">
-            基础K线图
+            商业化K线图
             <Icon
               type="arrows-alt"
               title="Show me the code"
               onClick={this.onCodeToggleClick}
             />
           </p>
+          <p className="sample-desc">装载数据，自定义上升下降颜色，显示下方volume柱状图，支持x轴及鼠标缩放</p>
           <div className="code-container">
             <Highlight className="JavaScript">{
               `import { KLineChart } from 'deep-viz';
