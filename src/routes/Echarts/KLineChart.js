@@ -161,6 +161,16 @@ export default class KLineChartShow extends Basic {
       type: 'Object',
       defaultValue: 'null',
     }, {
+      parameter: 'upColor',
+      description: '非必需，定义上涨颜色',
+      type: 'String',
+      defaultValue: '#F04B5B',
+    }, {
+      parameter: 'downColor',
+      description: '非必需，定义下跌颜色',
+      type: 'String',
+      defaultValue: '#2BBE65',
+    }, {
       parameter: 'volume',
       description: '非必需，定义下方柱状图数据源及配置（一般用于表示volume），详见下面Table',
       type: 'Object',
@@ -175,6 +185,21 @@ export default class KLineChartShow extends Basic {
       description: '非必须，用来控制图标的位置left，right，top，bottom控制上面K线的四周留白，height控制上图高度；barLeft，barRight，barTop，barBottom控制下面柱状图位置，barHeight控制柱状图的高',
       type: 'Array',
       defaultValue: '[{left: 80, right: 10, top: 30, bottom: 10, height: 230 },{left: 80, right: 0, top: 290, bottom: 10, barHeight: 80 }]',
+    }, {
+      parameter: 'tooltipColor',
+      description: 'tooltip默认颜色',
+      type: 'String',
+      defaultValue: 'black',
+    }, {
+      parameter: 'tooltipShow',
+      description: 'tooltip是否显示',
+      type: 'Boolean',
+      defaultValue: 'true',
+    }, {
+      parameter: 'crossLabelBackcolor',
+      description: '交叉轴在坐标轴上label的底色',
+      type: 'String',
+      defaultValue: '#108EE9',
     }];
 
     const xSource = [{

@@ -102,7 +102,7 @@ export default class ProgressBarShow extends Basic {
     return (
       <div>
         <p className="container-header">ProgressBar 进度条</p>
-        <p>ProgressBar 进度条，主要用来展示每项数据在所有数据的占比，直观明了。</p>
+        <p>ProgressBar 进度条，主要用来展示每项数据在所有数据的占比，直观明了。文字可以选择在柱子上中下，大部分样式可以自定义。</p>
         <p className="container-title">代码示例</p>
         <p>点Title右侧箭头查看代码</p>
         <Card>
