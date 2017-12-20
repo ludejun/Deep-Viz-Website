@@ -76,7 +76,7 @@ export default function () {
       <div id="version">
         <h3>版本</h3>
         <ul className="list-container">
-          <li>稳定版：V1.0.0</li>
+          <li>稳定版：V1.1.1</li>
         </ul>
       </div>
 

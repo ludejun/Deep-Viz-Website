@@ -1,4 +1,6 @@
-##
+## 1.1.2
+
+Add xLabelCallback in KLineChart
 
 modify HeatList
 

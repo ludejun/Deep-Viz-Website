@@ -212,6 +212,11 @@ export default class KLineChartShow extends Basic {
       description: '非必需，定义x轴名称，放于坐标轴右侧',
       type: 'String',
       defaultValue: 'null',
+    }, {
+      parameter: 'xLabelCallback',
+      description: '非必需，x轴的label提供自定义转换回调，参数有两个，当前的标签value以及当前位置index；参考第二个例子，可让x轴label更简短',
+      type: 'Function',
+      defaultValue: 'null',
     }];
     const ySource = [{
       parameter: 'kData',
@@ -395,7 +400,10 @@ ReactDOM.render(
         <Card>
           <KLineChart
             config={{
-              x: { data: kData.xdata },
+              x: {
+                data: kData.xdata,
+                xLabelCallback: value => value.substring(value.indexOf('/') + 1, value.length),
+              },
               y: {
                 kData: kData.ydata,
                 lineData: [
@@ -546,7 +554,10 @@ calculateMA(dayCount, data) {
 ReactDOM.render(
   <KLineChart
     config={{
-      x: { data: kData.xdata },
+      x: {
+        data: kData.xdata,
+        xLabelCallback: value => value.substring(value.indexOf('/') + 1, value.length),
+      },
       y: [
         { data: [kData.ydata, this.calculateMA(5,kData.ydata), this.calculateMA(10,kData.ydata), this.calculateMA(20,kData.ydata)],
           legend: ['日K', 'MA5', 'MA10', 'MA20'],
@@ -559,7 +570,7 @@ ReactDOM.render(
     style={{ height: 450, width: '100%' }}
     onEvents={{ click: this.onChartClick }}
     onTooltipFormat={this.onTooltipFormat}
-  // />
+  />
 , mountNode);
             `}
             </Highlight>
