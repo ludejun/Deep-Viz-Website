@@ -183,8 +183,8 @@ export default class KLineChartShow extends Basic {
     }, {
       parameter: 'grid',
       description: '非必须，用来控制图标的位置left，right，top，bottom控制上面K线的四周留白，height控制上图高度；barLeft，barRight，barTop，barBottom控制下面柱状图位置，barHeight控制柱状图的高',
-      type: 'Array',
-      defaultValue: '[{left: 80, right: 10, top: 30, bottom: 10, height: 230 },{left: 80, right: 0, top: 290, bottom: 10, barHeight: 80 }]',
+      type: 'Object',
+      defaultValue: '{left: 80, right: 10, top: 30, bottom: 10, height: 230, barLeft: 80, barRight: 0, barTop: 290, barBottom: 10, barHeight: 80 }',
     }, {
       parameter: 'tooltipColor',
       description: 'tooltip默认颜色',
@@ -558,18 +558,22 @@ ReactDOM.render(
         data: kData.xdata,
         xLabelCallback: value => value.substring(value.indexOf('/') + 1, value.length),
       },
-      y: [
-        { data: [kData.ydata, this.calculateMA(5,kData.ydata), this.calculateMA(10,kData.ydata), this.calculateMA(20,kData.ydata)],
-          legend: ['日K', 'MA5', 'MA10', 'MA20'],
-          type: ['candlestick', 'line', 'line', 'line'],
-        }
-      ],
-      bar:{ data: kData.barData },
-      dataZoom: { start: 10, end: 50 },
+      y: {
+        kData: kData.ydata,
+        lineData: [
+          this.calculateMA(5, kData.ydata),
+          this.calculateMA(10, kData.ydata),
+          this.calculateMA(20, kData.ydata),
+        ],
+        legend: ['日K', 'MA5', 'MA10', 'MA20'],
+      },
+      volume: { show: true, data: kData.barData },
+      upColor: '#F04B5B',
+      downColor: '#2BBE65',
+      dataZoom: {},
     }}
-    style={{ height: 450, width: '100%' }}
+    style={{ height: 420, width: '100%' }}
     onEvents={{ click: this.onChartClick }}
-    onTooltipFormat={this.onTooltipFormat}
   />
 , mountNode);
             `}
