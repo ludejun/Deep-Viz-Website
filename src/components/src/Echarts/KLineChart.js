@@ -5,6 +5,16 @@ import Basic from './Basic';
 import { comdify } from '../utils';
 
 export default class KLineChart extends Basic {
+  componentWillReceiveProps(nextProps) {
+    if (this.chart) {
+      const chartInstance = this.chart.getEchartsInstance();
+      chartInstance.clear();
+      if (nextProps) {
+        chartInstance.setOption(this.getOption(nextProps));
+      }
+    }
+  }
+
   getOption(props) {
     const { color, config, onTooltipFormat } = props;
     const option = {
@@ -174,19 +184,20 @@ export default class KLineChart extends Basic {
       }];
 
       if (config.dataZoom) {
+        const { start, end } = config.dataZoom;
         option.dataZoom = [
           {
             xAxisIndex: [0, 1],
-            start: config.dataZoom.start || 30,
-            end: config.dataZoom.end || 100,
+            start: (start === null || start === undefined) ? 30 : start,
+            end: end || 100,
             type: 'inside',
           },
           {
             type: 'slider',
             xAxisIndex: [0, 1],
             show: true,
-            start: config.dataZoom.start || 30,
-            end: config.dataZoom.end || 100,
+            start: (start === null || start === undefined) ? 30 : start,
+            end: end || 100,
           },
         ];
       }
@@ -246,6 +257,9 @@ export default class KLineChart extends Basic {
   render() {
     return (
       <ReactEcharts
+        ref={(ref) => {
+          this.chart = ref;
+        }}
         option={this.getOption(this.props)}
         style={this.props.style || { height: 450, width: '100%' }}
         notMerge

@@ -1,3 +1,17 @@
+## 1.1.5
+
+clear chartInstance when componentWillReceiveProps in LineChart
+
+fix bug when dataZoom.start === 0 in LineChart/BarChartBasic/KLineChart/LineBarChart
+
+## 1.1.4
+
+hotfix bug in 1.1.3
+
+## 1.1.3
+
+clear instance when componentWillReceiveProps in KLineChart
+
 ## 1.1.2
 
 Add xLabelCallback in KLineChart
