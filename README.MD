@@ -14,6 +14,8 @@ Deep-Viz是主要专注于数据可视化，提供统一、简洁、漂亮、多
 
 ## Build Setup
 
+进入./src/components安装npm包的依赖： npm install
+
 ```bash
 # install dependencies
 npm install

@@ -28,7 +28,7 @@ export default class Footer extends WDBasic {
           </li>
           <li>
             <h2><Icon type="link" />资源链接</h2>
-            <div>
+            {/* <div>
               <a target="_blank" rel="noopener noreferrer" href="http://carp.wanda-group.tv/">鲸商顾问</a>
             </div>
             <div>
@@ -36,13 +36,13 @@ export default class Footer extends WDBasic {
             </div>
             <div>
               <a target="_blank" rel="noopener noreferrer" href="http://bigdata.wanda-group.net/">万达大数据</a>
-            </div>
+            </div> */}
           </li>
           <li>
-            <h2>Copyright © 2017</h2>
+            <h2>Copyright © 2017-2021</h2>
             <div>
-              <p>万达大数据中心</p>
-              <p>上海市浦东新区杨高南路729号陆家嘴世纪金融广场1号楼29层</p>
+              <p>ludejun@live.cn</p>
+              <p>上海市浦东新区</p>
             </div>
           </li>
         </ul>

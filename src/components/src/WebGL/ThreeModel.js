@@ -24,11 +24,13 @@ export default class ThreeModel extends Component {
     let mouseY = 0;
     const windowHalfX = width / 2;
     const windowHalfY = height / 2;
-    const modelConfig = {
-      male: require('../assets/model/male02.obj'),
-      female: require('../assets/model/female02.obj'),
-    };
-    const modelFile = modelPath || modelConfig[modelType || 'male'];
+    modelType && console.log('modelType已不再支持');
+    // const modelConfig = {
+    //   male: require('../assets/model/male02.obj'),
+    //   female: require('../assets/model/female02.obj'),
+    // };
+    // const modelFile = modelPath || modelConfig[modelType || 'male'];
+    const modelFile = modelPath;
 
     const init = () => {
       console.log('init...');

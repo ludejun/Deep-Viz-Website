@@ -6,7 +6,8 @@ export default class AMapCluster extends React.Component {
     window.mapRender = this.mapRender.bind(this);
     if (!window.AMap) {
       const script = document.createElement('script');
-      script.src = 'https://webapi.amap.com/maps?v=1.3&key=5f47a71f72692f5e7160f7b577d72a82&callback=mapRender';
+      script.src =
+        'https://webapi.amap.com/maps?v=1.4.15&key=5f47a71f72692f5e7160f7b577d72a82&callback=mapRender';
       document.head.appendChild(script);
     } else {
       this.mapRender(this.props);

@@ -6,7 +6,9 @@
     "development": {
       "extraBabelPlugins": [
         "dva-hmr",
-        "transform-runtime",
+        ["transform-runtime", {"helpers": false,
+          "polyfill": false,
+          "regenerator": true}],
         ["import", { "libraryName": "antd", "style": "css" }]
       ]
     },

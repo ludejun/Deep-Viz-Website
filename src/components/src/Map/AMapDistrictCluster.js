@@ -1,4 +1,4 @@
-/* eslint max-len: ["error", 180] */
+/* eslint-disable */
 import React from 'react';
 import PropTypes from 'prop-types';
 import './amp.less';
@@ -8,7 +8,8 @@ class AMapDistrictCluster extends React.Component {
     window.mapRender = this.mapRender.bind(this);
     if (!window.AMap) {
       const script = document.createElement('script');
-      script.src = 'https://webapi.amap.com/maps?v=1.3&key=5f47a71f72692f5e7160f7b577d72a82&callback=mapRender&plugin=AMap.ToolBar';
+      script.src =
+        'https://webapi.amap.com/maps?v=1.4.15&key=5f47a71f72692f5e7160f7b577d72a82&callback=mapRender';
       document.head.appendChild(script);
     } else {
       this.mapRender();
@@ -17,11 +18,23 @@ class AMapDistrictCluster extends React.Component {
     const script2 = document.createElement('script');
     script2.async = false;
     script2.type = 'text/javascript';
-    script2.src = 'https://webapi.amap.com/ui/1.0/main.js?v=1.0.11';
+    script2.src = 'https://webapi.amap.com/ui/1.1/main-async.js';
     document.head.appendChild(script2);
-    script2.onload = () => {
-      // 加载相关组件
-      window.AMapUI.load(['ui/geo/DistrictCluster', 'lib/$', 'lib/utils'], (DistrictCluster, $, utils) => {
+  }
+
+  mapRender() {
+    this.amap = new window.AMap.Map('ampClusterContainer', {
+      zoom: 4,
+      center: [116.0, 37.6],
+    });
+    AMap.plugin('AMap.ToolBar', () =>
+      this.amap.addControl(new new AMap.ToolBar()())
+    );
+    window.initAMapUI(); // 异步调用高德API：https://lbs.amap.com/api/amap-ui/intro#import
+
+    AMapUI.load(
+      ['ui/geo/DistrictCluster', 'lib/$', 'lib/utils'],
+      (DistrictCluster, $, utils) => {
         window.DistrictCluster = DistrictCluster;
         // 启动页面
         if (this.props.labelConfig) {
@@ -29,17 +42,8 @@ class AMapDistrictCluster extends React.Component {
         } else if (!this.props.labelConfig) {
           this.initPage1(DistrictCluster, $, utils);
         }
-      });
-    };
-    // }
-  }
-
-  mapRender() {
-    this.amap = new window.AMap.Map('ampClusterContainer', {
-      zoom: 1,
-      // center: [116.39, 39.9],
-    });
-    this.amap.addControl(new window.AMap.ToolBar());
+      }
+    );
   }
 
   initPage1(DistrictCluster, $) {
@@ -70,26 +74,49 @@ class AMapDistrictCluster extends React.Component {
     const that = this;
     const { renderOptions } = this.props;
     function MyRender(ctx, polygons, styleOptions, feature, dataItems) {
-      MyRender.__super__.constructor.call(this, ctx, polygons, styleOptions, feature, dataItems);
+      MyRender.__super__.constructor.call(
+        this,
+        ctx,
+        polygons,
+        styleOptions,
+        feature,
+        dataItems
+      );
     }
     // 继承默认引擎
     utils.inherit(MyRender, DistrictCluster.Render.Default);
     utils.extend(MyRender.prototype, {
       drawFeaturePolygons(ctx, polygons, styleOptions, feature, dataItems) {
         // 调用父类方法
-        MyRender.__super__.drawFeaturePolygons.call(this, ctx, polygons, styleOptions, feature, dataItems);
+        MyRender.__super__.drawFeaturePolygons.call(
+          this,
+          ctx,
+          polygons,
+          styleOptions,
+          feature,
+          dataItems
+        );
         // 直接绘制聚合信息
         this.drawMyLabel(feature, dataItems);
       },
       _initContainter(ctx, polygons, styleOptions, feature, dataItems) {
         // 调用父类方法
-        MyRender.__super__._initContainter.call(this, ctx, polygons, styleOptions, feature, dataItems);
+        MyRender.__super__._initContainter.call(
+          this,
+          ctx,
+          polygons,
+          styleOptions,
+          feature,
+          dataItems
+        );
         this._createCanvas('mylabel', this._container);
       },
       drawMyLabel(feature, dataItems) {
         const pixelRatio = this.getPixelRatio(); // 高清下存在比例放大
         // const pos = feature.properties.centroid || feature.properties.center;
-        const containerPos = map.lngLatToContainer(feature.properties.centroid || feature.properties.center);
+        const containerPos = map.lngLatToContainer(
+          feature.properties.centroid || feature.properties.center
+        );
         const labelCtx = this._getCanvasCxt('mylabel');
 
         // 文字的中心点
@@ -103,13 +130,21 @@ class AMapDistrictCluster extends React.Component {
         const halfTxtWidth = textMetrics.width / 2;
         labelCtx.fillStyle = that.props.labelConfig.fillStyle || '#108EE9';
         if (that.props.labelConfig.type === 'rect') {
-          labelCtx.fillRect(centerX - halfTxtWidth - 3 * pixelRatio,
+          labelCtx.fillRect(
+            centerX - halfTxtWidth - 3 * pixelRatio,
             centerY - 11 * pixelRatio,
             textMetrics.width + 6 * pixelRatio,
-            22 * pixelRatio);
+            22 * pixelRatio
+          );
         } else if (that.props.labelConfig.type === 'circle') {
           labelCtx.beginPath();
-          labelCtx.arc(centerX, centerY, halfTxtWidth * pixelRatio / 2 / 2, 0, 2 * Math.PI);
+          labelCtx.arc(
+            centerX,
+            centerY,
+            (halfTxtWidth * pixelRatio) / 2 / 2,
+            0,
+            2 * Math.PI
+          );
           labelCtx.fill();
           labelCtx.closePath();
         }
@@ -143,7 +178,9 @@ class AMapDistrictCluster extends React.Component {
           hoverOptions: {
             fillStyle: renderOptions ? renderOptions.hoverColor : '#b0ddaf',
             lineWidth: renderOptions ? renderOptions.hoverLineWidth : 1,
-            strokeStyle: renderOptions ? renderOptions.hoverStrokeStyle : '#1f77b4',
+            strokeStyle: renderOptions
+              ? renderOptions.hoverStrokeStyle
+              : '#1f77b4',
           },
         },
       },
@@ -153,7 +190,7 @@ class AMapDistrictCluster extends React.Component {
     $('<div id="loadingTip">加载数据，请稍候...</div>').appendTo(document.body);
     // $.get('http://a.amap.com/amap-ui/static/data/10w.txt', (csv) => {
     $('#loadingTip').remove();
-      // const data = csv.split('\n');
+    // const data = csv.split('\n');
     distCluster.setData(this.props.point);
     // });
   }
@@ -161,8 +198,11 @@ class AMapDistrictCluster extends React.Component {
   render() {
     const { style = {} } = this.props;
     return (
-      <div style={{ position: 'relative' }}>
-        <div id="ampClusterContainer" style={{ width: '100%', height: 630, ...style }} />
+      <div style={{ position: "relative" }}>
+        <div
+          id="ampClusterContainer"
+          style={{ width: "100%", height: 630, ...style }}
+        />
       </div>
     );
   }

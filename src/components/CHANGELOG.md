@@ -1,3 +1,9 @@
+## 1.2.0
+
+- 去除内置的3D人物模型，改为外链加载，减小包体积
+- 更新升级AMap API，及兼容性处理
+- 升级Echarts版本，及兼容性处理
+
 ## 1.1.5
 
 clear chartInstance when componentWillReceiveProps in LineChart
