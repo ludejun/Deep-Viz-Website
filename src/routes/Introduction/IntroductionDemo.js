@@ -141,7 +141,7 @@ export default class IntroductionDemo extends Basic {
       {
         type: 'scatter3D',
         itemStyle: {
-          formatter: '万达集团',
+          formatter: '打工人集团',
         },
         color: 'red',
         symbolSize: 10,
