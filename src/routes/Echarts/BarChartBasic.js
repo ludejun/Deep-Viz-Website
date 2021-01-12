@@ -148,6 +148,12 @@ export default class BarChartBasicShow extends Basic {
         type: 'Boolean',
         defaultValue: 'true',
       },
+      {
+        parameter: 'custom',
+        description: '非必需，其他自定义x轴属性',
+        type: 'Object',
+        defaultValue: 'null',
+      },
     ];
     const ySource = [
       {
@@ -229,6 +235,12 @@ export default class BarChartBasicShow extends Basic {
           '非必需，每个柱子类型的颜色，color.length=data.length；每个元素可以是颜色字符串，也可以是一个数组，' +
           '当每个元素是数组时，会从第1个颜色渐变到第2个颜色',
         type: 'Array',
+        defaultValue: 'null',
+      },
+      {
+        parameter: 'custom',
+        description: '非必需，其他自定义y轴属性，可覆盖上面定义值',
+        type: 'Object',
         defaultValue: 'null',
       },
     ];

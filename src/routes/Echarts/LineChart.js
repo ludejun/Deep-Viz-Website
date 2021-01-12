@@ -151,6 +151,12 @@ export default class LineChartShow extends Basic {
         type: 'Boolean',
         defaultValue: 'true',
       },
+      {
+        parameter: 'custom',
+        description: '非必需，其他自定义x轴属性，可覆盖上面定义值',
+        type: 'Object',
+        defaultValue: 'null',
+      },
     ];
     const ySource = [
       {
@@ -226,6 +232,12 @@ export default class LineChartShow extends Basic {
         description: '非必需，定义y轴是否显示',
         type: 'Boolean',
         defaultValue: 'true',
+      },
+      {
+        parameter: 'custom',
+        description: '非必需，其他自定义y轴属性，可覆盖上面定义值',
+        type: 'Object',
+        defaultValue: 'null',
       },
     ];
     const tableConfig = [

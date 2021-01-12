@@ -105,6 +105,12 @@ export default class LineBarChartShow extends Basic {
       description: '非必需，定义x轴名称是否全显示，默认会在不遮挡的情况下间隔显示',
       type: 'Boolean',
       defaultValue: 'false',
+    },
+    {
+      parameter: 'custom',
+      description: '非必需，其他自定义x轴属性，可覆盖上面定义值',
+      type: 'Object',
+      defaultValue: 'null',
     }];
     const ySource = [{
       parameter: 'data',
@@ -161,6 +167,11 @@ export default class LineBarChartShow extends Basic {
       description: '非必需，此y轴上是否有分割线；不推荐使用，两个坐标轴刻度很难对齐',
       type: 'Boolean',
       defaultValue: 'false',
+    }, {
+      parameter: 'custom',
+      description: '非必需，其他自定义y轴属性，可覆盖上面定义值',
+      type: 'Object',
+      defaultValue: 'null',
     }];
     const tableConfig = [
       { title: 'LineBarChart', subtitle: '', dataSource: chartSource },
