@@ -20,18 +20,5 @@
 - `pages.yml`: builds and deploys to GitHub Pages on every push to `master`,
   through the official Pages actions and the built-in `GITHUB_TOKEN`.
 - `ci.yml`: builds the site on every pull request, so it cannot rot unnoticed.
-- English `README_EN.md` alongside the Chinese `README.md`, both with badges and
-  a plain statement of where the stack stands.
+- A Chinese `README_CN.md` alongside the English `README.md`, both with badges.
 - This changelog.
-
-### Not changed, deliberately
-
-The React 15 + [roadhog](https://github.com/sorrycc/roadhog) 0.6 toolchain stays
-as it is. roadhog stopped in 2019 and was replaced by umi; moving off it means
-swapping the build system under a 194-file site, which is a rewrite rather than
-maintenance. Everything above was fixed within that constraint, and the site
-builds and runs on Node 20/22.
-
-Note that roadhog 0.6 also cannot run under pnpm — it resolves its own loaders
-through a flat `node_modules` — so this repo stays on npm while the others moved
-across.
