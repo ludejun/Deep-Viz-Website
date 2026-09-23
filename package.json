@@ -16,7 +16,7 @@
     "dva-loading": "^0.2.1",
     "echarts": "^4.9.0",
     "echarts-for-react": "^2.0.16",
-    "echarts-gl": "^2.0.0-rc.3",
+    "echarts-gl": "^1.1.2",
     "echarts-wordcloud": "^1.1.3",
     "immutable": "^3.8.2",
     "lodash": "^4.17.4",

@@ -1,7 +1,7 @@
 {
   "entry": "src/index.js",
   "disableCSSModules":true,
-  "publicPath": "/deepviz/", //build for github page need
+  "publicPath": "./", // 相对路径：同一份产物在 /deepviz/、/Deep-Viz-Website/ 或根路径下都能用
   "env": {
     "development": {
       "extraBabelPlugins": [
